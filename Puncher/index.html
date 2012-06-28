@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mobile Puncher</title>
+	<title>Puncher</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
-	<script src="jquery-1.7.1.min.js"></script>
-	<script src="jquery.mobile-1.1.0.min.js"></script>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.1.0.min.js"></script>
+	<script src="js/iscroll.js"></script>
 <style>
 </style>
 <script>
-$(document).delegate("#index", "pageinit", function() {
-	var h=$("#index").height();
-
-	var $sc=$("#submit-content");
-	var m=$sc.parent().height();
-	$("#submit-content").css("margin-top",m/2);
-});
+(function(){
+	// get current time
+	function getCurTime(dayCount) {
+		function two(v){
+			return v>9?v:'0'+v;
+		}
+		var d = new Date();
+		d.setDate(d.getDate() + (!!dayCount ? dayCount : 0));
+		var year = d.getFullYear();
+		var month = d.getMonth() + 1 > 9 ? d.getMonth() + 1 : '0' + (d.getMonth() + 1);
+		var day = two(d.getDate())
+		var hour = two(d.getHours());
+		var minuts = two(d.getMinutes());
+		var seconds = two(d.getSeconds());
+		var time = year + "-" + month + "-" + day + " " + hour + ":" + minuts + ":" + seconds;
+		return time;
+	}
+	// save time data
+	function save(time){
+		var times=localStorage["times"];
+		times=times?JSON.parse(times):[];
+		times.push(time);
+		times=JSON.stringify(times);
+		localStorage["times"]=times;
+	}
+	// record time
+	$(document).delegate("#popup", "pageinit", function() {
+		var time=getCurTime();
+		save(time);
+		$("#check-time").html(time);
+	});
+})();
 </script>
 <style>
-#welcome {
-	background:url(images/bg002.jpg) no-repeat center center;
+body{
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
 }
-#index {
+#welcome {
 	background:url(images/bg001.jpg) no-repeat center center;
 }
 </style>
@@ -37,48 +64,32 @@ $(document).delegate("#index", "pageinit", function() {
 </div>
 
 <!-- index page -->
-<div data-role="page" data-theme="b" id="index">
+<div data-role="page" data-theme="c" id="index">
 	<div data-role="header" data-position="fixed" data-theme="b">
-		<h1>Mobile Puncher</h1>
-		<a href="#index" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
-		<a href="#weocome" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+		<h1>Puncher</h1>
+		<a href="#welcome" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
 	</div>
 	<div data-role="content" id="submit-content">
-		<p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop" id="submit">Check In</a></p>
+		<p><a href="#popup" data-icon="arrow-r" data-iconpos="right" data-role="button" data-rel="dialog" data-transition="pop" id="check-in">Check In</a></p>
+		<p><a href="list.html" data-icon="arrow-r" data-iconpos="right" data-role="button" data-transition="slide">Check History</a></p>
 	</div>
 	<div data-role="footer" data-position="fixed" data-theme="b">
-		<p style="text-align:center">Hongbo Li &copy; 2012 Mobile Puncher</p>
-	</div>
-</div>
- 
-<!-- check page -->
-<div data-role="page" data-theme="b" id="check">
-	<div data-role="header" data-theme="b">
-		<h1>Mobile Puncher</h1>
-		<a href="#index" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
-	</div>
-	<div data-role="content">
-		<a href="#index" data-role="button">index</a></p>
-	</div>
-	<div data-role="footer" data-position="fixed" data-theme="b">
-		<p style="text-align:center">Hongbo Li &copy; 2012 Mobile Puncher</p>
+		<p style="text-align:center">Hongbo Li &copy; 2012 Puncher</p>
 	</div>
 </div>
 
-<!-- Start of third page: #popup -->
+<!-- check in popup -->
 <div data-role="page" data-theme="b" id="popup">
-
 	<div data-role="header" data-theme="b">
-		<h1>Dialog</h1>
+		<h1>Check Time</h1>
 	</div>
-	<div data-role="content" data-theme="b">	
-		<h2>Popup</h2>
-		<p>demo</p>		
-		<p><a href="#index" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
+	<div data-role="content" data-theme="c" style="text-align:center">	
+		<h2><span id="check-time"></span></h2>
+		<p><a href="list.html" data-icon="arrow-r" data-iconpos="right" data-role="button" data-transition="slide">Check History</a></p>
 	</div>
-	
 	<div data-role="footer" data-theme="b">
-		<h4>Page Footer</h4>
+		<h4></h4>
 	</div>
 </div>
 
