@@ -9,30 +9,6 @@
 	<script src="js/jquery.mobile-1.1.0.min.js"></script>
 	<script src="js/iscroll.js"></script>
 <style>
-</style>
-<script>
-(function(){
-
-	// time history
-	$(document).delegate("#check", "pageshow", function() {
-		$("#check-list").empty();
-		var times=localStorage["times"];
-		if(!times)
-			return;
-		times=JSON.parse(times);
-		times.reverse();
-		for(var i=0;i<times.length;i++){
-			var t=times[i];
-			var ft=t.replace(/-/g,"");
-			$("#check-list").append("<li data-filtertext='"+ft+"'><a href='#' class='item'>"+times[i]+"</a></li>");
-		}
-		myScroll = new iScroll('wrapper',{hideScrollbar:true});
-	});
-
-	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-})();
-</script>
-<style>
 body{
 	-webkit-user-select: none;
 	-webkit-text-size-adjust: none;
@@ -66,6 +42,27 @@ body{
 	color:green;
 }
 </style>
+<script>
+(function(){
+	$(document).delegate("#check", "pageshow", function() {
+		alert("111");
+		$("#check-list").empty();
+		var times=localStorage["times"];
+		if(!times)
+			return;
+		times=JSON.parse(times);
+		times.reverse();
+		for(var i=0;i<times.length;i++){
+			var t=times[i];
+			var ft=t.replace(/-/g,"");
+			$("#check-list").append("<li data-filtertext='"+ft+"'><a href='#' class='item'>"+times[i]+"</a></li>");
+		}
+		myScroll = new iScroll('wrapper',{hideScrollbar:true});
+	});
+
+	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+})();
+</script>
 </head>
 <body>
 
@@ -73,8 +70,8 @@ body{
 <div data-role="page" data-theme="c" id="check">
 	<div data-role="header" data-position="fixed" data-theme="b">
 		<h1>Puncher</h1>
-		<a href="#welcome" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
-		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="index.html" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
 	</div>
 	<div id="wrapper">
 		<div id="scroller">
