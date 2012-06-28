@@ -42,6 +42,12 @@
 		width:100%;
 		padding:0;
 	}
+
+	#enter {
+		height:50px;
+		width:120px;
+		line-height:32px;
+	}
 	</style>
 </head>
 <body>
@@ -49,7 +55,7 @@
 <!-- welcome page -->
 <div data-role="page" id="welcome">
 	<div data-role="content">
-		<p><a href="#index" data-role="button" data-theme="b" data-transition="slide" data-icon="arrow-r" data-iconpos="right">Enter</a></p>	
+		<p><a href="#index" data-role="button" data-theme="b" data-transition="slide" data-icon="arrow-r" data-iconpos="right" id="enter">Enter</a></p>	
 	</div>
 </div>
 
@@ -74,7 +80,7 @@
 <div data-role="page" data-theme="c" id="check">
 	<div data-role="header" data-position="fixed" data-theme="b">
 		<h1>Puncher</h1>
-		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#welcome" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
 		<a href="index.html" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
 	</div>
 	<div id="wrapper">
@@ -141,6 +147,25 @@
 		$("#check-time").html(time);
 	});
 
+	// welcome page
+	$(document).delegate("#welcome", "pageinit", function() {
+		var mt=$("#welcome").height()-$("#enter").height();
+		var ml=$("#welcome").width()-$("#enter").width();
+		$("#enter").css({
+			"margin-top":mt/2,
+			"margin-left":ml/2
+		})
+	});
+
+	// clear data
+	$(document).delegate("#check", "pageinit", function() {
+		$("#clear").click(function(){
+			localStorage.clear();
+			$("#check-list").empty();
+		});
+	});
+
+	// show data
 	$(document).delegate("#check", "pageshow", function() {
 		$("#check-list").empty();
 		var times=localStorage["times"];
