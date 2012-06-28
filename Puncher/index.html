@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile Puncher</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
+	<script src="jquery-1.7.1.min.js"></script>
+	<script src="jquery.mobile-1.1.0.min.js"></script>
+<style>
+</style>
+<script>
+$(document).delegate("#index", "pageinit", function() {
+	var h=$("#index").height();
+
+	var $sc=$("#submit-content");
+	var m=$sc.parent().height();
+	$("#submit-content").css("margin-top",m/2);
+});
+</script>
+<style>
+#welcome {
+	background:url(images/bg002.jpg) no-repeat center center;
+}
+#index {
+	background:url(images/bg001.jpg) no-repeat center center;
+}
+</style>
+</head>
+<body>
+
+<!-- welcome page -->
+<div data-role="page" id="welcome">
+	<div data-role="content">
+		<p><a href="#index" data-role="button" data-theme="b" data-transition="slide" data-icon="arrow-r" data-iconpos="right">Enter</a></p>	
+	</div>
+</div>
+
+<!-- index page -->
+<div data-role="page" data-theme="b" id="index">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<h1>Mobile Puncher</h1>
+		<a href="#index" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#weocome" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+	</div>
+	<div data-role="content" id="submit-content">
+		<p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop" id="submit">Check In</a></p>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<p style="text-align:center">Hongbo Li &copy; 2012 Mobile Puncher</p>
+	</div>
+</div>
+ 
+<!-- check page -->
+<div data-role="page" data-theme="b" id="check">
+	<div data-role="header" data-theme="b">
+		<h1>Mobile Puncher</h1>
+		<a href="#index" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+	</div>
+	<div data-role="content">
+		<a href="#index" data-role="button">index</a></p>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<p style="text-align:center">Hongbo Li &copy; 2012 Mobile Puncher</p>
+	</div>
+</div>
+
+<!-- Start of third page: #popup -->
+<div data-role="page" data-theme="b" id="popup">
+
+	<div data-role="header" data-theme="b">
+		<h1>Dialog</h1>
+	</div>
+	<div data-role="content" data-theme="b">	
+		<h2>Popup</h2>
+		<p>demo</p>		
+		<p><a href="#index" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
+	</div>
+	
+	<div data-role="footer" data-theme="b">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+
+</body>
+</html>
