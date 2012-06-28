@@ -16,6 +16,7 @@
 
 	#check-list li{
 		text-align:center;
+		padding-left:55px;
 		line-height:30px;
 	}
 	#check-list a {
