@@ -141,7 +141,7 @@
 		localStorage["times"]=times;
 	}
 	// record time
-	$(document).delegate("#popup", "pageinit", function() {
+	$(document).delegate("#popup", "pageshow", function() {
 		var time=getCurTime();
 		save(time);
 		$("#check-time").html(time);
