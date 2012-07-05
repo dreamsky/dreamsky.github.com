@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+	#content {
+		margin:0 auto;
+	}
+
+	#location{
+		line-height:50px;
+	}
+	.info{
+		height:250px;
+		background:url(images/weather_bg.jpg) repeat left bottom;
+		margin-top:20px;
+		border-radius: 10px;
+		position:relative;
+		text-align:center;
+	}
+	.info img{
+		display:block;
+		padding-top:20px;
+		margin: 0 auto;
+	}
+	.day{
+		color: #DCF0F6;
+		font-size: 15px;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);	
+	}
+	.cond{
+		bottom: -30px;
+		color: #424242;
+		font-size: 16px;
+		position: relative;
+		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+		width: 100%;	
+	}
+	li .cond b{
+		text-transform:uppercase;
+	}
+	#list{
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	#list li{
+		width:100%;
+		height:200px;
+	}
+	</style>
+</head>
+<body>
+
+<!-- check history page -->
+<div data-role="page" data-theme="c" id="home">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<h1>Weather</h1>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+	</div>
+	<div data-role="content" id="content">
+		<div id="main">
+			<a href="#" data-role="button" data-icon="star" id="location"></a>
+			<div class="info">
+				<div id="weather">
+					<ul id="list"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<p style="text-align:center">Hongbo Li &copy; 2012 Weather</p>
+	</div>
+</div>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.1.0.min.js"></script>
+	<script src="js/iscroll.js"></script>
+	<script src="js/core.js"></script>
+<script>
+(function(){
+
+	var APPID = '5GEl6U4c';	// Your Yahoo APP id
+	var DEG = 'c';			// c for celsius, f for fahrenheit
+	
+	// Mapping the weather codes returned by Yahoo's API
+	// to the correct icons in the img/icons folder
+	
+	var weatherIconMap = [
+		'storm', 'storm', 'storm', 'lightning', 'lightning', 'snow', 'hail', 'hail',
+		'drizzle', 'drizzle', 'rain', 'rain', 'rain', 'snow', 'snow', 'snow', 'snow',
+		'hail', 'hail', 'fog', 'fog', 'fog', 'fog', 'wind', 'wind', 'snowflake',
+		'cloud', 'cloud_moon', 'cloud_sun', 'cloud_moon', 'cloud_sun', 'moon', 'sun',
+		'moon', 'sun', 'hail', 'sun', 'lightning', 'lightning', 'lightning', 'rain',
+		'snowflake', 'snowflake', 'snowflake', 'cloud', 'rain', 'snow', 'lightning'
+	];
+	
+	var weatherDiv = $('#list'),location = $('#location');
+	var mainDiv = $("#main");
+	mainDiv.hide();
+	var loading=$("<img src='images/loading.gif' style=''/>").appendTo($("#content"));
+
+	// Does this browser support geolocation?
+	if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
+	}
+	else{
+	    showError("Your browser does not support Geolocation!");
+	}
+	
+	// Get user's location, and use Yahoo's PlaceFinder API
+	// to get the location name, woeid and weather forecast
+	
+	function locationSuccess(position) {
+	    var lat = position.coords.latitude;
+	    var lon = position.coords.longitude;
+
+	    // Yahoo's PlaceFinder API http://developer.yahoo.com/geo/placefinder/
+	    // We are passing the R gflag for reverse geocoding (coordinates to place name)
+	    var geoAPI = 'http://where.yahooapis.com/geocode?location='+lat+','+lon+'&flags=J&gflags=R&appid='+APPID;
+	    
+	    // Forming the query for Yahoo's weather forecasting API with YQL
+	    // http://developer.yahoo.com/weather/
+	    
+	    var wsql = 'select * from weather.forecast where woeid=WID and u="'+DEG+'"',
+	        weatherYQL = 'http://query.yahooapis.com/v1/public/yql?q='+encodeURIComponent(wsql)+'&format=json&callback=?',
+	        code, city, results, woeid;
+	    
+	    /*if (window.console && window.console.info){
+	    	console.info("Coordinates: %f %f", lat, lon);
+	    }*/
+	    
+	    // Issue a cross-domain AJAX request (CORS) to the GEO service.
+	    // Not supported in Opera and IE.
+	    $.getJSON(geoAPI, function(r){
+	        if(r.ResultSet.Found == 1){
+	            results = r.ResultSet.Results;
+	            city = results[0].city;
+	            code = results[0].state || results[0].country;
+	            // This is the city identifier for the weather API
+	            woeid = results[0].woeid;
+	            // Make a weather API request:
+	            $.getJSON(weatherYQL.replace('WID',woeid), function(r){
+	                if(r.query && r.query.count == 1){
+	                	// Create the weather items in the #scroller UL
+	                    var item = r.query.results.channel.item.condition;
+	                    if(!item){
+	                    	showError("We can't find weather information about your city!");
+	                    	if (window.console && window.console.info){
+						    	console.info("%s, %s; woeid: %d", city, code, woeid);
+						    }
+						    return false;
+	                    }
+	                    addWeather(item.code, "Now", item.text + ' <b>'+item.temp+'°'+DEG+'</b>',true);
+						
+	                    for (var i=0;i<2;i++){
+	                        item = r.query.results.channel.item.forecast[i];
+	                        addWeather(
+	                        	item.code, 
+	                        	item.day +' <b>'+item.date.replace('\d+$','')+'</b>',
+	                        	item.text + ' <b>'+item.low+'°'+DEG+' / '+item.high+'°'+DEG+'</b>'
+	                        ,false);
+	                    }
+						
+						
+	                    // Add the location to the page
+	                    location.html('Weather - '+city);
+	                }
+	                else {
+	                    showError("Error retrieving weather data!");
+	                }
+	            });
+	        }
+	    }).error(function(){
+	    	showError("Your browser does not support CORS requests!");
+	    });
+	}
+
+	function addWeather(code, day, condition,show){
+	    var info = '<li style="display:'+(show?"":"none")+'"><img width="150" src="images/icons/'+ weatherIconMap[code] +'.png" />' +
+	    	' <p class="day">'+ day +'</p> <p class="cond">'+ condition +
+	    	'</p></li>';
+		weatherDiv.append(info);
+		loading.hide();
+		mainDiv.show();
+	}
+
+	/* Error handling functions */
+	function locationError(error){
+    	switch(error.code) {
+			case error.TIMEOUT:
+				showError("A timeout occured! Please try again!");
+				break;
+			case error.POSITION_UNAVAILABLE:
+				showError('We can\'t detect your location. Sorry!');
+				break;
+			case error.PERMISSION_DENIED:
+				showError('Please allow geolocation access for this to work.');
+				break;
+			case error.UNKNOWN_ERROR:
+				showError('An unknown error occured!');
+				break;
+		}
+    }
+	function showError(msg){
+		alert(msg);
+	}
+
+	$(document).delegate("#home", "swipeleft", function() {
+		var $li=$("li:visible");
+		if($li.next().length>0){
+			$li.hide("slow");
+			$li.next().show("slow");
+		}
+	});
+
+	$(document).delegate("#home", "swiperight", function() {
+		var $li=$("li:visible");
+		if($li.prev().length>0){
+			$li.hide();
+			$li.prev().show("slow");
+		}
+	});
+
+})();
+</script>
+</body>
+</html>

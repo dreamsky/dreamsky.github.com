@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Album</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/photoswipe.css" />
+	<style>
+		.gallery { list-style: none; padding: 0; margin: 0; }
+		.gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+		.gallery li { float: left; width: 50%; }
+		.gallery li a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+		.gallery li img { display: block; width: 100%; height: auto; }
+		.ui-content { overflow-x: visible; }
+	</style>
+
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.1.0.min.js"></script>
+	<script src="js/cordova-1.8.1.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/klass.min.js"></script>
+	<script src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var options = {};
+			var instance = window.Code.PhotoSwipe.attach(window.document.querySelectorAll('#Gallery a'), options);
+		});
+	</script>
+</head>
+<body>
+
+<div data-role="page" data-theme="a" id="home" class="gallery-page">
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1>Album</h1>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+	</div>
+	<div data-role="content">
+		<ul id="Gallery" class="gallery">
+			<li><a href="images/full/010.jpg" rel="external"><img src="images/thumb/010.jpg" alt="Image 010" /></a></li>
+			<li><a href="images/full/011.jpg" rel="external"><img src="images/thumb/011.jpg" alt="Image 011" /></a></li>
+			<li><a href="images/full/012.jpg" rel="external"><img src="images/thumb/012.jpg" alt="Image 012" /></a></li>
+			<li><a href="images/full/013.jpg" rel="external"><img src="images/thumb/013.jpg" alt="Image 013" /></a></li>
+			<li><a href="images/full/014.jpg" rel="external"><img src="images/thumb/014.jpg" alt="Image 014" /></a></li>
+			<li><a href="images/full/015.jpg" rel="external"><img src="images/thumb/015.jpg" alt="Image 015" /></a></li>
+			<li><a href="images/full/016.jpg" rel="external"><img src="images/thumb/016.jpg" alt="Image 016" /></a></li>
+			<li><a href="images/full/017.jpg" rel="external"><img src="images/thumb/017.jpg" alt="Image 017" /></a></li>
+			<li><a href="images/full/018.jpg" rel="external"><img src="images/thumb/018.jpg" alt="Image 018" /></a></li>
+			<li><a href="images/full/019.jpg" rel="external"><img src="images/thumb/019.jpg" alt="Image 019" /></a></li>
+		</ul>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="a">
+		<p style="text-align:center">Hongbo Li &copy; 2012 BoBox</p>
+	</div>
+</div>
+</body>
+</html>

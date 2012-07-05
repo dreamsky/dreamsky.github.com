@@ -4,12 +4,9 @@
 	<title>Puncher</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
 	<style>
-	body{
-		-webkit-user-select: none;
-		-webkit-text-size-adjust: none;
-	}
 	#welcome {
 		background:url(images/bg001.jpg) no-repeat center center;
 	}
@@ -54,16 +51,21 @@
 
 <!-- welcome page -->
 <div data-role="page" id="welcome">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<h1>Puncher</h1>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+	</div>
 	<div data-role="content">
-		<p><a href="#index" data-role="button" data-theme="b" data-transition="slide" data-icon="arrow-r" data-iconpos="right" id="enter">Enter</a></p>	
+		<p><a href="#main" data-role="button" data-theme="b" data-transition="slide" data-icon="arrow-r" data-iconpos="right" id="enter">Enter</a></p>	
 	</div>
 </div>
 
-<!-- index page -->
-<div data-role="page" data-theme="c" id="index">
+<!-- main page -->
+<div data-role="page" data-theme="c" id="main">
 	<div data-role="header" data-position="fixed" data-theme="b">
 		<h1>Puncher</h1>
-		<a href="#welcome" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
 		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
 	</div>
 	<div data-role="content" id="submit-content">
@@ -114,6 +116,7 @@
 	<script src="js/jquery-1.7.1.min.js"></script>
 	<script src="js/jquery.mobile-1.1.0.min.js"></script>
 	<script src="js/iscroll.js"></script>
+	<script src="js/core.js"></script>
 <script>
 (function(){
 	// get current time

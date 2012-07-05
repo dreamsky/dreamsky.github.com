@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+	.ui-content{
+		padding:0;
+	}
+	</style>
+</head>
+<body onload="onLoad()">
+
+<!-- check history page -->
+<div data-role="page" data-theme="c" id="home">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<h1>Map</h1>
+		<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		<a href="#" data-icon="back" data-iconpos="notext" data-rel="back">Back</a>
+	</div>
+	<div data-role="content">
+		<div id="position"></div>
+		<div id="map" style="width:100%;"></div>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<p style="text-align:center">Hongbo Li &copy; 2012 Map</p>
+	</div>
+</div>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.1.0.min.js"></script>
+	<script src="http://map.google.com/maps/api/js?sensor=false"></script>  
+	<script src="js/cordova-1.8.1.js"></script>
+	<script src="js/core.js"></script>
+<script>
+(function(){
+	
+	var Map={
+		init: function(){
+			Map.geoInit();
+		},
+		geoInit:function(){
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(Map.locationSuccess, Map.locationError,{
+					enableHighAcuracy: true,
+					timeout: 5000,
+					maximumAge: 3000
+				});
+			}else{
+				Map.showError("Your browser does not support Geolocation!");
+			}
+		},
+		locationSuccess: function (position){
+			var coords=position.coords;
+			var lat = position.coords.latitude;
+			var lon = position.coords.longitude;
+			var hh=$("[data-role='header']").height();
+			var fh=$("[data-role='footer']").height();
+			var h=$(window).height()-hh-fh-5;
+			$("#map").height(h);
+			Map.showMap(position);
+		},
+		locationError: function(error){
+			switch(error.code) {
+				case error.TIMEOUT:
+					Map.showError("A timeout occured! Please try again!");
+					break;
+				case error.POSITION_UNAVAILABLE:
+					Map.showError('We can\'t detect your location. Sorry!');
+					break;
+				case error.PERMISSION_DENIED:
+					Map.showError('Please allow geolocation access for this to work.');
+					break;
+				case error.UNKNOWN_ERROR:
+					Map.showError('An unknown error occured!');
+					break;
+			}
+		},
+		showMap: function(position){
+			var coords = position.coords;     
+			var latlng = new google.maps.LatLng(   
+				coords.latitude,   
+				coords.longitude   
+			);   
+			var myOptions = {   
+				//放大倍数   
+				zoom: 12,   
+				//地图中心设为指定坐标点   
+				center: latlng,   
+				//地图类型   
+				mapTypeId: google.maps.MapTypeId.ROADMAP   
+			};   
+			//创建地图并输出到页面   
+			var myMap = new google.maps.Map(   
+				document.getElementById("map"),myOptions   
+			);   
+			//创建标记   
+			var marker = new google.maps.Marker({   
+				//标注指定坐标点   
+				position: latlng,   
+				//设置在myMap地图中标注   
+				map: myMap
+				//mapTypeControl: false,
+				//navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+			});
+			//设置标注窗口   
+			var infowindow = new google.maps.InfoWindow({   
+				content:"您在这里<br/>纬度："+   
+					coords.latitude+   
+					"<br/>经度："+coords.longitude   
+			});   
+			//打开标注窗口   
+			infowindow.open(myMap,marker);  
+		},
+		showError: function(msg){
+			alert(msg);
+		}
+	};
+	Map.init();
+	
+})();
+</script>
+</body>
+</html>
