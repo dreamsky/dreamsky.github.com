@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Less · Twitter Bootstrap中文版/中文翻译</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">Bootstrap</a>
+          <div class="nav-collapse">
+	    <ul class="nav">
+              <li class="">
+                <a href="./index.html">概述</a>
+              </li>
+              <li class="">
+                <a href="./scaffolding.html">框架</a>
+              </li>
+              <li class="">
+                <a href="./base-css.html">基础CSS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">Javascript插件</a>
+              </li>
+              <li class="active">
+                <a href="./less.html">使用LESS</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./download.html">定制</a>
+              </li>
+              <li class="">
+                <a href="./examples.html">例子</a>
+              </li>
+	      <li class="">
+                <a href="./wrongway.html">译者言</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>在Bootstrap中使用LESS</h1>
+  <p class="lead">
+    我们使用 <a href="http://lesscss.net" target="_blank">LESS</a> (一种CSS预处理器)定制和扩展Bootstrap。
+    LESS充分利用变量，混合以及其他有用的工具来构建Bootstrap的CSS。
+  </p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#builtWith">使用LESS</a></li>
+      <li><a href="#variables">变量</a></li>
+      <li><a href="#mixins">混合</a></li>
+      <li><a href="#compiling">编译Bootstrap</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- BUILT WITH LESS
+================================================== -->
+<section id="builtWith">
+  <div class="page-header">
+    <h1>使用LESS</h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>为什么使用LESS?</h3>
+      <p>
+	Bootstrap使用LESS构造核心，LESS是由我们的好友 <a href="http://cloudhead.io">Alexis Sellier</a> 创造的一种动态样本表语言。
+	它让系统底层的CSS开发变得更快捷高效，更有生趣。
+      </p>
+    </div>
+    <div class="span4">
+      <h3>包括什么?</h3>
+      <p>
+	做为CSS的扩展，LESS包括变量，可重用代码段的混合，简单的数学操作，内嵌，以及颜色方法等等。
+      </p>
+    </div>
+    <div class="span4">
+      <h3>了解更多</h3>
+      <img style="float: right; height: 36px;" src="assets/img/less-logo-large.png" alt="LESS CSS">
+      <p>
+	详见LESS官网 <a href="http://lesscss.org">http://lesscss.org</a> 。<br />
+	详见LESS中国官网 <a href="http://lesscss.net">http://lesscss.net</a> 。
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3><a href="#variables">变量</a></h3>
+      <p>
+	没有使用LESS之前，在CSS中管理颜色和像素值是个痛苦的事情，通常充斥着复制粘贴操作。现在可以借助LESS将颜色和像素值声明为变量，并对其一次性赋值。
+      </p>
+    </div>
+    <div class="span4">
+      <h3><a href="#mixins">混合</a></h3>
+      <p>
+	 需在一个规则的ol的CSS中声明三种边框圆角时怎么办？借助混合，可以将它们写到一行，然后在其他地方重用。
+      </p>
+    </div>
+    <div class="span4">
+      <h3>运算</h3>
+      <p>
+	通过数学运算可以即时灵活地调整栅格尺寸和行间距。借助加减乘除，将CSS变更有条理。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- VARIABLES
+================================================== -->
+<section id="variables">
+  <div class="page-header">
+    <h1>Bootstrap变量 <small>LESS变量和变量值，以及用法指南</small></h1>
+  </div>
+
+  <div class="row">
+    <div class="span6">
+      <h3>超链接</h3>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span2"><code>@linkColor</code></td>
+            <td>#08c</td>
+            <td>默认的链接颜色</td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #08c;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@linkColorHover</code></td>
+            <td><code>darken(@linkColor, 15%)</code></td>
+            <td>默认悬停时的链接颜色</td>
+            <td><span class="swatch" style="background-color: #005580;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>栅格系统</h3>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span2"><code>@gridColumns</code></td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td><code>@gridColumnWidth</code></td>
+            <td>60px</td>
+          </tr>
+          <tr>
+            <td><code>@gridGutterWidth</code></td>
+            <td>20px</td>
+          </tr>
+          <tr>
+            <td><code>@fluidGridColumnWidth</code></td>
+            <td>6.382978723%</td>
+          </tr>
+          <tr>
+            <td><code>@fluidGridGutterWidth</code></td>
+            <td>2.127659574%</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>排版</h3>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span2"><code>@baseFontSize</code></td>
+            <td>13px</td>
+          </tr>
+          <tr>
+            <td><code>@baseFontFamily</code></td>
+            <td><code>"Helvetica Neue", Helvetica, Arial, sans-serif</code></td>
+          </tr>
+          <tr>
+            <td><code>@baseLineHeight</code></td>
+            <td>18px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="span6">
+      <h3>灰度色</h3>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span2"><code>@black</code></td>
+            <td>#000</td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #000;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@grayDarker</code></td>
+            <td>#222</td>
+            <td><span class="swatch" style="background-color: #222;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@grayDark</code></td>
+            <td>#333</td>
+            <td><span class="swatch" style="background-color: #333;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@gray</code></td>
+            <td>#555</td>
+            <td><span class="swatch" style="background-color: #555;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@grayLight</code></td>
+            <td>#999</td>
+            <td><span class="swatch" style="background-color: #999;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@grayLighter</code></td>
+            <td>#eee</td>
+            <td><span class="swatch" style="background-color: #eee;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@white</code></td>
+            <td>#fff</td>
+            <td><span class="swatch swatch-bordered" style="background-color: #fff;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>强调色</h3>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span2"><code>@blue</code></td>
+            <td>#049cdb</td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #049cdb;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@green</code></td>
+            <td>#46a546</td>
+            <td><span class="swatch" style="background-color: #46a546;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@red</code></td>
+            <td>#9d261d</td>
+            <td><span class="swatch" style="background-color: #9d261d;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@yellow</code></td>
+            <td>#ffc40d</td>
+            <td><span class="swatch" style="background-color: #ffc40d;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@orange</code></td>
+            <td>#f89406</td>
+            <td><span class="swatch" style="background-color: #f89406;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@pink</code></td>
+            <td>#c3325f</td>
+            <td><span class="swatch" style="background-color: #c3325f;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@purple</code></td>
+            <td>#7a43b6</td>
+            <td><span class="swatch" style="background-color: #7a43b6;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> <!-- /row -->
+
+  <h3>组件</h3>
+  <div class="row">
+    <div class="span6">
+      <h4>按钮</h4>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span3"><code>@primaryButtonBackground</code></td>
+            <td><code>@linkColor</code></td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #08c;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>表单</h4>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span3"><code>@placeholderText</code></td>
+            <td><code>@grayLight</code></td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #999;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>导航栏</h4>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span3"><code>@navbarHeight</code></td>
+            <td>40px</td>
+            <td class="swatch-col"></td>
+          </tr>
+          <tr>
+            <td><code>@navbarBackground</code></td>
+            <td><code>@grayDarker</code></td>
+            <td><span class="swatch" style="background-color: #222;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@navbarBackgroundHighlight</code></td>
+            <td><code>@grayDark</code></td>
+            <td><span class="swatch" style="background-color: #333;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@navbarText</code></td>
+            <td><code>@grayLight</code></td>
+            <td><span class="swatch" style="background-color: #999;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@navbarLinkColor</code></td>
+            <td><code>@grayLight</code></td>
+            <td><span class="swatch" style="background-color: #999;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@navbarLinkColorHover</code></td>
+            <td><code>@white</code></td>
+            <td><span class="swatch swatch-bordered" style="background-color: #fff;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="span6">
+      <h4>表单状态和通知</h4>
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td class="span3"><code>@warningText</code></td>
+            <td>#c09853</td>
+            <td><span class="swatch" style="background-color: #c09853;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@warningBackground</code></td>
+            <td>#f3edd2</td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #f3edd2;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@errorText</code></td>
+            <td>#b94a48</td>
+            <td><span class="swatch" style="background-color: #b94a48;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@errorBackground</code></td>
+            <td>#f2dede</td>
+            <td><span class="swatch" style="background-color: #f2dede;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@successText</code></td>
+            <td>#468847</td>
+            <td><span class="swatch" style="background-color: #468847;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@successBackground</code></td>
+            <td>#dff0d8</td>
+            <td><span class="swatch" style="background-color: #dff0d8;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@infoText</code></td>
+            <td>#3a87ad</td>
+            <td><span class="swatch" style="background-color: #3a87ad;"></span></td>
+          </tr>
+          <tr>
+            <td><code>@infoBackground</code></td>
+            <td>#d9edf7</td>
+            <td><span class="swatch" style="background-color: #d9edf7;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div><!-- /row -->
+
+</section>
+
+
+
+<!-- MIXINS
+================================================== -->
+<section id="mixins">
+  <div class="page-header">
+    <h1>Bootstrap 混合 <small></small></h1>
+  </div>
+  <h2>关于混合</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>基本的混合</h3>
+      <p>
+	基本的混合从本质上来说，就是包括整个或是部分代码片段。写法类似一个CSS类，可以随处调用。
+      </p>
+<pre class="prettyprint linenums">
+.element {
+  .clearfix();
+}
+</pre>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>带参数的混合</h3>
+      <p>
+	带参数的混合和基本混合很像，不同之处是前者可以接收参数(根据名称)，参数可以有默认值。
+      </p>
+<pre class="prettyprint linenums">
+.element {
+  .border-radius(4px);
+}
+</pre>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>易于定制</h3>
+      <p>
+	基本上Bootstrap所有的混合都保存在mixins.less，
+	这是一个出色的工具类.less文件，我们可以在任何一个.less文件中使用其中的混合。
+      </p>
+      <p>
+	因此，直接使用已有的混合或是自定义一个新混合皆可。
+      </p>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+  <h2>包含混合</h2>
+  <h3>实用工具</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.clearfix()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>清除浮动</td>
+      </tr>
+      <tr>
+        <td><code>.tab-focus()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>添加类似Webkit获得焦点的风格和类似Firefox的的外包线</td>
+      </tr>
+      <tr>
+        <td><code>.center-block()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>使用<code>margin: auto</code>把块级元素自动居中</td>
+      </tr>
+      <tr>
+        <td><code>.ie7-inline-block()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>添加规则的 <code>display: inline-block</code> 以支持IE7</td>
+      </tr>
+      <tr>
+        <td><code>.size()</code></td>
+        <td><code>@height: 5px, @width: 5px</code></td>
+        <td>快速设置行高和行宽</td>
+      </tr>
+      <tr>
+        <td><code>.square()</code></td>
+        <td><code>@size: 5px</code></td>
+        <td>基于<code>.size()</code> 设置正方形区域</td>
+      </tr>
+      <tr>
+        <td><code>.opacity()</code></td>
+        <td><code>@opacity: 100</code></td>
+        <td>设置透明度的百分比 (比如 "50" 或 "75")</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>表单</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.placeholder()</code></td>
+        <td><code>@color: @placeholderText</code></td>
+        <td>设置输入框中 <code>placeholder</code> 的字体颜色</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>排版</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>#font > #family > .serif()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>对某个元素应用一系列serif衬线字体</td>
+      </tr>
+      <tr>
+        <td><code>#font > #family > .sans-serif()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>对某个元素应用一系列sans-serif字体</td>
+      </tr>
+      <tr>
+        <td><code>#font > #family > .monospace()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>对某个元素应用一系列monospace字体</td>
+      </tr>
+      <tr>
+        <td><code>#font > .shorthand()</code></td>
+        <td><code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code></td>
+        <td>方便设置字体大小，粗细和行间距</td>
+      </tr>
+      <tr>
+        <td><code>#font > .serif()</code></td>
+        <td><code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code></td>
+        <td>设置衬线字体族serif，字体大小，粗细和行间距</td>
+      </tr>
+      <tr>
+        <td><code>#font > .sans-serif()</code></td>
+        <td><code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code></td>
+        <td>设置sans-serif字体族，字体大小，粗细和行间距</td>
+      </tr>
+      <tr>
+        <td><code>#font > .monospace()</code></td>
+        <td><code>@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight</code></td>
+        <td>设置monospace字体族，字体大小，粗细和行间距</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>栅格系统</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.container-fixed()</code></td>
+        <td><em class="muted">无</em></td>
+        <td>创建一个水平居中的容器，用以容纳内容</td>
+      </tr>
+      <tr>
+        <td><code>#grid > .core()</code></td>
+        <td><code>@gridColumnWidth, @gridGutterWidth</code></td>
+        <td>使用 <em>n</em> 列和 <em>x</em> 像素间距宽度，生成一个象素栅格系统(容器，行，列)</td>
+      </tr>
+      <tr>
+        <td><code>#grid > .fluid()</code></td>
+        <td><code>@fluidGridColumnWidth, @fluidGridGutterWidth</code></td>
+        <td>使用 <em>n</em> 列和 <em>x</em> % 间距宽度，生成一个百分比栅格系统</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>CSS3属性</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span3">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.border-radius()</code></td>
+        <td><code>@radius: 5px</code></td>
+        <td>元素圆角化，可以是一个单独的值，也可以分别是四个角的值</td>
+      </tr>
+      <tr>
+        <td><code>.box-shadow()</code></td>
+        <td><code>@shadow: 0 1px 3px rgba(0,0,0,.25)</code></td>
+        <td>对元素应用阴影</td>
+      </tr>
+      <tr>
+        <td><code>.transition()</code></td>
+        <td><code>@transition</code></td>
+        <td>添加CSS3过渡效果(比如， <code>all .2s linear</code>)</td>
+      </tr>
+      <tr>
+        <td><code>.rotate()</code></td>
+        <td><code>@degrees</code></td>
+        <td>旋转一个元素 <em>n</em> 度</td>
+      </tr>
+      <tr>
+        <td><code>.scale()</code></td>
+        <td><code>@ratio</code></td>
+        <td>对一个元素缩放原有大小的 <em>n</em> 倍</td>
+      </tr>
+      <tr>
+        <td><code>.translate()</code></td>
+        <td><code>@x: 0, @y: 0</code></td>
+        <td>在平面上移动x和y个像素</td>
+      </tr>
+      <tr>
+        <td><code>.background-clip()</code></td>
+        <td><code>@clip</code></td>
+        <td>裁剪一个元素的背景 (用于 <code>border-radius</code>)</td>
+      </tr>
+      <tr>
+        <td><code>.background-size()</code></td>
+        <td><code>@size</code></td>
+        <td>通过CSS3更改背景图片的大小</td>
+      </tr>
+      <tr>
+        <td><code>.box-sizing()</code></td>
+        <td><code>@boxmodel</code></td>
+        <td>改变一个元素的盒(box)模型 (比如，用在100%宽度 <code>input</code> 上的 <code>border-box</code> )</td>
+      </tr>
+      <tr>
+        <td><code>.user-select()</code></td>
+        <td><code>@select</code></td>
+        <td>更改页面文本的选择光标</td>
+      </tr>
+      <tr>
+        <td><code>.resizable()</code></td>
+        <td><code>@direction: both</code></td>
+        <td>改变右下角坐标以重置元素大小</td>
+      </tr>
+      <tr>
+        <td><code>.content-columns()</code></td>
+        <td><code>@columnCount, @columnGap: @gridColumnGutter</code></td>
+        <td>让元素中的内容使用CSS3的列</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>背景和渐变</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">混合</th>
+        <th>参数</th>
+        <th>用法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>#translucent > .background()</code></td>
+        <td><code>@color: @white, @alpha: 1</code></td>
+        <td>设置一个元素的背景色和透明度</td>
+      </tr>
+      <tr>
+        <td><code>#translucent > .border()</code></td>
+        <td><code>@color: @white, @alpha: 1</code></td>
+        <td>设置一个元素的边框的颜色和透明度</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .vertical()</code></td>
+        <td><code>@startColor, @endColor</code></td>
+        <td>创建一个跨浏览器的垂直背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .horizontal()</code></td>
+        <td><code>@startColor, @endColor</code></td>
+        <td>创建一个跨浏览器的水平背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .directional()</code></td>
+        <td><code>@startColor, @endColor, @deg</code></td>
+        <td>创建一个跨浏览器的有斜度的背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .vertical-three-colors()</code></td>
+        <td><code>@startColor, @midColor, @colorStop, @endColor</code></td>
+        <td>创建一个跨浏览器的三色背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .radial()</code></td>
+        <td><code>@innerColor, @outerColor</code></td>
+        <td>创建一个跨浏览器的放射背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradient > .striped()</code></td>
+        <td><code>@color, @angle</code></td>
+        <td>创建一个跨浏览器的条纹背景渐变</td>
+      </tr>
+      <tr>
+        <td><code>#gradientBar()</code></td>
+        <td><code>@primaryColor, @secondaryColor</code></td>
+        <td>用于给按钮指定渐变背景和浅暗的边框</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+<!-- COMPILING LESS AND BOOTSTRAP
+================================================== -->
+<section id="compiling">
+  <div class="page-header">
+    <h1>使用LESS编译Bootstrap</h1>
+  </div>
+  <div class="alert alert-info">
+    <strong>注意：</strong>
+    如果您向Github pull修改后的代码，您<strong>必须</strong>通过下列方式重新编译CSS。
+  </div>
+  <h2>编译的工具</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>带有makefile的Node.js</h3>
+      <p>
+	运行下列命令，利用npm在全局环境下安装LESS命令行编译器和uglify-js：
+      </p>
+      <pre>$ npm install -g less uglify-js</pre>
+      <p>
+	安装成功后，在您的Bootstrap的根目录下运行 <code>make</code> 即可编译CSS。
+      </p>
+      <p>
+	此外，如果您已经安装了 <a href="https://github.com/mynyml/watchr">watchr</a> ，您可以运行 <code>make watch</code> ，
+	这样您每次修改Bootstrap后，就会自动重编译Bootstrap。（不是必须运行，这样做仅仅是出于方便。）
+      </p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>命令行</h3>
+      <p>
+	在Node下运行下列命令安装LESS命令行工具：
+      </p>
+        <pre>$ lessc ./lib/bootstrap.less > bootstrap.css</pre>
+      <p>
+	如果想压缩生成的css大小，就一定要在命令行参数中包含 <code>--compress</code> 。
+      </p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>Javascript</h3>
+      <p><a href="http://lesscss.org/">下载最新的 Less.js</a> 并在 <code>&lt;head&gt;</code> 中包含Bootstrap中的less路径和less.js文件路径。</p>
+<pre class="prettyprint">
+&lt;link rel="stylesheet/less" href="/path/to/bootstrap.less"&gt;
+&lt;script src="/path/to/less.js"&gt;&lt;/script&gt;
+</pre>
+      <p>
+	要重编译.less文件，只要在保存文件后刷新页面。Less.js会重新编译.less文件并进行本地存储。
+      </p>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+  <div class="row">
+    <div class="span4">
+      <h3>非官方的Mac应用</h3>
+      <p>
+	<a href="http://incident57.com/less/">非官方Mac应用</a> 监视.less文件所在的目录，每次观察到.less文件发生改动都会自动将.less编译成本地文件。
+      </p>
+      <p>
+	如果您喜欢，您可以在应用的首选项设置自动最小化代码，以及编译后的文件目录。
+      </p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>更多Mac应用</h3>
+      <h4><a href="http://crunchapp.net/" target="_blank">Crunch</a></h4>
+      <p>
+	Crunch是一个用Abode Air构造的界面优美的LESS编辑器和编译器。
+      </p>
+      <h4><a href="http://incident57.com/codekit/" target="_blank">CodeKit</a></h4>
+      <p>
+	CodeKit同样是非官方的Mac应用，可以编译LESS,SASS,Stylus和CoffeeScript。
+      </p>
+      <h4><a href="http://wearekiss.com/simpless" target="_blank">Simpless</a></h4>
+      <p>
+	跨Mac, Linux, 和PC平台的应用，可以拖拽LESS文件进行编译，而且其代码开源， <a href="https://github.com/Paratron/SimpLESS" target="_blank">代码托管在GitHub上</a> 。
+      </p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>中文LESS资料</h3>
+      <h4><a href="http://www.lesscss.net//" target="_blank">LESS官方站中文版</a></h4>
+      <p>
+	<a href="http://veryued.org/">飞长（王玉林）</a>翻译维护。
+      </p>
+      <h4><a href="http://less.cnodejs.net" target="_blank">在线编译</a></h4>
+      <p>
+	在线编译LESS，非常方便！
+      </p>
+      <h4><a href="http://less.cnodejs.net/tools" target="_blank">工具汇总</a></h4>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+</section>
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+	<p class="pull-right"><a href="#">回到顶端</a></p>
+        <p>我们倾注世间之爱于设计与创作 <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>，由<a href="http://weibo.com/tvlikedev">Tvlike.me/TV来客开发者</a>翻译</p>
+        <p>开源依照 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a> 发布。 文档依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> 发布。</p>
+        <p>Icons取自 <a href="http://glyphicons.com">Glyphicons Free</a>，授权依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>。</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+
+
+  </body>
+</html>

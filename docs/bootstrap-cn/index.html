@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Bootstrap中文版/中文翻译</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">Bootstrap</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html">概述</a>
+              </li>
+              <li class="">
+                <a href="./scaffolding.html">框架</a>
+              </li>
+              <li class="">
+                <a href="./base-css.html">基础CSS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">Javascript插件</a>
+              </li>
+              <li class="">
+                <a href="./less.html">使用LESS</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./download.html">定制</a>
+              </li>
+              <li class="">
+                <a href="./examples.html">例子</a>
+              </li>
+	      <li class="">
+                <a href="./wrongway.html">译者言</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron masthead">
+  <div class="inner">
+    <h1>Bootstrap, from Twitter</h1>
+    <p>基于HTML，CSS，JAVASCRIPT的简洁灵活的<br/>流行前端框架及交互组件集</p>
+    <p class="download-info">
+      <a href="https://github.com/twitter/bootstrap/" class="btn btn-primary btn-large">访问 GitHub 项目</a>
+      <a href="assets/bootstrap.zip" class="btn btn-large">下载 Bootstrap <small>(v2.0.2)</small></a>
+    </p>
+  </div>
+
+  <div class="bs-links">
+    <ul class="quick-links">
+      <li><a href="./upgrading.html">从 1.4 版升级</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/zipball/master">下载文档</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/issues?state=open">提交问题</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/wiki">路线图和更新日志</a></li>
+    </ul>
+    <ul class="quick-links">
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
+      </li>
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<hr class="soften">
+
+<div class="marketing">
+  <h1>适用于任何场景，适用于每一个人</h1>
+  <p class="marketing-byline">需要理由来爱上Bootstrap么？那就请接着向下看。</p>
+  <div class="row">
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_042_group.png">
+      <h2>由匠人建，为匠人用</h2>
+      <p>
+	和您一样，我们乐于创造出色的web应用，于是想帮助更多象我们一样的匠人更为高效快捷地构建产品。Bootstrap因此而生。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_079_podium.png">
+      <h2>适应各种技术水平</h2>
+      <p>
+	Bootstrap适应不同技术水平的从业者，无论是设计师还是程序员，大牛还是菜鸟。既能用来开发简单的小东西，也能构造更为复杂的应用。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_163_iphone.png">
+      <h2>跨设备，跨浏览器</h2>
+      <p>
+	最初设想中的Bootstrap只支持现代浏览器，不过新版本已经能支持所有主流浏览器（甚至包括IE7）。从Bootstrap 2开始，提供对平板和智能手机的支持。
+      </p>
+    </div>
+  </div><!--/row-->
+  <div class="row">
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_155_show_thumbnails.png">
+      <h2>12列栅格布局</h2>
+      <p>
+	栅格系统不是万能的，不过在应用的核心层有一个稳定和灵活的栅格系统确实可以让开发变得更简单。可以选用内置的栅格或是自己手写。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_214_resize_small.png">
+      <h2>响应式设计</h2>
+      <p>
+	从Bootstrap 2开始，提供完整的响应式特性。所有的组件都能根据分辨率和设备灵活缩放，从而提供一致性的用户体验。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_266_book_open.png">
+      <h2>样式化的文档</h2>
+      <p>
+	与其他前端工具箱不同，Bootstrap优先设计了一个样式化的使用指南，不仅用来介绍特性，更用以展示最佳实践，应用以及代码实例。
+      </p>
+    </div>
+  </div><!--/row-->
+  <div class="row">
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_082_roundabout.png">
+      <h2>不断完善的库</h2>
+      <p>
+	尽管只有10kb(gzip压缩后)，Bootstrap却仍是最完备的前端工具箱之一，提供了几十个全功能的随时可用的组件。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_009_magic.png">
+      <h2>定制的jQuery插件</h2>
+      <p>
+	一个出色的组件设计岂能没有易用易扩展的人机界面？Bootstrap为此提供了定制的jQuery内置插件。
+      </p>
+    </div>
+    <div class="span4">
+      <img class="bs-icon" src="assets/img/less-small.png">
+      <h2>用LESS构建</h2>
+      <p>
+	当传统的枯燥CSS写法止步不前时，LESS横空出世了。LESS中使用变量，嵌套，操作，混合编码，花费很小成本却让书写CSS更快更灵活。
+      </p>
+    </div>
+  </div><!--/row-->
+  <div class="row">
+    <div class="span3">
+      <img class="small-bs-icon" src="assets/img/icon-html5.png">
+      <h3>HTML5</h3>
+      <p>支持HTML5标签和语法</p>
+    </div>
+    <div class="span3">
+      <img class="small-bs-icon" src="assets/img/icon-css3.png">
+      <h3>CSS3</h3>
+      <p>逐步改进组件达到最终效果</p>
+    </div>
+    <div class="span3">
+      <img class="small-bs-icon" src="assets/img/icon-github.png">
+      <h3>开源</h3>
+      <p>全部托管于 <a href="https://github.com">GitHub</a>.</p>
+    </div>
+    <div class="span3">
+      <img class="small-bs-icon" src="assets/img/icon-twitter.png">
+      <h3>Twitter制造</h3>
+      <p>由经验丰富的<a href="http://twitter.com/fat">工程师</a>和<a href="http://twitter.com/mdo">设计师</a>奉献</p>
+    </div>
+  </div><!--/row-->
+
+  <hr class="soften">
+
+  <h1>Bootstrap案例</h1>
+  <p class="marketing-byline">更多案例请查看 <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">非官方Tumblr站</a> 或 <a href="./examples.html">浏览例子</a>.</p>
+  <ul class="thumbnails example-sites">
+    <li class="span3">
+      <a class="thumbnail" href="http://soundready.fm/" target="_blank">
+        <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://kippt.com/" target="_blank">
+        <img src="assets/img/example-sites/kippt.png" alt="Kippt">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://www.fleetio.com/" target="_blank">
+        <img src="assets/img/example-sites/fleetio.png" alt="Fleetio">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
+        <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
+      </a>
+    </li>
+  </ul>
+
+</div><!-- /.marketing --> 
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">回到顶端</a></p>
+        <p>我们倾注世间之爱于设计与创作 <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>，由<a href="http://weibo.com/tvlikedev">Tvlike.me/TV来客开发者</a>翻译</p>
+        <p>开源依照 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a> 发布。 文档依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> 发布。</p>
+        <p>Icons取自 <a href="http://glyphicons.com">Glyphicons Free</a>，授权依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>。</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+
+
+  </body>
+</html>
