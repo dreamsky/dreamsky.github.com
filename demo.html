@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Demo</title>
+		<style type="text/css">
+#custom-bar{
+	width:200px;
+	height:65px;
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	background-color:#333;
+	padding:10px;
+	border-radius:3px;
+	display:none;
+}
+#custom-bar textarea{
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+#custom-bar textarea:focus{
+  border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+}
+.blue-btn {
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+	background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+	background-color:#3d94f6;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #1570cd;
+}.blue-btn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background-color:#1e62d0;
+}.blue-btn:active {
+	position:relative;
+	top:1px;
+}
+#add-cmt{
+	position:relative;
+	top:-27px;
+	left:5px;
+	width:60px;
+	height:60px;
+	padding:10px;
+	cursor:pointer;
+	border-radius:30px;
+}
+#cmt-content{
+	width:120px;
+	height:60px;
+}
+		</style>
+		<script src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var God={
+				init:function(){
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 500) {
+							$('#custom-bar').fadeIn();
+						} else {
+							$('#custom-bar').fadeOut();
+						}
+					});
+					$("#add-cmt").click(function(){
+						if(God.postCmt($("#cmt-content").val())){
+							//推荐博文
+							//God.recommend();
+						};
+						return false;
+					});
+				},
+				postCmt: function (msg) {
+					if (msg.trim().length == 0) {
+						alert('怎么也得留一个字吧！');
+						return false;
+					}
+					else if (msg.trim().length > 1000) {
+						alert('这枚同学，快捷留言最多支持1000个字符！');
+						return false;
+					}
+					
+					var $txt = $('#tbCommentBody');
+					if ($txt.length > 0) {
+						$txt.css("background-color","#E4F5FF");
+						$txt.val(msg);
+						$txt.focus();
+						//新增评论
+						//commentManager.PostNewComment();
+						return true;
+					}
+					else {
+						alert("使用博客园留言功能需要先登录哦！");
+						window.top.location = 'http://passport.cnblogs.com/login.aspx?ReturnUrl=http://www.cnblogs.com/'
+					}
+				},
+				recommend: function () {
+					var diggit = document.getElementsByClassName('diggit');
+					if ((diggit) && (diggit[0])) {
+						diggit[0].onclick();
+					}
+					else {
+						alert("温馨提示:快捷推荐功能失效了！");
+					}
+				}
+			};
+			God.init();
+		});
+	</script>
+	</head>
+
+	<body style="background-color:#FAF7EF">
+		
+		<div style="height:1500px;">
+		
+		</div>
+		
+		<div id="custom-bar">
+				<textarea id="cmt-content">好文！支持一下！</textarea>
+				<button id="add-cmt" class="blue-btn">顶</button>
+		</div>
+		
+		<div class="commentbox_main">
+<div class="commentbox_title">
+<div class="commentbox_title_left">评论内容：</div>
+<div class="commentbox_title_right">
+<img id="ubb_quote" class="comment_icon" src="http://static.cnblogs.com/images/ubb/quote.gif" alt="引用" title="添加引用" onclick="insertUBB('tbCommentBody','quote')">
+<img id="ubb_bold" class="comment_icon" src="http://static.cnblogs.com/images/ubb/b.png" alt="粗体" title="添加粗体" onclick="insertUBB('tbCommentBody','b')">
+<img id="ubb_url" class="comment_icon" src="http://static.cnblogs.com/images/ubb/lk.png" alt="链接" title="添加链接" onclick="insertUbbUrl('tbCommentBody')">
+<img id="ubb_indent" class="comment_icon" src="http://static.cnblogs.com/images/ubb/indent.png" alt="缩进" title="添加首行缩进" onclick="insertIndent('tbCommentBody')">
+<img id="ubb_code" class="comment_icon" src="http://static.cnblogs.com/images/ubb/InsertCode.gif" alt="代码" title="添加代码" onclick="insertUbbCode()">
+<img id="ubb_img" class="comment_icon" src="http://static.cnblogs.com/images/ubb/img.gif" alt="图片" title="添加图片" onclick="insertUbbImg('tbCommentBody')">
+<a href="javascript:OpenImageUploadWindow();" class="comment_uploadimg_a" title="上传图片并插入评论框">上传图片</a>
+</div>
+</div>
+<div class="clear"></div>
+<textarea id="tbCommentBody" class="comment_textarea" rows="10"></textarea>
+</div>
+	</body>
+</html>

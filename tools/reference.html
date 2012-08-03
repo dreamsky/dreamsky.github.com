@@ -1,0 +1,4535 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            前端百宝箱
+        </title>
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 10px; }
+        </style>
+        <link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/CodeMirror/lib/codemirror.css">
+		<link href="../css/main.css" rel="stylesheet">
+
+		<script src="../js/CodeMirror/lib/codemirror.js"></script>
+		<script src="../js/CodeMirror/mode/xml/xml.js"></script>
+		<script src="../js/CodeMirror/mode/javascript/javascript.js"></script>
+		<script src="../js/CodeMirror/mode/css/css.js"></script>
+		<script src="../js/CodeMirror/mode/htmlmixed/htmlmixed.js"></script>
+
+		<script src="../js/jquery-1.7.1.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+            </script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </a>
+                    <a class="brand" href="#">
+                        前端百宝箱
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="../index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html.html">
+                                    HTML
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../css.html">
+                                    CSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../javascript.html">
+                                    JavaScript
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="../tools.html">
+                                    工具
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">	
+			<div class="alert alert-info">
+				<i class="icon-star"></i>&nbsp;&nbsp;各种对照表。
+			</div>
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#ascii" data-toggle="tab">ASCII 对照表</a></li>
+				<li><a href="#http" data-toggle="tab">HTTP 内容类型</a></li>
+				<li><a href="#html" data-toggle="tab">HTML 转义字符</a></li>
+				<li><a href="#rgb" data-toggle="tab">RGB 颜色参考</a></li>
+				<li><a href="#code" data-toggle="tab">HTTP 状态码详解</a></li>
+			</ul>
+			<div class="tab-content">
+			  <div class="tab-pane fade in active" id="ascii">
+				<!--ASCII 对照表-->
+<table class="table table-bordered table-striped" width="100%" cellspacing="0" cellpadding="0">
+				<tbody><tr>
+					<th class="separateColor">ASCII值</th>
+					<th>控制字符</th>
+					<th class="separateColor">ASCII值</th>
+					<th>控制字符</th>
+					<th class="separateColor">ASCII值</th>
+					<th>控制字符</th>
+					<th class="separateColor">ASCII值</th>
+					<th>控制字符</th>
+				</tr>
+				<tr>
+					<td class="separateColor">0</td>
+					<td>NUT</td>
+					<td class="separateColor">32</td>
+					<td>(space)</td>
+					<td class="separateColor">64</td>
+					<td>@</td>
+					<td class="separateColor">96</td>
+					<td>、</td>
+				</tr>
+				<tr>
+					<td class="separateColor">1</td>
+					<td>SOH</td>
+					<td class="separateColor">33</td>
+					<td>!</td>
+					<td class="separateColor">65</td>
+					<td>A</td>
+					<td class="separateColor">97</td>
+					<td>a</td>
+				</tr>
+				<tr>
+					<td class="separateColor">2</td>
+					<td>STX</td>
+					<td class="separateColor">34</td>
+					<td>"</td>
+					<td class="separateColor">66</td>
+					<td>B</td>
+					<td class="separateColor">98</td>
+					<td>b</td>
+				</tr>
+				<tr>
+					<td class="separateColor">3</td>
+					<td>ETX</td>
+					<td class="separateColor">35</td>
+					<td>#</td>
+					<td class="separateColor">67</td>
+					<td>C</td>
+					<td class="separateColor">99</td>
+					<td>c</td>
+				</tr>
+				<tr>
+					<td class="separateColor">4</td>
+					<td>EOT</td>
+					<td class="separateColor">36</td>
+					<td>$</td>
+					<td class="separateColor">68</td>
+					<td>D</td>
+					<td class="separateColor">100</td>
+					<td>d</td>
+				</tr>
+				<tr>
+					<td class="separateColor">5</td>
+					<td>ENQ</td>
+					<td class="separateColor">37</td>
+					<td>%</td>
+					<td class="separateColor">69</td>
+					<td>E</td>
+					<td class="separateColor">101</td>
+					<td>e</td>
+				</tr>
+				<tr>
+					<td class="separateColor">6</td>
+					<td>ACK</td>
+					<td class="separateColor">38</td>
+					<td>&amp;</td>
+					<td class="separateColor">70</td>
+					<td>F</td>
+					<td class="separateColor">102</td>
+					<td>f</td>
+				</tr>
+				<tr>
+					<td class="separateColor">7</td>
+					<td>BEL</td>
+					<td class="separateColor">39</td>
+					<td>,</td>
+					<td class="separateColor">71</td>
+					<td>G</td>
+					<td class="separateColor">103</td>
+					<td>g</td>
+				</tr>
+				<tr>
+					<td class="separateColor">8</td>
+					<td>BS</td>
+					<td class="separateColor">40</td>
+					<td>(</td>
+					<td class="separateColor">72</td>
+					<td>H</td>
+					<td class="separateColor">104</td>
+					<td>h</td>
+				</tr>
+				<tr>
+					<td class="separateColor">9</td>
+					<td>HT</td>
+					<td class="separateColor">41</td>
+					<td>)</td>
+					<td class="separateColor">73</td>
+					<td>I</td>
+					<td class="separateColor">105</td>
+					<td>i</td>
+				</tr>
+				<tr>
+					<td class="separateColor">10</td>
+					<td>LF</td>
+					<td class="separateColor">42</td>
+					<td>*</td>
+					<td class="separateColor">74</td>
+					<td>J</td>
+					<td class="separateColor">106</td>
+					<td>j</td>
+				</tr>
+				<tr>
+					<td class="separateColor">11</td>
+					<td>VT</td>
+					<td class="separateColor">43</td>
+					<td>+</td>
+					<td class="separateColor">75</td>
+					<td>K</td>
+					<td class="separateColor">107</td>
+					<td>k</td>
+				</tr>
+				<tr>
+					<td class="separateColor">12</td>
+					<td>FF</td>
+					<td class="separateColor">44</td>
+					<td>,</td>
+					<td class="separateColor">76</td>
+					<td>L</td>
+					<td class="separateColor">108</td>
+					<td>l</td>
+				</tr>
+				<tr>
+					<td class="separateColor">13</td>
+					<td>CR</td>
+					<td class="separateColor">45</td>
+					<td>-</td>
+					<td class="separateColor">77</td>
+					<td>M</td>
+					<td class="separateColor">109</td>
+					<td>m</td>
+				</tr>
+				<tr>
+					<td class="separateColor">14</td>
+					<td>SO</td>
+					<td class="separateColor">46</td>
+					<td>.</td>
+					<td class="separateColor">78</td>
+					<td>N</td>
+					<td class="separateColor">110</td>
+					<td>n</td>
+				</tr>
+				<tr>
+					<td class="separateColor">15</td>
+					<td>SI</td>
+					<td class="separateColor">47</td>
+					<td>/</td>
+					<td class="separateColor">79</td>
+					<td>O</td>
+					<td class="separateColor">111</td>
+					<td>o</td>
+				</tr>
+				<tr>
+					<td class="separateColor">16</td>
+					<td>DLE</td>
+					<td class="separateColor">48</td>
+					<td>0</td>
+					<td class="separateColor">80</td>
+					<td>P</td>
+					<td class="separateColor">112</td>
+					<td>p</td>
+				</tr>
+				<tr>
+					<td class="separateColor">17</td>
+					<td>DCI</td>
+					<td class="separateColor">49</td>
+					<td>1</td>
+					<td class="separateColor">81</td>
+					<td>Q</td>
+					<td class="separateColor">113</td>
+					<td>q</td>
+				</tr>
+				<tr>
+					<td class="separateColor">18</td>
+					<td>DC2</td>
+					<td class="separateColor">50</td>
+					<td>2</td>
+					<td class="separateColor">82</td>
+					<td>R</td>
+					<td class="separateColor">114</td>
+					<td>r</td>
+				</tr>
+				<tr>
+					<td class="separateColor">19</td>
+					<td>DC3</td>
+					<td class="separateColor">51</td>
+					<td>3</td>
+					<td class="separateColor">83</td>
+					<td>S</td>
+					<td class="separateColor">115</td>
+					<td>s</td>
+				</tr>
+				<tr>
+					<td class="separateColor">20</td>
+					<td>DC4</td>
+					<td class="separateColor">52</td>
+					<td>4</td>
+					<td class="separateColor">84</td>
+					<td>T</td>
+					<td class="separateColor">116</td>
+					<td>t</td>
+				</tr>
+				<tr>
+					<td class="separateColor">21</td>
+					<td>NAK</td>
+					<td class="separateColor">53</td>
+					<td>5</td>
+					<td class="separateColor">85</td>
+					<td>U</td>
+					<td class="separateColor">117</td>
+					<td>u</td>
+				</tr>
+				<tr>
+					<td class="separateColor">22</td>
+					<td>SYN</td>
+					<td class="separateColor">54</td>
+					<td>6</td>
+					<td class="separateColor">86</td>
+					<td>V</td>
+					<td class="separateColor">118</td>
+					<td>v</td>
+				</tr>
+				<tr>
+					<td class="separateColor">23</td>
+					<td>TB</td>
+					<td class="separateColor">55</td>
+					<td>7</td>
+					<td class="separateColor">87</td>
+					<td>W</td>
+					<td class="separateColor">119</td>
+					<td>w</td>
+				</tr>
+				<tr>
+					<td class="separateColor">24</td>
+					<td>CAN</td>
+					<td class="separateColor">56</td>
+					<td>8</td>
+					<td class="separateColor">88</td>
+					<td>X</td>
+					<td class="separateColor">120</td>
+					<td>x</td>
+				</tr>
+				<tr>
+					<td class="separateColor">25</td>
+					<td>EM</td>
+					<td class="separateColor">57</td>
+					<td>9</td>
+					<td class="separateColor">89</td>
+					<td>Y</td>
+					<td class="separateColor">121</td>
+					<td>y</td>
+				</tr>
+				<tr>
+					<td class="separateColor">26</td>
+					<td>SUB</td>
+					<td class="separateColor">58</td>
+					<td>:</td>
+					<td class="separateColor">90</td>
+					<td>Z</td>
+					<td class="separateColor">122</td>
+					<td>z</td>
+				</tr>
+				<tr>
+					<td class="separateColor">27</td>
+					<td>ESC</td>
+					<td class="separateColor">59</td>
+					<td>;</td>
+					<td class="separateColor">91</td>
+					<td>[</td>	
+					<td class="separateColor">123</td>
+					<td>{</td>
+				</tr>
+				<tr>
+					<td class="separateColor">28</td>
+					<td>FS</td>
+					<td class="separateColor">60</td>
+					<td>&lt;</td>
+					<td class="separateColor">92</td>
+					<td>/</td>	
+					<td class="separateColor">124</td>
+					<td>|</td>
+				</tr>
+				<tr>
+					<td class="separateColor">29</td>
+					<td>GS</td>
+					<td class="separateColor">61</td>
+					<td>=</td>
+					<td class="separateColor">93</td>
+					<td>]</td>
+					<td class="separateColor">125</td>
+					<td>}</td>
+				</tr>
+				<tr>
+					<td class="separateColor">30</td>
+					<td>RS</td>
+					<td class="separateColor">62</td>
+					<td>&gt;</td>
+					<td class="separateColor">94</td>
+					<td>^</td>
+					<td class="separateColor">126</td>
+					<td>`</td>
+				</tr>
+				<tr>
+					<td class="separateColor">31</td>
+					<td>US</td>
+					<td class="separateColor">63</td>
+					<td>?</td>
+					<td class="separateColor">95</td>
+					<td>—</td>
+					<td class="separateColor">127</td>
+					<td>DEL</td>
+				</tr>
+			</tbody></table>
+				<!--ASCII 对照表-->
+			  </div>
+			  <div class="tab-pane fade" id="http">
+				<!--HTTP 内容类型-->
+<table class="table table-bordered table-striped" width="100%" cellspacing="0" cellpadding="0"> 
+	<tbody><tr>
+       <th class="separateColor">文件扩展名</th>
+       <th>Content-Type(Mime-Type)</th>
+       <th class="separateColor">文件扩展名</th>
+       <th>Content-Type(Mime-Type)</th>
+     </tr>
+     </tbody><tbody>
+		<tr>
+    		<td class="separateColor">.*（ 二进制流，不知道下载文件类型）</td>
+    		<td>application/octet-stream</td>
+			<td class="separateColor">.tif</td>
+			<td>image/tiff</td> 
+    	</tr>
+      <tr>
+       <td class="separateColor">.001</td>
+       <td>application/x-001</td> 
+       <td class="separateColor">.301</td>
+       <td>application/x-301</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.323</td>
+       <td>text/h323</td> 
+ 
+       <td class="separateColor">.906</td>
+       <td>application/x-906</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.907</td>
+       <td>drawing/907</td> 
+   
+       <td class="separateColor">.a11</td>
+       <td>application/x-a11</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.acp</td>
+       <td>audio/x-mei-aac</td> 
+     
+       <td class="separateColor">.ai</td>
+       <td>application/postscript</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.aif</td>
+       <td>audio/aiff</td> 
+      
+       <td class="separateColor">.aifc</td>
+       <td>audio/aiff</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.aiff</td>
+       <td>audio/aiff</td> 
+     
+       <td class="separateColor">.anv</td>
+       <td>application/x-anv</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.asa</td>
+       <td>text/asa</td> 
+    
+       <td class="separateColor">.asf</td>
+       <td>video/x-ms-asf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.asp</td>
+       <td>text/asp</td> 
+    
+       <td class="separateColor">.asx</td>
+       <td>video/x-ms-asf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.au</td>
+       <td>audio/basic</td> 
+     
+       <td class="separateColor">.avi</td>
+       <td>video/avi</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.awf</td>
+       <td>application/vnd.adobe.workflow</td> 
+   
+       <td class="separateColor">.biz</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.bmp</td>
+       <td>application/x-bmp</td> 
+      
+       <td class="separateColor">.bot</td>
+       <td>application/x-bot</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.c4t</td>
+       <td>application/x-c4t</td> 
+      
+       <td class="separateColor">.c90</td>
+       <td>application/x-c90</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cal</td>
+       <td>application/x-cals</td> 
+      
+       <td class="separateColor">.cat</td>
+       <td>application/vnd.ms-pki.seccat</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cdf</td>
+       <td>application/x-netcdf</td> 
+     
+       <td class="separateColor">.cdr</td>
+       <td>application/x-cdr</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cel</td>
+       <td>application/x-cel</td> 
+      
+       <td class="separateColor">.cer</td>
+       <td>application/x-x509-ca-cert</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cg4</td>
+       <td>application/x-g4</td> 
+      
+       <td class="separateColor">.cgm</td>
+       <td>application/x-cgm</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cit</td>
+       <td>application/x-cit</td> 
+     
+       <td class="separateColor">.class</td>
+       <td>java/*</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cml</td>
+       <td>text/xml</td> 
+      
+       <td class="separateColor">.cmp</td>
+       <td>application/x-cmp</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cmx</td>
+       <td>application/x-cmx</td> 
+    
+       <td class="separateColor">.cot</td>
+       <td>application/x-cot</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.crl</td>
+       <td>application/pkix-crl</td> 
+     
+       <td class="separateColor">.crt</td>
+       <td>application/x-x509-ca-cert</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.csi</td>
+       <td>application/x-csi</td> 
+      
+       <td class="separateColor">.css</td>
+       <td>text/css</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.cut</td>
+       <td>application/x-cut</td> 
+      
+       <td class="separateColor">.dbf</td>
+       <td>application/x-dbf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dbm</td>
+       <td>application/x-dbm</td> 
+      
+       <td class="separateColor">.dbx</td>
+       <td>application/x-dbx</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dcd</td>
+       <td>text/xml</td> 
+      
+       <td class="separateColor">.dcx</td>
+       <td>application/x-dcx</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.der</td>
+       <td>application/x-x509-ca-cert</td> 
+      
+       <td class="separateColor">.dgn</td>
+       <td>application/x-dgn</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dib</td>
+       <td>application/x-dib</td> 
+   
+       <td class="separateColor">.dll</td>
+       <td>application/x-msdownload</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.doc</td>
+       <td>application/msword</td> 
+     
+       <td class="separateColor">.dot</td>
+       <td>application/msword</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.drw</td>
+       <td>application/x-drw</td> 
+     
+       <td class="separateColor">.dtd</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dwf</td>
+       <td>Model/vnd.dwf</td> 
+     
+       <td class="separateColor">.dwf</td>
+       <td>application/x-dwf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dwg</td>
+       <td>application/x-dwg</td> 
+      
+       <td class="separateColor">.dxb</td>
+       <td>application/x-dxb</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.dxf</td>
+       <td>application/x-dxf</td> 
+      
+       <td class="separateColor">.edn</td>
+       <td>application/vnd.adobe.edn</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.emf</td>
+       <td>application/x-emf</td> 
+     
+       <td class="separateColor">.eml</td>
+       <td>message/rfc822</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ent</td>
+       <td>text/xml</td> 
+      
+       <td class="separateColor">.epi</td>
+       <td>application/x-epi</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.eps</td>
+       <td>application/x-ps</td> 
+     
+       <td class="separateColor">.eps</td>
+       <td>application/postscript</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.etd</td>
+       <td>application/x-ebx</td> 
+     
+       <td class="separateColor">.exe</td>
+       <td>application/x-msdownload</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.fax</td>
+       <td>image/fax</td> 
+      
+       <td class="separateColor">.fdf</td>
+       <td>application/vnd.fdf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.fif</td>
+       <td>application/fractals</td> 
+      
+       <td class="separateColor">.fo</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.frm</td>
+       <td>application/x-frm</td> 
+      
+       <td class="separateColor">.g4</td>
+       <td>application/x-g4</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.gbr</td>
+       <td>application/x-gbr</td> 
+     
+       <td class="separateColor">.</td>
+       <td>application/x-</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.gif</td>
+       <td>image/gif</td> 
+      
+       <td class="separateColor">.gl2</td>
+       <td>application/x-gl2</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.gp4</td>
+       <td>application/x-gp4</td> 
+      
+       <td class="separateColor">.hgl</td>
+       <td>application/x-hgl</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.hmr</td>
+       <td>application/x-hmr</td> 
+     
+       <td class="separateColor">.hpg</td>
+       <td>application/x-hpgl</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.hpl</td>
+       <td>application/x-hpl</td> 
+     
+       <td class="separateColor">.hqx</td>
+       <td>application/mac-binhex40</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.hrf</td>
+       <td>application/x-hrf</td> 
+      
+       <td class="separateColor">.hta</td>
+       <td>application/hta</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.htc</td>
+       <td>text/x-component</td> 
+      
+       <td class="separateColor">.htm</td>
+       <td>text/html</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.html</td>
+       <td>text/html</td> 
+      
+       <td class="separateColor">.htt</td>
+       <td>text/webviewhtml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.htx</td>
+       <td>text/html</td> 
+      
+       <td class="separateColor">.icb</td>
+       <td>application/x-icb</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ico</td>
+       <td>image/x-icon</td> 
+     
+       <td class="separateColor">.ico</td>
+       <td>application/x-ico</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.iff</td>
+       <td>application/x-iff</td> 
+      
+       <td class="separateColor">.ig4</td>
+       <td>application/x-g4</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.igs</td>
+       <td>application/x-igs</td> 
+      
+       <td class="separateColor">.iii</td>
+       <td>application/x-iphone</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.img</td>
+       <td>application/x-img</td> 
+      
+       <td class="separateColor">.ins</td>
+       <td>application/x-internet-signup</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.isp</td>
+       <td>application/x-internet-signup</td> 
+      
+       <td class="separateColor">.IVF</td>
+       <td>video/x-ivf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.java</td>
+       <td>java/*</td> 
+      
+       <td class="separateColor">.jfif</td>
+       <td>image/jpeg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.jpe</td>
+       <td>image/jpeg</td> 
+      
+       <td class="separateColor">.jpe</td>
+       <td>application/x-jpe</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.jpeg</td>
+       <td>image/jpeg</td> 
+      
+       <td class="separateColor">.jpg</td>
+       <td>image/jpeg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.jpg</td>
+       <td>application/x-jpg</td> 
+      
+       <td class="separateColor">.js</td>
+       <td>application/x-javascript</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.jsp</td>
+       <td>text/html</td> 
+      
+       <td class="separateColor">.la1</td>
+       <td>audio/x-liquid-file</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.lar</td>
+       <td>application/x-laplayer-reg</td> 
+     
+       <td class="separateColor">.latex</td>
+       <td>application/x-latex</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.lavs</td>
+       <td>audio/x-liquid-secure</td> 
+   
+       <td class="separateColor">.lbm</td>
+       <td>application/x-lbm</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.lmsff</td>
+       <td>audio/x-la-lms</td> 
+      
+       <td class="separateColor">.ls</td>
+       <td>application/x-javascript</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ltr</td>
+       <td>application/x-ltr</td> 
+     
+       <td class="separateColor">.m1v</td>
+       <td>video/x-mpeg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.m2v</td>
+       <td>video/x-mpeg</td> 
+      
+       <td class="separateColor">.m3u</td>
+       <td>audio/mpegurl</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.m4e</td>
+       <td>video/mpeg4</td> 
+     
+       <td class="separateColor">.mac</td>
+       <td>application/x-mac</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.man</td>
+       <td>application/x-troff-man</td> 
+     
+       <td class="separateColor">.math</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mdb</td>
+       <td>application/msaccess</td> 
+      
+       <td class="separateColor">.mdb</td>
+       <td>application/x-mdb</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mfp</td>
+       <td>application/x-shockwave-flash</td> 
+     
+       <td class="separateColor">.mht</td>
+       <td>message/rfc822</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mhtml</td>
+       <td>message/rfc822</td> 
+      
+       <td class="separateColor">.mi</td>
+       <td>application/x-mi</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mid</td>
+       <td>audio/mid</td> 
+      
+       <td class="separateColor">.midi</td>
+       <td>audio/mid</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mil</td>
+       <td>application/x-mil</td> 
+    
+       <td class="separateColor">.mml</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mnd</td>
+       <td>audio/x-musicnet-download</td> 
+      
+       <td class="separateColor">.mns</td>
+       <td>audio/x-musicnet-stream</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mocha</td>
+       <td>application/x-javascript</td> 
+     
+       <td class="separateColor">.movie</td>
+       <td>video/x-sgi-movie</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mp1</td>
+       <td>audio/mp1</td> 
+     
+       <td class="separateColor">.mp2</td>
+       <td>audio/mp2</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mp2v</td>
+       <td>video/mpeg</td> 
+      
+       <td class="separateColor">.mp3</td>
+       <td>audio/mp3</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mp4</td>
+       <td>video/mpeg4</td> 
+     
+       <td class="separateColor">.mpa</td>
+       <td>video/x-mpg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mpd</td>
+       <td>application/vnd.ms-project</td> 
+      
+       <td class="separateColor">.mpe</td>
+       <td>video/x-mpeg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mpeg</td>
+       <td>video/mpg</td> 
+      
+       <td class="separateColor">.mpg</td>
+       <td>video/mpg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mpga</td>
+       <td>audio/rn-mpeg</td> 
+      
+       <td class="separateColor">.mpp</td>
+       <td>application/vnd.ms-project</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mps</td>
+       <td>video/x-mpeg</td> 
+      
+       <td class="separateColor">.mpt</td>
+       <td>application/vnd.ms-project</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mpv</td>
+       <td>video/mpg</td> 
+     
+       <td class="separateColor">.mpv2</td>
+       <td>video/mpeg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mpw</td>
+       <td>application/vnd.ms-project</td> 
+      
+       <td class="separateColor">.mpx</td>
+       <td>application/vnd.ms-project</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.mtx</td>
+       <td>text/xml</td> 
+    
+       <td class="separateColor">.mxp</td>
+       <td>application/x-mmxp</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.net</td>
+       <td>image/pnetvue</td> 
+      
+       <td class="separateColor">.nrf</td>
+       <td>application/x-nrf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.nws</td>
+       <td>message/rfc822</td> 
+      
+       <td class="separateColor">.odc</td>
+       <td>text/x-ms-odc</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.out</td>
+       <td>application/x-out</td> 
+      
+       <td class="separateColor">.p10</td>
+       <td>application/pkcs10</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.p12</td>
+       <td>application/x-pkcs12</td> 
+     
+       <td class="separateColor">.p7b</td>
+       <td>application/x-pkcs7-certificates</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.p7c</td>
+       <td>application/pkcs7-mime</td> 
+     
+       <td class="separateColor">.p7m</td>
+       <td>application/pkcs7-mime</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.p7r</td>
+       <td>application/x-pkcs7-certreqresp</td> 
+     
+       <td class="separateColor">.p7s</td>
+       <td>application/pkcs7-signature</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pc5</td>
+       <td>application/x-pc5</td> 
+      
+       <td class="separateColor">.pci</td>
+       <td>application/x-pci</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pcl</td>
+       <td>application/x-pcl</td> 
+      
+       <td class="separateColor">.pcx</td>
+       <td>application/x-pcx</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pdf</td>
+       <td>application/pdf</td> 
+      
+       <td class="separateColor">.pdf</td>
+       <td>application/pdf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pdx</td>
+       <td>application/vnd.adobe.pdx</td> 
+      
+       <td class="separateColor">.pfx</td>
+       <td>application/x-pkcs12</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pgl</td>
+       <td>application/x-pgl</td> 
+     
+       <td class="separateColor">.pic</td>
+       <td>application/x-pic</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pko</td>
+       <td>application/vnd.ms-pki.pko</td> 
+     
+       <td class="separateColor">.pl</td>
+       <td>application/x-perl</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.plg</td>
+       <td>text/html</td> 
+       <td class="separateColor">.pls</td>
+       <td>audio/scpls</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.plt</td>
+       <td>application/x-plt</td> 
+       <td class="separateColor">.png</td>
+       <td>image/png</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.png</td>
+       <td>application/x-png</td> 
+       <td class="separateColor">.pot</td>
+       <td>application/vnd.ms-powerpoint</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ppa</td>
+       <td>application/vnd.ms-powerpoint</td> 
+       <td class="separateColor">.ppm</td>
+       <td>application/x-ppm</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pps</td>
+       <td>application/vnd.ms-powerpoint</td> 
+       <td class="separateColor">.ppt</td>
+       <td>application/vnd.ms-powerpoint</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ppt</td>
+       <td>application/x-ppt</td> 
+       <td class="separateColor">.pr</td>
+       <td>application/x-pr</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.prf</td>
+       <td>application/pics-rules</td> 
+       <td class="separateColor">.prn</td>
+       <td>application/x-prn</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.prt</td>
+       <td>application/x-prt</td> 
+       <td class="separateColor">.ps</td>
+       <td>application/x-ps</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ps</td>
+       <td>application/postscript</td> 
+       <td class="separateColor">.ptn</td>
+       <td>application/x-ptn</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.pwz</td>
+       <td>application/vnd.ms-powerpoint</td> 
+       <td class="separateColor">.r3t</td>
+       <td>text/vnd.rn-realtext3d</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ra</td>
+       <td>audio/vnd.rn-realaudio</td> 
+       <td class="separateColor">.ram</td>
+       <td>audio/x-pn-realaudio</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ras</td>
+       <td>application/x-ras</td> 
+       <td class="separateColor">.rat</td>
+       <td>application/rat-file</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rdf</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.rec</td>
+       <td>application/vnd.rn-recording</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.red</td>
+       <td>application/x-red</td> 
+       <td class="separateColor">.rgb</td>
+       <td>application/x-rgb</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rjs</td>
+       <td>application/vnd.rn-realsystem-rjs</td> 
+       <td class="separateColor">.rjt</td>
+       <td>application/vnd.rn-realsystem-rjt</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rlc</td>
+       <td>application/x-rlc</td> 
+       <td class="separateColor">.rle</td>
+       <td>application/x-rle</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rm</td>
+       <td>application/vnd.rn-realmedia</td> 
+       <td class="separateColor">.rmf</td>
+       <td>application/vnd.adobe.rmf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rmi</td>
+       <td>audio/mid</td> 
+       <td class="separateColor">.rmj</td>
+       <td>application/vnd.rn-realsystem-rmj</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rmm</td>
+       <td>audio/x-pn-realaudio</td> 
+       <td class="separateColor">.rmp</td>
+       <td>application/vnd.rn-rn_music_package</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rms</td>
+       <td>application/vnd.rn-realmedia-secure</td> 
+       <td class="separateColor">.rmvb</td>
+       <td>application/vnd.rn-realmedia-vbr</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rmx</td>
+       <td>application/vnd.rn-realsystem-rmx</td> 
+       <td class="separateColor">.rnx</td>
+       <td>application/vnd.rn-realplayer</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rp</td>
+       <td>image/vnd.rn-realpix</td> 
+       <td class="separateColor">.rpm</td>
+       <td>audio/x-pn-realaudio-plugin</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rsml</td>
+       <td>application/vnd.rn-rsml</td> 
+       <td class="separateColor">.rt</td>
+       <td>text/vnd.rn-realtext</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rtf</td>
+       <td>application/msword</td> 
+       <td class="separateColor">.rtf</td>
+       <td>application/x-rtf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.rv</td>
+       <td>video/vnd.rn-realvideo</td> 
+       <td class="separateColor">.sam</td>
+       <td>application/x-sam</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.sat</td>
+       <td>application/x-sat</td> 
+       <td class="separateColor">.sdp</td>
+       <td>application/sdp</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.sdw</td>
+       <td>application/x-sdw</td> 
+       <td class="separateColor">.sit</td>
+       <td>application/x-stuffit</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.slb</td>
+       <td>application/x-slb</td> 
+       <td class="separateColor">.sld</td>
+       <td>application/x-sld</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.slk</td>
+       <td>drawing/x-slk</td> 
+       <td class="separateColor">.smi</td>
+       <td>application/smil</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.smil</td>
+       <td>application/smil</td> 
+       <td class="separateColor">.smk</td>
+       <td>application/x-smk</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.snd</td>
+       <td>audio/basic</td> 
+       <td class="separateColor">.sol</td>
+       <td>text/plain</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.sor</td>
+       <td>text/plain</td> 
+       <td class="separateColor">.spc</td>
+       <td>application/x-pkcs7-certificates</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.spl</td>
+       <td>application/futuresplash</td> 
+       <td class="separateColor">.spp</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ssm</td>
+       <td>application/streamingmedia</td> 
+       <td class="separateColor">.sst</td>
+       <td>application/vnd.ms-pki.certstore</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.stl</td>
+       <td>application/vnd.ms-pki.stl</td> 
+       <td class="separateColor">.stm</td>
+       <td>text/html</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.sty</td>
+       <td>application/x-sty</td> 
+       <td class="separateColor">.svg</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.swf</td>
+       <td>application/x-shockwave-flash</td> 
+       <td class="separateColor">.tdf</td>
+       <td>application/x-tdf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.tg4</td>
+       <td>application/x-tg4</td> 
+       <td class="separateColor">.tga</td>
+       <td>application/x-tga</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.tif</td>
+       <td>image/tiff</td> 
+       <td class="separateColor">.tif</td>
+       <td>application/x-tif</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.tiff</td>
+       <td>image/tiff</td> 
+       <td class="separateColor">.tld</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.top</td>
+       <td>drawing/x-top</td> 
+       <td class="separateColor">.torrent</td>
+       <td>application/x-bittorrent</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.tsd</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.txt</td>
+       <td>text/plain</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.uin</td>
+       <td>application/x-icq</td> 
+       <td class="separateColor">.uls</td>
+       <td>text/iuls</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vcf</td>
+       <td>text/x-vcard</td> 
+       <td class="separateColor">.vda</td>
+       <td>application/x-vda</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vdx</td>
+       <td>application/vnd.visio</td> 
+       <td class="separateColor">.vml</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vpg</td>
+       <td>application/x-vpeg005</td> 
+       <td class="separateColor">.vsd</td>
+       <td>application/vnd.visio</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vsd</td>
+       <td>application/x-vsd</td> 
+       <td class="separateColor">.vss</td>
+       <td>application/vnd.visio</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vst</td>
+       <td>application/vnd.visio</td> 
+       <td class="separateColor">.vst</td>
+       <td>application/x-vst</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vsw</td>
+       <td>application/vnd.visio</td> 
+       <td class="separateColor">.vsx</td>
+       <td>application/vnd.visio</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.vtx</td>
+       <td>application/vnd.visio</td> 
+       <td class="separateColor">.vxml</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wav</td>
+       <td>audio/wav</td> 
+       <td class="separateColor">.wax</td>
+       <td>audio/x-ms-wax</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wb1</td>
+       <td>application/x-wb1</td> 
+       <td class="separateColor">.wb2</td>
+       <td>application/x-wb2</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wb3</td>
+       <td>application/x-wb3</td> 
+       <td class="separateColor">.wbmp</td>
+       <td>image/vnd.wap.wbmp</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wiz</td>
+       <td>application/msword</td> 
+       <td class="separateColor">.wk3</td>
+       <td>application/x-wk3</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wk4</td>
+       <td>application/x-wk4</td> 
+       <td class="separateColor">.wkq</td>
+       <td>application/x-wkq</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wks</td>
+       <td>application/x-wks</td> 
+       <td class="separateColor">.wm</td>
+       <td>video/x-ms-wm</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wma</td>
+       <td>audio/x-ms-wma</td> 
+       <td class="separateColor">.wmd</td>
+       <td>application/x-ms-wmd</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wmf</td>
+       <td>application/x-wmf</td> 
+       <td class="separateColor">.wml</td>
+       <td>text/vnd.wap.wml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wmv</td>
+       <td>video/x-ms-wmv</td> 
+       <td class="separateColor">.wmx</td>
+       <td>video/x-ms-wmx</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wmz</td>
+       <td>application/x-ms-wmz</td> 
+       <td class="separateColor">.wp6</td>
+       <td>application/x-wp6</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wpd</td>
+       <td>application/x-wpd</td> 
+       <td class="separateColor">.wpg</td>
+       <td>application/x-wpg</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wpl</td>
+       <td>application/vnd.ms-wpl</td> 
+       <td class="separateColor">.wq1</td>
+       <td>application/x-wq1</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wr1</td>
+       <td>application/x-wr1</td> 
+       <td class="separateColor">.wri</td>
+       <td>application/x-wri</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wrk</td>
+       <td>application/x-wrk</td> 
+       <td class="separateColor">.ws</td>
+       <td>application/x-ws</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.ws2</td>
+       <td>application/x-ws</td> 
+       <td class="separateColor">.wsc</td>
+       <td>text/scriptlet</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.wsdl</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.wvx</td>
+       <td>video/x-ms-wvx</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xdp</td>
+       <td>application/vnd.adobe.xdp</td> 
+       <td class="separateColor">.xdr</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xfd</td>
+       <td>application/vnd.adobe.xfd</td> 
+       <td class="separateColor">.xfdf</td>
+       <td>application/vnd.adobe.xfdf</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xhtml</td>
+       <td>text/html</td> 
+       <td class="separateColor">.xls</td>
+       <td>application/vnd.ms-excel</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xls</td>
+       <td>application/x-xls</td> 
+       <td class="separateColor">.xlw</td>
+       <td>application/x-xlw</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xml</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.xpl</td>
+       <td>audio/scpls</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xq</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.xql</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xquery</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.xsd</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xsl</td>
+       <td>text/xml</td> 
+       <td class="separateColor">.xslt</td>
+       <td>text/xml</td>
+      </tr> 
+      <tr>
+       <td class="separateColor">.xwd</td>
+       <td>application/x-xwd</td> 
+       <td class="separateColor">.x_b</td>
+       <td>application/x-x_b</td>
+      </tr>
+	  <tr>
+       <td class="separateColor">.sis</td>
+       <td>application/vnd.symbian.install</td>
+	   <td class="separateColor">.sisx</td>
+       <td>application/vnd.symbian.install</td>
+      </tr>
+      <tr>
+       <td class="separateColor">.x_t</td>
+       <td>application/x-x_t</td>
+	   <td class="separateColor">.ipa</td>
+       <td>application/vnd.iphone</td>
+      </tr> 
+	  <tr>
+       <td class="separateColor">.apk</td>
+       <td>application/vnd.android.package-archive</td>
+	   <td class="separateColor">.xap</td>
+       <td>application/x-silverlight-app</td>
+      </tr>
+     </tbody>
+    </table>
+				<!--HTTP 内容类型-->
+			  </div>
+			  <div class="tab-pane fade" id="html">
+				<!--HTML 转义字符-->
+<table class="table table-bordered table-striped" width="50%" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <th>字符</th>
+            <th>十进制</th>
+            <th>转义字符</th>
+        </tr>
+		<tr>
+			<td>"</td>
+			<td>&amp;#34;</td>
+			<td>&amp;quot;</td>
+		</tr>
+		<tr>
+			<td>&amp;</td>
+			<td>&amp;#38;</td>
+			<td>&amp;amp;</td>
+		</tr>
+		<tr>
+			<td>&lt;</td>
+			<td>&amp;#60;</td>
+			<td>&amp;lt;</td>
+		</tr>
+		<tr>
+			<td>&gt;</td>
+			<td>&amp;#62;</td>
+			<td>&amp;gt;</td>
+		</tr>
+		<tr>
+			<td>不断开空格(non-breaking space)</td>
+			<td>&amp;#160;</td>
+			<td>&amp;nbsp;</td>
+		</tr>
+		</tbody>
+	</table>
+
+
+		<table class="table table-bordered table-striped" width="100%" cellspacing="0" cellpadding="0">
+        	<caption>HTML特殊转义字符对照表</caption>
+        <tbody><tr>
+            <th class="separateColor">字符</th>
+            <th>十进制</th>
+            <th>转义字符</th>
+            <th class="separateColor">字符</th>
+            <th>十进制</th>
+            <th>转义字符</th>
+            <th class="separateColor">字符</th>
+            <th>十进制</th>
+            <th>转义字符</th>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#161;</td>
+            <td>&amp;iexcl;</td>
+            <td class="separateColor">Á</td>
+            <td>&amp;#193;</td>
+            <td>&amp;Aacute;</td>
+            <td class="separateColor">á</td>
+            <td>&amp;#225;</td>
+            <td>&amp;aacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">￠</td>
+            <td>&amp;#162;</td>
+            <td>&amp;cent;</td>
+            <td class="separateColor">Â</td>
+            <td>&amp;#194;</td>
+            <td>&amp;circ;</td>
+            <td class="separateColor">â</td>
+            <td>&amp;#226</td>
+            <td>&amp;acirc;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">￡</td>
+            <td>&amp;#163;</td>
+            <td>&amp;pound;</td>
+            <td class="separateColor">Ã</td>
+            <td>&amp;#195;</td>
+            <td>&amp;Atilde;</td>
+            <td class="separateColor">ã</td>
+            <td>&amp;#227;</td>
+            <td>&amp;atilde;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">¤</td>
+            <td>&amp;#164;</td>
+            <td>&amp;curren;</td>
+            <td class="separateColor">Ä</td>
+            <td>&amp;#196;</td>
+            <td>&amp;Auml</td>
+            <td class="separateColor">ä</td>
+            <td>&amp;#228;</td>
+            <td>&amp;auml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">￥</td>
+            <td>&amp;#165;</td>
+            <td>&amp;yen;</td>
+            <td class="separateColor">Å</td>
+            <td>&amp;#197;</td>
+            <td>&amp;ring;</td>
+            <td class="separateColor">å</td>
+            <td>&amp;#229;</td>
+            <td>&amp;aring;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">|</td>
+            <td>&amp;#166;</td>
+            <td>&amp;brvbar;</td>
+            <td class="separateColor">Æ</td>
+            <td>&amp;#198;</td>
+            <td>&amp;AElig;</td>
+            <td class="separateColor">æ</td>
+            <td>&amp;#230;</td>
+            <td>&amp;aelig;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">§</td>
+            <td>&amp;#167;</td>
+            <td>&amp;sect;</td>
+            <td class="separateColor">Ç</td>
+            <td>&amp;#199;</td>
+            <td>&amp;Ccedil;</td>
+            <td class="separateColor">ç</td>
+            <td>&amp;#231;</td>
+            <td>&amp;ccedil;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">¨</td>
+            <td>&amp;#168;</td>
+            <td>&amp;uml;</td>
+            <td class="separateColor">È</td>
+            <td>&amp;#200;</td>
+            <td>&amp;Egrave;</td>
+            <td class="separateColor">è</td>
+            <td>&amp;#232;</td>
+            <td>&amp;egrave;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">©</td>
+            <td>&amp;#169;</td>
+            <td>&amp;copy;</td>
+            <td class="separateColor">É</td>
+            <td>&amp;#201;</td>
+            <td>&amp;Eacute;</td>
+            <td class="separateColor">é</td>
+            <td>&amp;#233;</td>
+            <td>&amp;eacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">a</td>
+            <td>&amp;#170;</td>
+            <td>&amp;ordf;</td>
+            <td class="separateColor">Ê</td>
+            <td>&amp;#202;</td>
+            <td>&amp;Ecirc;</td>
+            <td class="separateColor">ê</td>
+            <td>&amp;#234;</td>
+            <td>&amp;ecirc;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#171;</td>
+            <td>&amp;laquo;</td>
+            <td class="separateColor">Ë</td>
+            <td>&amp;#203;</td>
+            <td>&amp;Euml;</td>
+            <td class="separateColor">ë</td>
+            <td>&amp;#235;</td>
+            <td>&amp;euml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#172;</td>
+            <td>&amp;not;</td>
+            <td class="separateColor">Ì</td>
+            <td>&amp;#204;</td>
+            <td>&amp;Igrave;</td>
+            <td class="separateColor">ì</td>
+            <td>&amp;#236;</td>
+            <td>&amp;igrave;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">/x7f</td>
+            <td>&amp;#173;</td>
+            <td>&amp;shy;</td>
+            <td class="separateColor">Í</td>
+            <td>&amp;#205;</td>
+            <td>&amp;Iacute;</td>
+            <td class="separateColor">í</td>
+            <td>&amp;#237;</td>
+            <td>&amp;iacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">®</td>
+            <td>&amp;#174;</td>
+            <td>&amp;reg;</td>
+            <td class="separateColor">Î</td>
+            <td>&amp;#206;</td>
+            <td>&amp;Icirc;</td>
+            <td class="separateColor">î</td>
+            <td>&amp;#238;</td>
+            <td>&amp;icirc;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">ˉ</td>
+            <td>&amp;#175;</td>
+            <td>&amp;macr;</td>
+            <td class="separateColor">Ï</td>
+            <td>&amp;#207;</td>
+            <td>&amp;Iuml;</td>
+            <td class="separateColor">ï</td>
+            <td>&amp;#239;</td>
+            <td>&amp;iuml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">°</td>
+            <td>&amp;#176;</td>
+            <td>&amp;deg;</td>
+            <td class="separateColor">Ð</td>
+            <td>&amp;#208;</td>
+            <td>&amp;ETH;</td>
+            <td class="separateColor">ð</td>
+            <td>&amp;#240;</td>
+            <td>&amp;ieth;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">±</td>
+            <td>&amp;#177;</td>
+            <td>&amp;plusmn;</td>
+            <td class="separateColor">Ñ</td>
+            <td>&amp;#209;</td>
+            <td>&amp;Ntilde;</td>
+            <td class="separateColor">ñ</td>
+            <td>&amp;#241;</td>
+            <td>&amp;ntilde;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">2</td>
+            <td>&amp;#178;</td>
+            <td>&amp;sup2;</td>
+            <td class="separateColor">Ò</td>
+            <td>&amp;#210;</td>
+            <td>&amp;Ograve;</td>
+            <td class="separateColor">ò</td>
+            <td>&amp;#242;</td>
+            <td>&amp;ograve;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">3</td>
+            <td>&amp;#179;</td>
+            <td>&amp;sup3;</td>
+            <td class="separateColor">Ó</td>
+            <td>&amp;#211;</td>
+            <td>&amp;Oacute;</td>
+            <td class="separateColor">ó</td>
+            <td>&amp;#243;</td>
+            <td>&amp;oacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">′</td>
+            <td>&amp;#180;</td>
+            <td>&amp;acute;</td>
+            <td class="separateColor">Ô</td>
+            <td>&amp;#212;</td>
+            <td>&amp;Ocirc;</td>
+            <td class="separateColor">ô</td>
+            <td>&amp;#244;</td>
+            <td>&amp;ocirc;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">μ</td>
+            <td>&amp;#181;</td>
+            <td>&amp;micro;</td>
+            <td class="separateColor">Õ</td>
+            <td>&amp;#213;</td>
+            <td>&amp;Otilde;</td>
+            <td class="separateColor">õ</td>
+            <td>&amp;#245;</td>
+            <td>&amp;otilde;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#182;</td>
+            <td>&amp;para;</td>
+            <td class="separateColor">Ö</td>
+            <td>&amp;#214;</td>
+            <td>&amp;Ouml;</td>
+            <td class="separateColor">ö</td>
+            <td>&amp;#246;</td>
+            <td>&amp;ouml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">·</td>
+            <td>&amp;#183;</td>
+            <td>&amp;middot;</td>
+            <td class="separateColor">&amp;times;</td>
+            <td>&amp;#215;</td>
+            <td>&amp;times;</td>
+            <td class="separateColor">÷</td>
+            <td>&amp;#247;</td>
+            <td>&amp;divide;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#184;</td>
+            <td>&amp;cedil;</td>
+            <td class="separateColor">Ø</td>
+            <td>&amp;#216;</td>
+            <td>&amp;Oslash;</td>
+            <td class="separateColor">ø</td>
+            <td>&amp;#248;</td>
+            <td>&amp;oslash;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">1</td>
+            <td>&amp;#185;</td>
+            <td>&amp;sup1;</td>
+            <td class="separateColor">Ù</td>
+            <td>&amp;#217;</td>
+            <td>&amp;Ugrave;</td>
+            <td class="separateColor">ù</td>
+            <td>&amp;#249;</td>
+            <td>&amp;ugrave;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">o</td>
+            <td>&amp;#186;</td>
+            <td>&amp;ordm;</td>
+            <td class="separateColor">Ú</td>
+            <td>&amp;#218;</td>
+            <td>&amp;Uacute;</td>
+            <td class="separateColor">ú</td>
+            <td>&amp;#250;</td>
+            <td>&amp;uacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#187;</td>
+            <td>&amp;raquo;</td>
+            <td class="separateColor">Û</td>
+            <td>&amp;#219;</td>
+            <td>&amp;Ucirc;</td>
+            <td class="separateColor">û</td>
+            <td>&amp;#251;</td>
+            <td>&amp;ucirc;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#188;</td>
+            <td>&amp;frac14;</td>
+            <td class="separateColor">Ü</td>
+            <td>&amp;#220;</td>
+            <td>&amp;Uuml;</td>
+            <td class="separateColor">ü</td>
+            <td>&amp;#252;</td>
+            <td>&amp;uuml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#189;</td>
+            <td>&amp;frac12;</td>
+            <td class="separateColor">Ý</td>
+            <td>&amp;#221;</td>
+            <td>&amp;Yacute;</td>
+            <td class="separateColor">ý</td>
+            <td>&amp;#253;</td>
+            <td>&amp;yacute;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#190;</td>
+            <td>&amp;frac34;</td>
+            <td class="separateColor">Þ</td>
+            <td>&amp;#222;</td>
+            <td>&amp;THORN;</td>
+            <td class="separateColor">þ</td>
+            <td>&amp;#254;</td>
+            <td>&amp;thorn;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">?</td>
+            <td>&amp;#191;</td>
+            <td>&amp;iquest;</td>
+            <td class="separateColor">ß</td>
+            <td>&amp;#223;</td>
+            <td>&amp;szlig;</td>
+            <td class="separateColor">ÿ</td>
+            <td>&amp;#255;</td>
+            <td>&amp;yuml;</td>
+        </tr>
+        <tr>
+            <td class="separateColor">À</td>
+            <td>&amp;#192;</td>
+            <td>&amp;Agrave;</td>
+            <td class="separateColor">à</td>
+            <td>&amp;#224;</td>
+            <td>&amp;agrave;</td>
+            <td>　</td>
+            </tr>
+        </tbody></table>
+				<!--HTML 转义字符-->
+			  </div>
+			  <div class="tab-pane fade" id="rgb">
+				<!--RGB 颜色参考-->
+<div class="toolUsing clearfix">
+					<script type="text/javascript" src="../js/farbtastic.js"></script>
+ <link rel="stylesheet" href="../css/farbtastic.css" type="text/css">
+
+<form class="well form-inline" style="width:240px;align: center;">
+	<div id="colorpicker"></div>
+	<div class="form-item">
+		<div class="input-prepend">
+		<span class="add-on">颜色值：</span><input class="span2" type="text" id="color" name="color" value="#123456" style="background-color: rgb(18, 52, 86); color: rgb(255, 255, 255); ">
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+     $('#colorpicker').farbtastic('#color');
+   });
+ </script>
+</form>
+		<table class="table table-bordered table-striped" width="100%" cellspacing="0" cellpadding="0">
+           <tbody><tr>
+            <th>实色效果</th>
+            <th>英文名称</th>
+            <th>R.G.B</th>
+            <th>16色</th>
+            <th>实色效果</th>
+            <th>英文名称</th>
+            <th>R.G.B</th>
+            <th>16色</th>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 250, 250); "></td>
+            <td>Snow</td>
+            <td>255 250 250</td>
+            <td>#FFFAFA</td>
+            <td style="background-color: rgb(187, 255, 255); "></td>
+            <td>PaleTurquoise1</td>
+            <td>187 255 255</td>
+            <td>#BBFFFF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(248, 248, 255); "></td>
+            <td>GhostWhite</td>
+            <td>248 248 255</td>
+            <td>#F8F8FF</td>
+            <td style="background-color: rgb(174, 238, 238); "></td>
+            <td>PaleTurquoise2</td>
+            <td>174 238 238</td>
+            <td>#AEEEEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(245, 245, 245); "></td>
+            <td>WhiteSmoke</td>
+            <td>245 245 245</td>
+            <td>#F5F5F5</td>
+            <td style="background-color: rgb(150, 205, 205); "></td>
+            <td>PaleTurquoise3</td>
+            <td>150 205 205</td>
+            <td>#96CDCD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(220, 220, 220); "></td>
+            <td>Gainsboro</td>
+            <td>220 220 220</td>
+            <td>#DCDCDC</td>
+            <td style="background-color: rgb(102, 139, 139); "></td>
+            <td>PaleTurquoise4</td>
+            <td>102 139 139</td>
+            <td>#668B8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 250, 240); "></td>
+            <td>FloralWhite</td>
+            <td>255 250 240</td>
+            <td>#FFFAF0</td>
+            <td style="background-color: rgb(152, 245, 255); "></td>
+            <td>CadetBlue1</td>
+            <td>152 245 255</td>
+            <td>#98F5FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(253, 245, 230); "></td>
+            <td>OldLace</td>
+            <td>253 245 230</td>
+            <td>#FDF5E6</td>
+            <td style="background-color: rgb(142, 229, 238); "></td>
+            <td>CadetBlue2</td>
+            <td>142 229 238</td>
+            <td>#8EE5EE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(250, 240, 230); "></td>
+            <td>Linen</td>
+            <td>250 240 230</td>
+            <td>#FAF0E6</td>
+            <td style="background-color: rgb(122, 197, 205); "></td>
+            <td>CadetBlue3</td>
+            <td>122 197 205</td>
+            <td>#7AC5CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(250, 235, 215); "></td>
+            <td>AntiqueWhite</td>
+            <td>250 235 215</td>
+            <td>#FAEBD7</td>
+            <td style="background-color: rgb(83, 134, 139); "></td>
+            <td>CadetBlue4</td>
+            <td>83 134 139</td>
+            <td>#53868B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 239, 213); "></td>
+            <td>PapayaWhip</td>
+            <td>255 239 213</td>
+            <td>#FFEFD5</td>
+            <td style="background-color: rgb(0, 245, 255); "></td>
+            <td>Turquoise1</td>
+            <td>0 245 255</td>
+            <td>#00F5FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 235, 205); "></td>
+            <td>BlanchedAlmond</td>
+            <td>255 235 205</td>
+            <td>#FFEBCD</td>
+            <td style="background-color: rgb(0, 229, 238); "></td>
+            <td>Turquoise2</td>
+            <td>0 229 238</td>
+            <td>#00E5EE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 228, 196); "></td>
+            <td>Bisque</td>
+            <td>255 228 196</td>
+            <td>#FFE4C4</td>
+            <td style="background-color: rgb(0, 197, 205); "></td>
+            <td>Turquoise3</td>
+            <td>0 197 205</td>
+            <td>#00C5CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 218, 185); "></td>
+            <td>PeachPuff</td>
+            <td>255 218 185</td>
+            <td>#FFDAB9</td>
+            <td style="background-color: rgb(0, 134, 139); "></td>
+            <td>Turquoise4</td>
+            <td>0 134 139</td>
+            <td>#00868B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 222, 173); "></td>
+            <td>NavajoWhite</td>
+            <td>255 222 173</td>
+            <td>#FFDEAD</td>
+            <td style="background-color: rgb(0, 255, 255); "></td>
+            <td>Cyan1</td>
+            <td>0 255 255</td>
+            <td>#00FFFF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 228, 181); "></td>
+            <td>Moccasin</td>
+            <td>255 228 181</td>
+            <td>#FFE4B5</td>
+            <td style="background-color: rgb(0, 238, 238); "></td>
+            <td>Cyan2</td>
+            <td>0 238 238</td>
+            <td>#00EEEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 248, 220); "></td>
+            <td>Cornsilk</td>
+            <td>255 248 220</td>
+            <td>#FFF8DC</td>
+            <td style="background-color: rgb(0, 205, 205); "></td>
+            <td>Cyan3</td>
+            <td>0 205 205</td>
+            <td>#00CDCD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 255, 240); "></td>
+            <td>Ivory</td>
+            <td>255 255 240</td>
+            <td>#FFFFF0</td>
+            <td style="background-color: rgb(0, 139, 139); "></td>
+            <td>Cyan4</td>
+            <td>0 139 139</td>
+            <td>#008B8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 250, 205); "></td>
+            <td>LemonChiffon</td>
+            <td>255 250 205</td>
+            <td>#FFFACD</td>
+            <td style="background-color: rgb(151, 255, 255); "></td>
+            <td>DarkSlateGray1</td>
+            <td>151 255 255</td>
+            <td>#97FFFF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 245, 238); "></td>
+            <td>Seashell</td>
+            <td>255 245 238</td>
+            <td>#FFF5EE</td>
+            <td style="background-color: rgb(141, 238, 238); "></td>
+            <td>DarkSlateGray2</td>
+            <td>141 238 238</td>
+            <td>#8DEEEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 255, 240); "></td>
+            <td>Honeydew</td>
+            <td>240 255 240</td>
+            <td>#F0FFF0</td>
+            <td style="background-color: rgb(121, 205, 205); "></td>
+            <td>DarkSlateGray3</td>
+            <td>121 205 205</td>
+            <td>#79CDCD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(245, 255, 250); "></td>
+            <td>MintCream</td>
+            <td>245 255 250</td>
+            <td>#F5FFFA</td>
+            <td style="background-color: rgb(82, 139, 139); "></td>
+            <td>DarkSlateGray4</td>
+            <td>82 139 139</td>
+            <td>#528B8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 255, 255); "></td>
+            <td>Azure</td>
+            <td>240 255 255</td>
+            <td>#F0FFFF</td>
+            <td style="background-color: rgb(127, 255, 212); "></td>
+            <td>Aquamarine1</td>
+            <td>127 255 212</td>
+            <td>#7FFFD4</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 248, 255); "></td>
+            <td>AliceBlue</td>
+            <td>240 248 255</td>
+            <td>#F0F8FF</td>
+            <td style="background-color: rgb(118, 238, 198); "></td>
+            <td>Aquamarine2</td>
+            <td>118 238 198</td>
+            <td>#76EEC6</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(230, 230, 250); "></td>
+            <td>lavender</td>
+            <td>230 230 250</td>
+            <td>#E6E6FA</td>
+            <td style="background-color: rgb(102, 205, 170); "></td>
+            <td>Aquamarine3</td>
+            <td>102 205 170</td>
+            <td>#66CDAA</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 240, 245); "></td>
+            <td>LavenderBlush</td>
+            <td>255 240 245</td>
+            <td>#FFF0F5</td>
+            <td style="background-color: rgb(69, 139, 116); "></td>
+            <td>Aquamarine4</td>
+            <td>69 139 116</td>
+            <td>#458B74</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 228, 225); "></td>
+            <td>MistyRose</td>
+            <td>255 228 225</td>
+            <td>#FFE4E1</td>
+            <td style="background-color: rgb(193, 255, 193); "></td>
+            <td>DarkSeaGreen1</td>
+            <td>193 255 193</td>
+            <td>#C1FFC1</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 255, 255); "></td>
+            <td>White</td>
+            <td>255 255 255</td>
+            <td>#FFFFFF</td>
+            <td style="background-color: rgb(180, 238, 180); "></td>
+            <td>DarkSeaGreen2</td>
+            <td>180 238 180</td>
+            <td>#B4EEB4</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 0); "></td>
+            <td>Black</td>
+            <td>0 0 0</td>
+            <td>#000000</td>
+            <td style="background-color: rgb(155, 205, 155); "></td>
+            <td>DarkSeaGreen3</td>
+            <td>155 205 155</td>
+            <td>#9BCD9B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(47, 79, 79); "></td>
+            <td>DarkSlateGray</td>
+            <td>47 79 79</td>
+            <td>#2F4F4F</td>
+            <td style="background-color: rgb(105, 139, 105); "></td>
+            <td>DarkSeaGreen4</td>
+            <td>105 139 105</td>
+            <td>#698B69</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(105, 105, 105); "></td>
+            <td>DimGrey</td>
+            <td>105 105 105</td>
+            <td>#696969</td>
+            <td style="background-color: rgb(84, 255, 159); "></td>
+            <td>SeaGreen1</td>
+            <td>84 255 159</td>
+            <td>#54FF9F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(112, 128, 144); "></td>
+            <td>SlateGrey</td>
+            <td>112 128 144</td>
+            <td>#708090</td>
+            <td style="background-color: rgb(78, 238, 148); "></td>
+            <td>SeaGreen2</td>
+            <td>78 238 148</td>
+            <td>#4EEE94</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(119, 136, 153); "></td>
+            <td>LightSlateGray</td>
+            <td>119 136 153</td>
+            <td>#778899</td>
+            <td style="background-color: rgb(67, 205, 128); "></td>
+            <td>SeaGreen3</td>
+            <td>67 205 128</td>
+            <td>#43CD80</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(190, 190, 190); "></td>
+            <td>Grey</td>
+            <td>190 190 190</td>
+            <td>#BEBEBE</td>
+            <td style="background-color: rgb(46, 139, 87); "></td>
+            <td>SeaGreen4</td>
+            <td>46 139 87</td>
+            <td>#2E8B57</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(211, 211, 211); "></td>
+            <td>LightGray</td>
+            <td>211 211 211</td>
+            <td>#D3D3D3</td>
+            <td style="background-color: rgb(154, 255, 154); "></td>
+            <td>PaleGreen1</td>
+            <td>154 255 154</td>
+            <td>#9AFF9A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(25, 25, 112); "></td>
+            <td>MidnightBlue</td>
+            <td>25 25 112</td>
+            <td>#191970</td>
+            <td style="background-color: rgb(144, 238, 144); "></td>
+            <td>PaleGreen2</td>
+            <td>144 238 144</td>
+            <td>#90EE90</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 128); "></td>
+            <td>NavyBlue</td>
+            <td>0 0 128</td>
+            <td>#000080</td>
+            <td style="background-color: rgb(124, 205, 124); "></td>
+            <td>PaleGreen3</td>
+            <td>124 205 124</td>
+            <td>#7CCD7C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(100, 149, 237); "></td>
+            <td>CornflowerBlue</td>
+            <td>100 149 237</td>
+            <td>#6495ED</td>
+            <td style="background-color: rgb(84, 139, 84); "></td>
+            <td>PaleGreen4</td>
+            <td>84 139 84</td>
+            <td>#548B54</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(72, 61, 139); "></td>
+            <td>DarkSlateBlue</td>
+            <td>72 61 139</td>
+            <td>#483D8B</td>
+            <td style="background-color: rgb(0, 255, 127); "></td>
+            <td>SpringGreen1</td>
+            <td>0 255 127</td>
+            <td>#00FF7F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(106, 90, 205); "></td>
+            <td>SlateBlue</td>
+            <td>106 90 205</td>
+            <td>#6A5ACD</td>
+            <td style="background-color: rgb(0, 238, 118); "></td>
+            <td>SpringGreen2</td>
+            <td>0 238 118</td>
+            <td>#00EE76</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(123, 104, 238); "></td>
+            <td>MediumSlateBlue</td>
+            <td>123 104 238</td>
+            <td>#7B68EE</td>
+            <td style="background-color: rgb(0, 205, 102); "></td>
+            <td>SpringGreen3</td>
+            <td>0 205 102</td>
+            <td>#00CD66</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(132, 112, 255); "></td>
+            <td>LightSlateBlue</td>
+            <td>132 112 255</td>
+            <td>#8470FF</td>
+            <td style="background-color: rgb(0, 139, 69); "></td>
+            <td>SpringGreen4</td>
+            <td>0 139 69</td>
+            <td>#008B45</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 205); "></td>
+            <td>MediumBlue</td>
+            <td>0 0 205</td>
+            <td>#0000CD</td>
+            <td style="background-color: rgb(0, 255, 0); "></td>
+            <td>Green1</td>
+            <td>0 255 0</td>
+            <td>#00FF00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(65, 105, 225); "></td>
+            <td>RoyalBlue</td>
+            <td>65 105 225</td>
+            <td>#4169E1</td>
+            <td style="background-color: rgb(0, 238, 0); "></td>
+            <td>Green2</td>
+            <td>0 238 0</td>
+            <td>#00EE00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 255); "></td>
+            <td>Blue</td>
+            <td>0 0 255</td>
+            <td>#0000FF</td>
+            <td style="background-color: rgb(0, 205, 0); "></td>
+            <td>Green3</td>
+            <td>0 205 0</td>
+            <td>#00CD00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(30, 144, 255); "></td>
+            <td>DodgerBlue</td>
+            <td>30 144 255</td>
+            <td>#1E90FF</td>
+            <td style="background-color: rgb(0, 139, 0); "></td>
+            <td>Green4</td>
+            <td>0 139 0</td>
+            <td>#008B00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 191, 255); "></td>
+            <td>DeepSkyBlue</td>
+            <td>0 191 255</td>
+            <td>#00BFFF</td>
+            <td style="background-color: rgb(127, 255, 0); "></td>
+            <td>Chartreuse1</td>
+            <td>127 255 0</td>
+            <td>#7FFF00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(135, 206, 235); "></td>
+            <td>SkyBlue</td>
+            <td>135 206 235</td>
+            <td>#87CEEB</td>
+            <td style="background-color: rgb(118, 238, 0); "></td>
+            <td>Chartreuse2</td>
+            <td>118 238 0</td>
+            <td>#76EE00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(135, 206, 250); "></td>
+            <td>LightSkyBlue</td>
+            <td>135 206 250</td>
+            <td>#87CEFA</td>
+            <td style="background-color: rgb(102, 205, 0); "></td>
+            <td>Chartreuse3</td>
+            <td>102 205 0</td>
+            <td>#66CD00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(70, 130, 180); "></td>
+            <td>SteelBlue</td>
+            <td>70 130 180</td>
+            <td>#4682B4</td>
+            <td style="background-color: rgb(69, 139, 0); "></td>
+            <td>Chartreuse4</td>
+            <td>69 139 0</td>
+            <td>#458B00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(176, 196, 222); "></td>
+            <td>LightSteelBlue</td>
+            <td>176 196 222</td>
+            <td>#B0C4DE</td>
+            <td style="background-color: rgb(192, 255, 62); "></td>
+            <td>OliveDrab1</td>
+            <td>192 255 62</td>
+            <td>#C0FF3E</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(173, 216, 230); "></td>
+            <td>LightBlue</td>
+            <td>173 216 230</td>
+            <td>#ADD8E6</td>
+            <td style="background-color: rgb(179, 238, 58); "></td>
+            <td>OliveDrab2</td>
+            <td>179 238 58</td>
+            <td>#B3EE3A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(176, 224, 230); "></td>
+            <td>PowderBlue</td>
+            <td>176 224 230</td>
+            <td>#B0E0E6</td>
+            <td style="background-color: rgb(154, 205, 50); "></td>
+            <td>OliveDrab3</td>
+            <td>154 205 50</td>
+            <td>#9ACD32</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(175, 238, 238); "></td>
+            <td>PaleTurquoise</td>
+            <td>175 238 238</td>
+            <td>#AFEEEE</td>
+            <td style="background-color: rgb(105, 139, 34); "></td>
+            <td>OliveDrab4</td>
+            <td>105 139 34</td>
+            <td>#698B22</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 206, 209); "></td>
+            <td>DarkTurquoise</td>
+            <td>0 206 209</td>
+            <td>#00CED1</td>
+            <td style="background-color: rgb(202, 255, 112); "></td>
+            <td>DarkOliveGreen1</td>
+            <td>202 255 112</td>
+            <td>#CAFF70</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(72, 209, 204); "></td>
+            <td>MediumTurquoise</td>
+            <td>72 209 204</td>
+            <td>#48D1CC</td>
+            <td style="background-color: rgb(188, 238, 104); "></td>
+            <td>DarkOliveGreen2</td>
+            <td>188 238 104</td>
+            <td>#BCEE68</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(64, 224, 208); "></td>
+            <td>Turquoise</td>
+            <td>64 224 208</td>
+            <td>#40E0D0</td>
+            <td style="background-color: rgb(162, 205, 90); "></td>
+            <td>DarkOliveGreen3</td>
+            <td>162 205 90</td>
+            <td>#A2CD5A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 255, 255); "></td>
+            <td>Cyan</td>
+            <td>0 255 255</td>
+            <td>#00FFFF</td>
+            <td style="background-color: rgb(110, 139, 61); "></td>
+            <td>DarkOliveGreen4</td>
+            <td>110 139 61</td>
+            <td>#6E8B3D</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(224, 255, 255); "></td>
+            <td>LightCyan</td>
+            <td>224 255 255</td>
+            <td>#E0FFFF</td>
+            <td style="background-color: rgb(255, 246, 143); "></td>
+            <td>Khaki1</td>
+            <td>255 246 143</td>
+            <td>#FFF68F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(95, 158, 160); "></td>
+            <td>CadetBlue</td>
+            <td>95 158 160</td>
+            <td>#5F9EA0</td>
+            <td style="background-color: rgb(238, 230, 133); "></td>
+            <td>Khaki2</td>
+            <td>238 230 133</td>
+            <td>#EEE685</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(102, 205, 170); "></td>
+            <td>MediumAquamarine</td>
+            <td>102 205 170</td>
+            <td>#66CDAA</td>
+            <td style="background-color: rgb(205, 198, 115); "></td>
+            <td>Khaki3</td>
+            <td>205 198 115</td>
+            <td>#CDC673</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(127, 255, 212); "></td>
+            <td>Aquamarine</td>
+            <td>127 255 212</td>
+            <td>#7FFFD4</td>
+            <td style="background-color: rgb(139, 134, 78); "></td>
+            <td>Khaki4</td>
+            <td>139 134 78</td>
+            <td>#8B864E</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 100, 0); "></td>
+            <td>DarkGreen</td>
+            <td>0 100 0</td>
+            <td>#006400</td>
+            <td style="background-color: rgb(255, 236, 139); "></td>
+            <td>LightGoldenrod1</td>
+            <td>255 236 139</td>
+            <td>#FFEC8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(85, 107, 47); "></td>
+            <td>DarkOliveGreen</td>
+            <td>85 107 47</td>
+            <td>#556B2F</td>
+            <td style="background-color: rgb(238, 220, 130); "></td>
+            <td>LightGoldenrod2</td>
+            <td>238 220 130</td>
+            <td>#EEDC82</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(143, 188, 143); "></td>
+            <td>DarkSeaGreen</td>
+            <td>143 188 143</td>
+            <td>#8FBC8F</td>
+            <td style="background-color: rgb(205, 190, 112); "></td>
+            <td>LightGoldenrod3</td>
+            <td>205 190 112</td>
+            <td>#CDBE70</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(46, 139, 87); "></td>
+            <td>SeaGreen</td>
+            <td>46 139 87</td>
+            <td>#2E8B57</td>
+            <td style="background-color: rgb(139, 129, 76); "></td>
+            <td>LightGoldenrod4</td>
+            <td>139 129 76</td>
+            <td>#8B814C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(60, 179, 113); "></td>
+            <td>MediumSeaGreen</td>
+            <td>60 179 113</td>
+            <td>#3CB371</td>
+            <td style="background-color: rgb(255, 255, 224); "></td>
+            <td>LightYellow1</td>
+            <td>255 255 224</td>
+            <td>#FFFFE0</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(32, 178, 170); "></td>
+            <td>LightSeaGreen</td>
+            <td>32 178 170</td>
+            <td>#20B2AA</td>
+            <td style="background-color: rgb(238, 238, 209); "></td>
+            <td>LightYellow2</td>
+            <td>238 238 209</td>
+            <td>#EEEED1</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(152, 251, 152); "></td>
+            <td>PaleGreen</td>
+            <td>152 251 152</td>
+            <td>#98FB98</td>
+            <td style="background-color: rgb(205, 205, 180); "></td>
+            <td>LightYellow3</td>
+            <td>205 205 180</td>
+            <td>#CDCDB4</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 255, 127); "></td>
+            <td>SpringGreen</td>
+            <td>0 255 127</td>
+            <td>#00FF7F</td>
+            <td style="background-color: rgb(139, 139, 122); "></td>
+            <td>LightYellow4</td>
+            <td>139 139 122</td>
+            <td>#8B8B7A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(124, 252, 0); "></td>
+            <td>LawnGreen</td>
+            <td>124 252 0</td>
+            <td>#7CFC00</td>
+            <td style="background-color: rgb(255, 255, 0); "></td>
+            <td>Yellow1</td>
+            <td>255 255 0</td>
+            <td>#FFFF00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 255, 0); "></td>
+            <td>Green</td>
+            <td>0 255 0</td>
+            <td>#00FF00</td>
+            <td style="background-color: rgb(238, 238, 0); "></td>
+            <td>Yellow2</td>
+            <td>238 238 0</td>
+            <td>#EEEE00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(127, 255, 0); "></td>
+            <td>Chartreuse</td>
+            <td>127 255 0</td>
+            <td>#7FFF00</td>
+            <td style="background-color: rgb(205, 205, 0); "></td>
+            <td>Yellow3</td>
+            <td>205 205 0</td>
+            <td>#CDCD00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 250, 154); "></td>
+            <td>MedSpringGreen</td>
+            <td>0 250 154</td>
+            <td>#00FA9A</td>
+            <td style="background-color: rgb(139, 139, 0); "></td>
+            <td>Yellow4</td>
+            <td>139 139 0</td>
+            <td>#8B8B00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(173, 255, 47); "></td>
+            <td>GreenYellow</td>
+            <td>173 255 47</td>
+            <td>#ADFF2F</td>
+            <td style="background-color: rgb(255, 215, 0); "></td>
+            <td>Gold1</td>
+            <td>255 215 0</td>
+            <td>#FFD700</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(50, 205, 50); "></td>
+            <td>LimeGreen</td>
+            <td>50 205 50</td>
+            <td>#32CD32</td>
+            <td style="background-color: rgb(238, 201, 0); "></td>
+            <td>Gold2</td>
+            <td>238 201 0</td>
+            <td>#EEC900</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(154, 205, 50); "></td>
+            <td>YellowGreen</td>
+            <td>154 205 50</td>
+            <td>#9ACD32</td>
+            <td style="background-color: rgb(205, 173, 0); "></td>
+            <td>Gold3</td>
+            <td>205 173 0</td>
+            <td>#CDAD00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(34, 139, 34); "></td>
+            <td>ForestGreen</td>
+            <td>34 139 34</td>
+            <td>#228B22</td>
+            <td style="background-color: rgb(139, 117, 0); "></td>
+            <td>Gold4</td>
+            <td>139 117 0</td>
+            <td>#8B7500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(107, 142, 35); "></td>
+            <td>OliveDrab</td>
+            <td>107 142 35</td>
+            <td>#6B8E23</td>
+            <td style="background-color: rgb(255, 193, 37); "></td>
+            <td>Goldenrod1</td>
+            <td>255 193 37</td>
+            <td>#FFC125</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(189, 183, 107); "></td>
+            <td>DarkKhaki</td>
+            <td>189 183 107</td>
+            <td>#BDB76B</td>
+            <td style="background-color: rgb(238, 180, 34); "></td>
+            <td>Goldenrod2</td>
+            <td>238 180 34</td>
+            <td>#EEB422</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 232, 170); "></td>
+            <td>PaleGoldenrod</td>
+            <td>238 232 170</td>
+            <td>#EEE8AA</td>
+            <td style="background-color: rgb(205, 155, 29); "></td>
+            <td>Goldenrod3</td>
+            <td>205 155 29</td>
+            <td>#CD9B1D</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(250, 250, 210); "></td>
+            <td>LtGoldenrodYello</td>
+            <td>250 250 210</td>
+            <td>#FAFAD2</td>
+            <td style="background-color: rgb(139, 105, 20); "></td>
+            <td>Goldenrod4</td>
+            <td>139 105 20</td>
+            <td>#8B6914</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 255, 224); "></td>
+            <td>LightYellow</td>
+            <td>255 255 224</td>
+            <td>#FFFFE0</td>
+            <td style="background-color: rgb(255, 185, 15); "></td>
+            <td>DarkGoldenrod1</td>
+            <td>255 185 15</td>
+            <td>#FFB90F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 255, 0); "></td>
+            <td>Yellow</td>
+            <td>255 255 0</td>
+            <td>#FFFF00</td>
+            <td style="background-color: rgb(238, 173, 14); "></td>
+            <td>DarkGoldenrod2</td>
+            <td>238 173 14</td>
+            <td>#EEAD0E</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 215, 0); "></td>
+            <td>Gold</td>
+            <td>255 215 0</td>
+            <td>#FFD700</td>
+            <td style="background-color: rgb(205, 149, 12); "></td>
+            <td>DarkGoldenrod3</td>
+            <td>205 149 12</td>
+            <td>#CD950C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 221, 130); "></td>
+            <td>LightGoldenrod</td>
+            <td>238 221 130</td>
+            <td>#EEDD82</td>
+            <td style="background-color: rgb(139, 101, 139); "></td>
+            <td>DarkGoldenrod4</td>
+            <td>139 101 8</td>
+            <td>#8B658B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(218, 165, 32); "></td>
+            <td>goldenrod</td>
+            <td>218 165 32</td>
+            <td>#DAA520</td>
+            <td style="background-color: rgb(255, 193, 193); "></td>
+            <td>RosyBrown1</td>
+            <td>255 193 193</td>
+            <td>#FFC1C1</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(184, 134, 11); "></td>
+            <td>DarkGoldenrod</td>
+            <td>184 134 11</td>
+            <td>#B8860B</td>
+            <td style="background-color: rgb(238, 180, 180); "></td>
+            <td>RosyBrown2</td>
+            <td>238 180 180</td>
+            <td>#EEB4B4</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(188, 143, 143); "></td>
+            <td>RosyBrown</td>
+            <td>188 143 143</td>
+            <td>#BC8F8F</td>
+            <td style="background-color: rgb(205, 155, 155); "></td>
+            <td>RosyBrown3</td>
+            <td>205 155 155</td>
+            <td>#CD9B9B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 92, 92); "></td>
+            <td>IndianRed</td>
+            <td>205 92 92</td>
+            <td>#CD5C5C</td>
+            <td style="background-color: rgb(139, 105, 105); "></td>
+            <td>RosyBrown4</td>
+            <td>139 105 105</td>
+            <td>#8B6969</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 69, 19); "></td>
+            <td>SaddleBrown</td>
+            <td>139 69 19</td>
+            <td>#8B4513</td>
+            <td style="background-color: rgb(255, 106, 106); "></td>
+            <td>IndianRed1</td>
+            <td>255 106 106</td>
+            <td>#FF6A6A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(160, 82, 45); "></td>
+            <td>Sienna</td>
+            <td>160 82 45</td>
+            <td>#A0522D</td>
+            <td style="background-color: rgb(238, 99, 99); "></td>
+            <td>IndianRed2</td>
+            <td>238 99 99</td>
+            <td>#EE6363</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 133, 63); "></td>
+            <td>Peru</td>
+            <td>205 133 63</td>
+            <td>#CD853F</td>
+            <td style="background-color: rgb(205, 85, 85); "></td>
+            <td>IndianRed3</td>
+            <td>205 85 85</td>
+            <td>#CD5555</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(222, 184, 135); "></td>
+            <td>Burlywood</td>
+            <td>222 184 135</td>
+            <td>#DEB887</td>
+            <td style="background-color: rgb(139, 58, 58); "></td>
+            <td>IndianRed4</td>
+            <td>139 58 58</td>
+            <td>#8B3A3A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(245, 245, 220); "></td>
+            <td>Beige</td>
+            <td>245 245 220</td>
+            <td>#F5F5DC</td>
+            <td style="background-color: rgb(255, 130, 71); "></td>
+            <td>Sienna1</td>
+            <td>255 130 71</td>
+            <td>#FF8247</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(245, 222, 179); "></td>
+            <td>Wheat</td>
+            <td>245 222 179</td>
+            <td>#F5DEB3</td>
+            <td style="background-color: rgb(238, 121, 66); "></td>
+            <td>Sienna2</td>
+            <td>238 121 66</td>
+            <td>#EE7942</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(244, 164, 96); "></td>
+            <td>SandyBrown</td>
+            <td>244 164 96</td>
+            <td>#F4A460</td>
+            <td style="background-color: rgb(205, 104, 57); "></td>
+            <td>Sienna3</td>
+            <td>205 104 57</td>
+            <td>#CD6839</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(210, 180, 140); "></td>
+            <td>Tan</td>
+            <td>210 180 140</td>
+            <td>#D2B48C</td>
+            <td style="background-color: rgb(139, 71, 38); "></td>
+            <td>Sienna4</td>
+            <td>139 71 38</td>
+            <td>#8B4726</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(210, 105, 30); "></td>
+            <td>Chocolate</td>
+            <td>210 105 30</td>
+            <td>#D2691E</td>
+            <td style="background-color: rgb(255, 211, 155); "></td>
+            <td>Burlywood1</td>
+            <td>255 211 155</td>
+            <td>#FFD39B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(178, 34, 34); "></td>
+            <td>Firebrick</td>
+            <td>178 34 34</td>
+            <td>#B22222</td>
+            <td style="background-color: rgb(238, 197, 145); "></td>
+            <td>Burlywood2</td>
+            <td>238 197 145</td>
+            <td>#EEC591</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(165, 42, 42); "></td>
+            <td>Brown</td>
+            <td>165 42 42</td>
+            <td>#A52A2A</td>
+            <td style="background-color: rgb(205, 170, 125); "></td>
+            <td>Burlywood3</td>
+            <td>205 170 125</td>
+            <td>#CDAA7D</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(233, 150, 122); "></td>
+            <td>DarkSalmon</td>
+            <td>233 150 122</td>
+            <td>#E9967A</td>
+            <td style="background-color: rgb(139, 115, 85); "></td>
+            <td>Burlywood4</td>
+            <td>139 115 85</td>
+            <td>#8B7355</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(250, 128, 114); "></td>
+            <td>Salmon</td>
+            <td>250 128 114</td>
+            <td>#FA8072</td>
+            <td style="background-color: rgb(255, 231, 186); "></td>
+            <td>Wheat1</td>
+            <td>255 231 186</td>
+            <td>#FFE7BA</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 160, 122); "></td>
+            <td>LightSalmon</td>
+            <td>255 160 122</td>
+            <td>#FFA07A</td>
+            <td style="background-color: rgb(238, 216, 174); "></td>
+            <td>Wheat2</td>
+            <td>238 216 174</td>
+            <td>#EED8AE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 165, 0); "></td>
+            <td>Orange</td>
+            <td>255 165 0</td>
+            <td>#FFA500</td>
+            <td style="background-color: rgb(205, 186, 150); "></td>
+            <td>Wheat3</td>
+            <td>205 186 150</td>
+            <td>#CDBA96</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 140, 0); "></td>
+            <td>DarkOrange</td>
+            <td>255 140 0</td>
+            <td>#FF8C00</td>
+            <td style="background-color: rgb(139, 126, 102); "></td>
+            <td>Wheat4</td>
+            <td>139 126 102</td>
+            <td>#8B7E66</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 127, 80); "></td>
+            <td>Coral</td>
+            <td>255 127 80</td>
+            <td>#FF7F50</td>
+            <td style="background-color: rgb(255, 165, 79); "></td>
+            <td>Tan1</td>
+            <td>255 165 79</td>
+            <td>#FFA54F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 128, 128); "></td>
+            <td>LightCoral</td>
+            <td>240 128 128</td>
+            <td>#F08080</td>
+            <td style="background-color: rgb(238, 154, 73); "></td>
+            <td>Tan2</td>
+            <td>238 154 73</td>
+            <td>#EE9A49</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 99, 71); "></td>
+            <td>Tomato</td>
+            <td>255 99 71</td>
+            <td>#FF6347</td>
+            <td style="background-color: rgb(205, 133, 63); "></td>
+            <td>Tan3</td>
+            <td>205 133 63</td>
+            <td>#CD853F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 69, 0); "></td>
+            <td>OrangeRed</td>
+            <td>255 69 0</td>
+            <td>#FF4500</td>
+            <td style="background-color: rgb(139, 90, 43); "></td>
+            <td>Tan4</td>
+            <td>139 90 43</td>
+            <td>#8B5A2B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 0, 0); "></td>
+            <td>Red</td>
+            <td>255 0 0</td>
+            <td>#FF0000</td>
+            <td style="background-color: rgb(255, 127, 36); "></td>
+            <td>Chocolate1</td>
+            <td>255 127 36</td>
+            <td>#FF7F24</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 105, 180); "></td>
+            <td>HotPink</td>
+            <td>255 105 180</td>
+            <td>#FF69B4</td>
+            <td style="background-color: rgb(238, 118, 33); "></td>
+            <td>Chocolate2</td>
+            <td>238 118 33</td>
+            <td>#EE7621</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 20, 147); "></td>
+            <td>DeepPink</td>
+            <td>255 20 147</td>
+            <td>#FF1493</td>
+            <td style="background-color: rgb(205, 102, 29); "></td>
+            <td>Chocolate3</td>
+            <td>205 102 29</td>
+            <td>#CD661D</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 192, 203); "></td>
+            <td>Pink</td>
+            <td>255 192 203</td>
+            <td>#FFC0CB</td>
+            <td style="background-color: rgb(139, 69, 19); "></td>
+            <td>Chocolate4</td>
+            <td>139 69 19</td>
+            <td>#8B4513</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 182, 193); "></td>
+            <td>LightPink</td>
+            <td>255 182 193</td>
+            <td>#FFB6C1</td>
+            <td style="background-color: rgb(255, 48, 48); "></td>
+            <td>Firebrick1</td>
+            <td>255 48 48</td>
+            <td>#FF3030</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(219, 112, 147); "></td>
+            <td>PaleVioletRed</td>
+            <td>219 112 147</td>
+            <td>#DB7093</td>
+            <td style="background-color: rgb(238, 44, 44); "></td>
+            <td>Firebrick2</td>
+            <td>238 44 44</td>
+            <td>#EE2C2C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(176, 48, 96); "></td>
+            <td>Maroon</td>
+            <td>176 48 96</td>
+            <td>#B03060</td>
+            <td style="background-color: rgb(205, 38, 38); "></td>
+            <td>Firebrick3</td>
+            <td>205 38 38</td>
+            <td>#CD2626</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(199, 21, 133); "></td>
+            <td>MediumVioletRed</td>
+            <td>199 21 133</td>
+            <td>#C71585</td>
+            <td style="background-color: rgb(139, 26, 26); "></td>
+            <td>Firebrick4</td>
+            <td>139 26 26</td>
+            <td>#8B1A1A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(208, 32, 144); "></td>
+            <td>VioletRed</td>
+            <td>208 32 144</td>
+            <td>#D02090</td>
+            <td style="background-color: rgb(255, 64, 64); "></td>
+            <td>Brown1</td>
+            <td>255 64 64</td>
+            <td>#FF4040</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 0, 255); "></td>
+            <td>Magenta</td>
+            <td>255 0 255</td>
+            <td>#FF00FF</td>
+            <td style="background-color: rgb(238, 59, 59); "></td>
+            <td>Brown2</td>
+            <td>238 59 59</td>
+            <td>#EE3B3B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 130, 238); "></td>
+            <td>Violet</td>
+            <td>238 130 238</td>
+            <td>#EE82EE</td>
+            <td style="background-color: rgb(205, 51, 51); "></td>
+            <td>Brown3</td>
+            <td>205 51 51</td>
+            <td>#CD3333</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(221, 160, 221); "></td>
+            <td>Plum</td>
+            <td>221 160 221</td>
+            <td>#DDA0DD</td>
+            <td style="background-color: rgb(139, 35, 35); "></td>
+            <td>Brown4</td>
+            <td>139 35 35</td>
+            <td>#8B2323</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(218, 112, 214); "></td>
+            <td>Orchid</td>
+            <td>218 112 214</td>
+            <td>#DA70D6</td>
+            <td style="background-color: rgb(255, 140, 105); "></td>
+            <td>Salmon1</td>
+            <td>255 140 105</td>
+            <td>#FF8C69</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(186, 85, 211); "></td>
+            <td>MediumOrchid</td>
+            <td>186 85 211</td>
+            <td>#BA55D3</td>
+            <td style="background-color: rgb(238, 130, 98); "></td>
+            <td>Salmon2</td>
+            <td>238 130 98</td>
+            <td>#EE8262</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(153, 50, 204); "></td>
+            <td>DarkOrchid</td>
+            <td>153 50 204</td>
+            <td>#9932CC</td>
+            <td style="background-color: rgb(205, 112, 84); "></td>
+            <td>Salmon3</td>
+            <td>205 112 84</td>
+            <td>#CD7054</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(148, 0, 211); "></td>
+            <td>DarkViolet</td>
+            <td>148 0 211</td>
+            <td>#9400D3</td>
+            <td style="background-color: rgb(139, 76, 57); "></td>
+            <td>Salmon4</td>
+            <td>139 76 57</td>
+            <td>#8B4C39</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(138, 43, 226); "></td>
+            <td>BlueViolet</td>
+            <td>138 43 226</td>
+            <td>#8A2BE2</td>
+            <td style="background-color: rgb(255, 160, 122); "></td>
+            <td>LightSalmon1</td>
+            <td>255 160 122</td>
+            <td>#FFA07A</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(160, 32, 240); "></td>
+            <td>Purple</td>
+            <td>160 32 240</td>
+            <td>#A020F0</td>
+            <td style="background-color: rgb(238, 149, 114); "></td>
+            <td>LightSalmon2</td>
+            <td>238 149 114</td>
+            <td>#EE9572</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(147, 112, 219); "></td>
+            <td>MediumPurple</td>
+            <td>147 112 219</td>
+            <td>#9370DB</td>
+            <td style="background-color: rgb(205, 129, 98); "></td>
+            <td>LightSalmon3</td>
+            <td>205 129 98</td>
+            <td>#CD8162</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(216, 191, 216); "></td>
+            <td>Thistle</td>
+            <td>216 191 216</td>
+            <td>#D8BFD8</td>
+            <td style="background-color: rgb(139, 87, 66); "></td>
+            <td>LightSalmon4</td>
+            <td>139 87 66</td>
+            <td>#8B5742</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 250, 250); "></td>
+            <td>Snow1</td>
+            <td>255 250 250</td>
+            <td>#FFFAFA</td>
+            <td style="background-color: rgb(255, 165, 0); "></td>
+            <td>Orange1</td>
+            <td>255 165 0</td>
+            <td>#FFA500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 233, 233); "></td>
+            <td>Snow2</td>
+            <td>238 233 233</td>
+            <td>#EEE9E9</td>
+            <td style="background-color: rgb(238, 154, 0); "></td>
+            <td>Orange2</td>
+            <td>238 154 0</td>
+            <td>#EE9A00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 201, 201); "></td>
+            <td>Snow3</td>
+            <td>205 201 201</td>
+            <td>#CDC9C9</td>
+            <td style="background-color: rgb(205, 133, 0); "></td>
+            <td>Orange3</td>
+            <td>205 133 0</td>
+            <td>#CD8500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 137, 137); "></td>
+            <td>Snow4</td>
+            <td>139 137 137</td>
+            <td>#8B8989</td>
+            <td style="background-color: rgb(139, 90, 0); "></td>
+            <td>Orange4</td>
+            <td>139 90 0</td>
+            <td>#8B5A00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 245, 238); "></td>
+            <td>Seashell1</td>
+            <td>255 245 238</td>
+            <td>#FFF5EE</td>
+            <td style="background-color: rgb(255, 127, 0); "></td>
+            <td>DarkOrange1</td>
+            <td>255 127 0</td>
+            <td>#FF7F00</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 229, 222); "></td>
+            <td>Seashell2</td>
+            <td>238 229 222</td>
+            <td>#EEE5DE</td>
+            <td style="background-color: rgb(238, 118, 0); "></td>
+            <td>DarkOrange2</td>
+            <td>238 118 0</td>
+            <td>#EE7600</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 197, 191); "></td>
+            <td>Seashell3</td>
+            <td>205 197 191</td>
+            <td>#CDC5BF</td>
+            <td style="background-color: rgb(205, 102, 0); "></td>
+            <td>DarkOrange3</td>
+            <td>205 102 0</td>
+            <td>#CD6600</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 134, 130); "></td>
+            <td>Seashell4</td>
+            <td>139 134 130</td>
+            <td>#8B8682</td>
+            <td style="background-color: rgb(139, 69, 0); "></td>
+            <td>DarkOrange4</td>
+            <td>139 69 0</td>
+            <td>#8B4500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 239, 219); "></td>
+            <td>AntiqueWhite1</td>
+            <td>255 239 219</td>
+            <td>#FFEFDB</td>
+            <td style="background-color: rgb(255, 114, 86); "></td>
+            <td>Coral1</td>
+            <td>255 114 86</td>
+            <td>#FF7256</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 223, 204); "></td>
+            <td>AntiqueWhite2</td>
+            <td>238 223 204</td>
+            <td>#EEDFCC</td>
+            <td style="background-color: rgb(238, 106, 80); "></td>
+            <td>Coral2</td>
+            <td>238 106 80</td>
+            <td>#EE6A50</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 192, 176); "></td>
+            <td>AntiqueWhite3</td>
+            <td>205 192 176</td>
+            <td>#CDC0B0</td>
+            <td style="background-color: rgb(205, 91, 69); "></td>
+            <td>Coral3</td>
+            <td>205 91 69</td>
+            <td>#CD5B45</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 131, 120); "></td>
+            <td>AntiqueWhite4</td>
+            <td>139 131 120</td>
+            <td>#8B8378</td>
+            <td style="background-color: rgb(139, 62, 47); "></td>
+            <td>Coral4</td>
+            <td>139 62 47</td>
+            <td>#8B3E2F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 228, 196); "></td>
+            <td>Bisque1</td>
+            <td>255 228 196</td>
+            <td>#FFE4C4</td>
+            <td style="background-color: rgb(255, 99, 71); "></td>
+            <td>Tomato1</td>
+            <td>255 99 71</td>
+            <td>#FF6347</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 213, 183); "></td>
+            <td>Bisque2</td>
+            <td>238 213 183</td>
+            <td>#EED5B7</td>
+            <td style="background-color: rgb(238, 92, 66); "></td>
+            <td>Tomato2</td>
+            <td>238 92 66</td>
+            <td>#EE5C42</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 183, 158); "></td>
+            <td>Bisque3</td>
+            <td>205 183 158</td>
+            <td>#CDB79E</td>
+            <td style="background-color: rgb(205, 79, 57); "></td>
+            <td>Tomato3</td>
+            <td>205 79 57</td>
+            <td>#CD4F39</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 125, 107); "></td>
+            <td>Bisque4</td>
+            <td>139 125 107</td>
+            <td>#8B7D6B</td>
+            <td style="background-color: rgb(139, 54, 38); "></td>
+            <td>Tomato4</td>
+            <td>139 54 38</td>
+            <td>#8B3626</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 218, 185); "></td>
+            <td>PeachPuff1</td>
+            <td>255 218 185</td>
+            <td>#FFDAB9</td>
+            <td style="background-color: rgb(255, 69, 0); "></td>
+            <td>OrangeRed1</td>
+            <td>255 69 0</td>
+            <td>#FF4500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 203, 173); "></td>
+            <td>PeachPuff2</td>
+            <td>238 203 173</td>
+            <td>#EECBAD</td>
+            <td style="background-color: rgb(238, 64, 0); "></td>
+            <td>OrangeRed2</td>
+            <td>238 64 0</td>
+            <td>#EE4000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 175, 149); "></td>
+            <td>PeachPuff3</td>
+            <td>205 175 149</td>
+            <td>#CDAF95</td>
+            <td style="background-color: rgb(205, 55, 0); "></td>
+            <td>OrangeRed3</td>
+            <td>205 55 0</td>
+            <td>#CD3700</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 119, 101); "></td>
+            <td>PeachPuff4</td>
+            <td>139 119 101</td>
+            <td>#8B7765</td>
+            <td style="background-color: rgb(139, 37, 0); "></td>
+            <td>OrangeRed4</td>
+            <td>139 37 0</td>
+            <td>#8B2500</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 222, 173); "></td>
+            <td>NavajoWhite1</td>
+            <td>255 222 173</td>
+            <td>#FFDEAD</td>
+            <td style="background-color: rgb(255, 0, 0); "></td>
+            <td>Red1</td>
+            <td>255 0 0</td>
+            <td>#FF0000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 207, 161); "></td>
+            <td>NavajoWhite2</td>
+            <td>238 207 161</td>
+            <td>#EECFA1</td>
+            <td style="background-color: rgb(238, 0, 0); "></td>
+            <td>Red2</td>
+            <td>238 0 0</td>
+            <td>#EE0000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 179, 139); "></td>
+            <td>NavajoWhite3</td>
+            <td>205 179 139</td>
+            <td>#CDB38B</td>
+            <td style="background-color: rgb(205, 0, 0); "></td>
+            <td>Red3</td>
+            <td>205 0 0</td>
+            <td>#CD0000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 121, 94); "></td>
+            <td>NavajoWhite4</td>
+            <td>139 121 94</td>
+            <td>#8B795E</td>
+            <td style="background-color: rgb(139, 0, 0); "></td>
+            <td>Red4</td>
+            <td>139 0 0</td>
+            <td>#8B0000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 250, 205); "></td>
+            <td>LemonChiffon1</td>
+            <td>255 250 205</td>
+            <td>#FFFACD</td>
+            <td style="background-color: rgb(255, 20, 147); "></td>
+            <td>DeepPink1</td>
+            <td>255 20 147</td>
+            <td>#FF1493</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 233, 191); "></td>
+            <td>LemonChiffon2</td>
+            <td>238 233 191</td>
+            <td>#EEE9BF</td>
+            <td style="background-color: rgb(238, 18, 137); "></td>
+            <td>DeepPink2</td>
+            <td>238 18 137</td>
+            <td>#EE1289</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 201, 165); "></td>
+            <td>LemonChiffon3</td>
+            <td>205 201 165</td>
+            <td>#CDC9A5</td>
+            <td style="background-color: rgb(205, 16, 118); "></td>
+            <td>DeepPink3</td>
+            <td>205 16 118</td>
+            <td>#CD1076</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 137, 112); "></td>
+            <td>LemonChiffon4</td>
+            <td>139 137 112</td>
+            <td>#8B8970</td>
+            <td style="background-color: rgb(139, 10, 80); "></td>
+            <td>DeepPink4</td>
+            <td>139 10 80</td>
+            <td>#8B0A50</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 248, 220); "></td>
+            <td>Cornsilk1</td>
+            <td>255 248 220</td>
+            <td>#FFF8DC</td>
+            <td style="background-color: rgb(255, 110, 180); "></td>
+            <td>HotPink1</td>
+            <td>255 110 180</td>
+            <td>#FF6EB4</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 232, 205); "></td>
+            <td>Cornsilk2</td>
+            <td>238 232 205</td>
+            <td>#EEE8CD</td>
+            <td style="background-color: rgb(238, 106, 167); "></td>
+            <td>HotPink2</td>
+            <td>238 106 167</td>
+            <td>#EE6AA7</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 200, 177); "></td>
+            <td>Cornsilk3</td>
+            <td>205 200 177</td>
+            <td>#CDC8B1</td>
+            <td style="background-color: rgb(205, 96, 144); "></td>
+            <td>HotPink3</td>
+            <td>205 96 144</td>
+            <td>#CD6090</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 136, 120); "></td>
+            <td>Cornsilk4</td>
+            <td>139 136 120</td>
+            <td>#8B8878</td>
+            <td style="background-color: rgb(139, 58, 98); "></td>
+            <td>HotPink4</td>
+            <td>139 58 98</td>
+            <td>#8B3A62</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 255, 240); "></td>
+            <td>Ivory1</td>
+            <td>255 255 240</td>
+            <td>#FFFFF0</td>
+            <td style="background-color: rgb(255, 181, 197); "></td>
+            <td>Pink1</td>
+            <td>255 181 197</td>
+            <td>#FFB5C5</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 238, 224); "></td>
+            <td>Ivory2</td>
+            <td>238 238 224</td>
+            <td>#EEEEE0</td>
+            <td style="background-color: rgb(238, 169, 184); "></td>
+            <td>Pink2</td>
+            <td>238 169 184</td>
+            <td>#EEA9B8</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 205, 193); "></td>
+            <td>Ivory3</td>
+            <td>205 205 193</td>
+            <td>#CDCDC1</td>
+            <td style="background-color: rgb(205, 145, 158); "></td>
+            <td>Pink3</td>
+            <td>205 145 158</td>
+            <td>#CD919E</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 139, 131); "></td>
+            <td>Ivory4</td>
+            <td>139 139 131</td>
+            <td>#8B8B83</td>
+            <td style="background-color: rgb(139, 99, 108); "></td>
+            <td>Pink4</td>
+            <td>139 99 108</td>
+            <td>#8B636C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 255, 240); "></td>
+            <td>Honeydew1</td>
+            <td>240 255 240</td>
+            <td>#F0FFF0</td>
+            <td style="background-color: rgb(255, 174, 185); "></td>
+            <td>LightPink1</td>
+            <td>255 174 185</td>
+            <td>#FFAEB9</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(224, 238, 224); "></td>
+            <td>Honeydew2</td>
+            <td>224 238 224</td>
+            <td>#E0EEE0</td>
+            <td style="background-color: rgb(238, 162, 173); "></td>
+            <td>LightPink2</td>
+            <td>238 162 173</td>
+            <td>#EEA2AD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(193, 205, 193); "></td>
+            <td>Honeydew3</td>
+            <td>193 205 193</td>
+            <td>#C1CDC1</td>
+            <td style="background-color: rgb(205, 140, 149); "></td>
+            <td>LightPink3</td>
+            <td>205 140 149</td>
+            <td>#CD8C95</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(131, 139, 131); "></td>
+            <td>Honeydew4</td>
+            <td>131 139 131</td>
+            <td>#838B83</td>
+            <td style="background-color: rgb(139, 95, 101); "></td>
+            <td>LightPink4</td>
+            <td>139 95 101</td>
+            <td>#8B5F65</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 240, 245); "></td>
+            <td>LavenderBlush1</td>
+            <td>255 240 245</td>
+            <td>#FFF0F5</td>
+            <td style="background-color: rgb(255, 130, 171); "></td>
+            <td>PaleVioletRed1</td>
+            <td>255 130 171</td>
+            <td>#FF82AB</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 224, 229); "></td>
+            <td>LavenderBlush2</td>
+            <td>238 224 229</td>
+            <td>#EEE0E5</td>
+            <td style="background-color: rgb(238, 121, 159); "></td>
+            <td>PaleVioletRed2</td>
+            <td>238 121 159</td>
+            <td>#EE799F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 193, 197); "></td>
+            <td>LavenderBlush3</td>
+            <td>205 193 197</td>
+            <td>#CDC1C5</td>
+            <td style="background-color: rgb(205, 104, 137); "></td>
+            <td>PaleVioletRed3</td>
+            <td>205 104 137</td>
+            <td>#CD6889</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 131, 134); "></td>
+            <td>LavenderBlush4</td>
+            <td>139 131 134</td>
+            <td>#8B8386</td>
+            <td style="background-color: rgb(139, 71, 93); "></td>
+            <td>PaleVioletRed4</td>
+            <td>139 71 93</td>
+            <td>#8B475D</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(255, 228, 225); "></td>
+            <td>MistyRose1</td>
+            <td>255 228 225</td>
+            <td>#FFE4E1</td>
+            <td style="background-color: rgb(255, 52, 179); "></td>
+            <td>Maroon1</td>
+            <td>255 52 179</td>
+            <td>#FF34B3</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(238, 213, 210); "></td>
+            <td>MistyRose2</td>
+            <td>238 213 210</td>
+            <td>#EED5D2</td>
+            <td style="background-color: rgb(238, 48, 167); "></td>
+            <td>Maroon2</td>
+            <td>238 48 167</td>
+            <td>#EE30A7</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(205, 183, 181); "></td>
+            <td>MistyRose3</td>
+            <td>205 183 181</td>
+            <td>#CDB7B5</td>
+            <td style="background-color: rgb(205, 41, 144); "></td>
+            <td>Maroon3</td>
+            <td>205 41 144</td>
+            <td>#CD2990</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(139, 125, 123); "></td>
+            <td>MistyRose4</td>
+            <td>139 125 123</td>
+            <td>#8B7D7B</td>
+            <td style="background-color: rgb(139, 28, 98); "></td>
+            <td>Maroon4</td>
+            <td>139 28 98</td>
+            <td>#8B1C62</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(240, 255, 255); "></td>
+            <td>Azure1</td>
+            <td>240 255 255</td>
+            <td>#F0FFFF</td>
+            <td style="background-color: rgb(255, 62, 150); "></td>
+            <td>VioletRed1</td>
+            <td>255 62 150</td>
+            <td>#FF3E96</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(224, 238, 238); "></td>
+            <td>Azure2</td>
+            <td>224 238 238</td>
+            <td>#E0EEEE</td>
+            <td style="background-color: rgb(238, 58, 140); "></td>
+            <td>VioletRed2</td>
+            <td>238 58 140</td>
+            <td>#EE3A8C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(193, 205, 205); "></td>
+            <td>Azure3</td>
+            <td>193 205 205</td>
+            <td>#C1CDCD</td>
+            <td style="background-color: rgb(205, 50, 120); "></td>
+            <td>VioletRed3</td>
+            <td>205 50 120</td>
+            <td>#CD3278</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(131, 139, 139); "></td>
+            <td>Azure4</td>
+            <td>131 139 139</td>
+            <td>#838B8B</td>
+            <td style="background-color: rgb(139, 34, 82); "></td>
+            <td>VioletRed4</td>
+            <td>139 34 82</td>
+            <td>#8B2252</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(131, 111, 255); "></td>
+            <td>SlateBlue1</td>
+            <td>131 111 255</td>
+            <td>#836FFF</td>
+            <td style="background-color: rgb(255, 0, 255); "></td>
+            <td>Magenta1</td>
+            <td>255 0 255</td>
+            <td>#FF00FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(122, 103, 238); "></td>
+            <td>SlateBlue2</td>
+            <td>122 103 238</td>
+            <td>#7A67EE</td>
+            <td style="background-color: rgb(238, 0, 238); "></td>
+            <td>Magenta2</td>
+            <td>238 0 238</td>
+            <td>#EE00EE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(105, 89, 205); "></td>
+            <td>SlateBlue3</td>
+            <td>105 89 205</td>
+            <td>#6959CD</td>
+            <td style="background-color: rgb(205, 0, 205); "></td>
+            <td>Magenta3</td>
+            <td>205 0 205</td>
+            <td>#CD00CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(71, 60, 139); "></td>
+            <td>SlateBlue4</td>
+            <td>71 60 139</td>
+            <td>#473C8B</td>
+            <td style="background-color: rgb(139, 0, 139); "></td>
+            <td>Magenta4</td>
+            <td>139 0 139</td>
+            <td>#8B008B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(72, 118, 255); "></td>
+            <td>RoyalBlue1</td>
+            <td>72 118 255</td>
+            <td>#4876FF</td>
+            <td style="background-color: rgb(255, 131, 250); "></td>
+            <td>Orchid1</td>
+            <td>255 131 250</td>
+            <td>#FF83FA</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(67, 110, 238); "></td>
+            <td>RoyalBlue2</td>
+            <td>67 110 238</td>
+            <td>#436EEE</td>
+            <td style="background-color: rgb(238, 122, 233); "></td>
+            <td>Orchid2</td>
+            <td>238 122 233</td>
+            <td>#EE7AE9</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(58, 95, 205); "></td>
+            <td>RoyalBlue3</td>
+            <td>58 95 205</td>
+            <td>#3A5FCD</td>
+            <td style="background-color: rgb(205, 105, 201); "></td>
+            <td>Orchid3</td>
+            <td>205 105 201</td>
+            <td>#CD69C9</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(39, 64, 139); "></td>
+            <td>RoyalBlue4</td>
+            <td>39 64 139</td>
+            <td>#27408B</td>
+            <td style="background-color: rgb(139, 71, 137); "></td>
+            <td>Orchid4</td>
+            <td>139 71 137</td>
+            <td>#8B4789</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 255); "></td>
+            <td>Blue1</td>
+            <td>0 0 255</td>
+            <td>#0000FF</td>
+            <td style="background-color: rgb(255, 187, 255); "></td>
+            <td>Plum1</td>
+            <td>255 187 255</td>
+            <td>#FFBBFF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 238); "></td>
+            <td>Blue2</td>
+            <td>0 0 238</td>
+            <td>#0000EE</td>
+            <td style="background-color: rgb(238, 174, 238); "></td>
+            <td>Plum2</td>
+            <td>238 174 238</td>
+            <td>#EEAEEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 205); "></td>
+            <td>Blue3</td>
+            <td>0 0 205</td>
+            <td>#0000CD</td>
+            <td style="background-color: rgb(205, 150, 205); "></td>
+            <td>Plum3</td>
+            <td>205 150 205</td>
+            <td>#CD96CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 0, 139); "></td>
+            <td>Blue4</td>
+            <td>0 0 139</td>
+            <td>#00008B</td>
+            <td style="background-color: rgb(139, 102, 139); "></td>
+            <td>Plum4</td>
+            <td>139 102 139</td>
+            <td>#8B668B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(30, 144, 255); "></td>
+            <td>DodgerBlue1</td>
+            <td>30 144 255</td>
+            <td>#1E90FF</td>
+            <td style="background-color: rgb(224, 102, 255); "></td>
+            <td>MediumOrchid1</td>
+            <td>224 102 255</td>
+            <td>#E066FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(28, 134, 238); "></td>
+            <td>DodgerBlue2</td>
+            <td>28 134 238</td>
+            <td>#1C86EE</td>
+            <td style="background-color: rgb(209, 95, 238); "></td>
+            <td>MediumOrchid2</td>
+            <td>209 95 238</td>
+            <td>#D15FEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(24, 116, 205); "></td>
+            <td>DodgerBlue3</td>
+            <td>24 116 205</td>
+            <td>#1874CD</td>
+            <td style="background-color: rgb(180, 82, 205); "></td>
+            <td>MediumOrchid3</td>
+            <td>180 82 205</td>
+            <td>#B452CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(16, 78, 139); "></td>
+            <td>DodgerBlue4</td>
+            <td>16 78 139</td>
+            <td>#104E8B</td>
+            <td style="background-color: rgb(122, 55, 139); "></td>
+            <td>MediumOrchid4</td>
+            <td>122 55 139</td>
+            <td>#7A378B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(99, 184, 255); "></td>
+            <td>SteelBlue1</td>
+            <td>99 184 255</td>
+            <td>#63B8FF</td>
+            <td style="background-color: rgb(191, 62, 255); "></td>
+            <td>DarkOrchid1</td>
+            <td>191 62 255</td>
+            <td>#BF3EFF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(92, 172, 238); "></td>
+            <td>SteelBlue2</td>
+            <td>92 172 238</td>
+            <td>#5CACEE</td>
+            <td style="background-color: rgb(178, 58, 238); "></td>
+            <td>DarkOrchid2</td>
+            <td>178 58 238</td>
+            <td>#B23AEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(79, 148, 205); "></td>
+            <td>SteelBlue3</td>
+            <td>79 148 205</td>
+            <td>#4F94CD</td>
+            <td style="background-color: rgb(154, 50, 205); "></td>
+            <td>DarkOrchid3</td>
+            <td>154 50 205</td>
+            <td>#9A32CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(54, 100, 139); "></td>
+            <td>SteelBlue4</td>
+            <td>54 100 139</td>
+            <td>#36648B</td>
+            <td style="background-color: rgb(104, 34, 139); "></td>
+            <td>DarkOrchid4</td>
+            <td>104 34 139</td>
+            <td>#68228B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 191, 255); "></td>
+            <td>DeepSkyBlue1</td>
+            <td>0 191 255</td>
+            <td>#00BFFF</td>
+            <td style="background-color: rgb(155, 48, 255); "></td>
+            <td>Purple1</td>
+            <td>155 48 255</td>
+            <td>#9B30FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 178, 238); "></td>
+            <td>DeepSkyBlue2</td>
+            <td>0 178 238</td>
+            <td>#00B2EE</td>
+            <td style="background-color: rgb(145, 44, 238); "></td>
+            <td>Purple2</td>
+            <td>145 44 238</td>
+            <td>#912CEE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 154, 205); "></td>
+            <td>DeepSkyBlue3</td>
+            <td>0 154 205</td>
+            <td>#009ACD</td>
+            <td style="background-color: rgb(125, 38, 205); "></td>
+            <td>Purple3</td>
+            <td>125 38 205</td>
+            <td>#7D26CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(0, 104, 139); "></td>
+            <td>DeepSkyBlue4</td>
+            <td>0 104 139</td>
+            <td>#00688B</td>
+            <td style="background-color: rgb(85, 26, 139); "></td>
+            <td>Purple4</td>
+            <td>85 26 139</td>
+            <td>#551A8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(135, 206, 255); "></td>
+            <td>SkyBlue1</td>
+            <td>135 206 255</td>
+            <td>#87CEFF</td>
+            <td style="background-color: rgb(171, 130, 255); "></td>
+            <td>MediumPurple1</td>
+            <td>171 130 255</td>
+            <td>#AB82FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(126, 192, 238); "></td>
+            <td>SkyBlue2</td>
+            <td>126 192 238</td>
+            <td>#7EC0EE</td>
+            <td style="background-color: rgb(159, 121, 238); "></td>
+            <td>MediumPurple2</td>
+            <td>159 121 238</td>
+            <td>#9F79EE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(108, 166, 205); "></td>
+            <td>SkyBlue3</td>
+            <td>108 166 205</td>
+            <td>#6CA6CD</td>
+            <td style="background-color: rgb(137, 104, 205); "></td>
+            <td>MediumPurple3</td>
+            <td>137 104 205</td>
+            <td>#8968CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(74, 112, 139); "></td>
+            <td>SkyBlue4</td>
+            <td>74 112 139</td>
+            <td>#4A708B</td>
+            <td style="background-color: rgb(93, 71, 139); "></td>
+            <td>MediumPurple4</td>
+            <td>93 71 139</td>
+            <td>#5D478B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(176, 226, 255); "></td>
+            <td>LightSkyBlue1</td>
+            <td>176 226 255</td>
+            <td>#B0E2FF</td>
+            <td style="background-color: rgb(255, 225, 255); "></td>
+            <td>Thistle1</td>
+            <td>255 225 255</td>
+            <td>#FFE1FF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(164, 211, 238); "></td>
+            <td>LightSkyBlue2</td>
+            <td>164 211 238</td>
+            <td>#A4D3EE</td>
+            <td style="background-color: rgb(238, 210, 238); "></td>
+            <td>Thistle2</td>
+            <td>238 210 238</td>
+            <td>#EED2EE</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(141, 182, 205); "></td>
+            <td>LightSkyBlue3</td>
+            <td>141 182 205</td>
+            <td>#8DB6CD</td>
+            <td style="background-color: rgb(205, 181, 205); "></td>
+            <td>Thistle3</td>
+            <td>205 181 205</td>
+            <td>#CDB5CD</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(96, 123, 139); "></td>
+            <td>LightSkyBlue4</td>
+            <td>96 123 139</td>
+            <td>#607B8B</td>
+            <td style="background-color: rgb(139, 123, 139); "></td>
+            <td>Thistle4</td>
+            <td>139 123 139</td>
+            <td>#8B7B8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(198, 226, 255); "></td>
+            <td>SlateGray1</td>
+            <td>198 226 255</td>
+            <td>#C6E2FF</td>
+            <td style="background-color: rgb(28, 28, 28); "></td>
+            <td>grey11</td>
+            <td>28 28 28</td>
+            <td>#1C1C1C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(185, 211, 238); "></td>
+            <td>SlateGray2</td>
+            <td>185 211 238</td>
+            <td>#B9D3EE</td>
+            <td style="background-color: rgb(54, 54, 54); "></td>
+            <td>grey21</td>
+            <td>54 54 54</td>
+            <td>#363636</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(159, 182, 205); "></td>
+            <td>SlateGray3</td>
+            <td>159 182 205</td>
+            <td>#9FB6CD</td>
+            <td style="background-color: rgb(79, 79, 79); "></td>
+            <td>grey31</td>
+            <td>79 79 79</td>
+            <td>#4F4F4F</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(108, 123, 139); "></td>
+            <td>SlateGray4</td>
+            <td>108 123 139</td>
+            <td>#6C7B8B</td>
+            <td style="background-color: rgb(105, 105, 105); "></td>
+            <td>grey41</td>
+            <td>105 105 105</td>
+            <td>#696969</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(202, 225, 255); "></td>
+            <td>LightSteelBlue1</td>
+            <td>202 225 255</td>
+            <td>#CAE1FF</td>
+            <td style="background-color: rgb(130, 130, 130); "></td>
+            <td>grey51</td>
+            <td>130 130 130</td>
+            <td>#828282</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(188, 210, 238); "></td>
+            <td>LightSteelBlue2</td>
+            <td>188 210 238</td>
+            <td>#BCD2EE</td>
+            <td style="background-color: rgb(156, 156, 156); "></td>
+            <td>grey61</td>
+            <td>156 156 156</td>
+            <td>#9C9C9C</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(162, 181, 205); "></td>
+            <td>LightSteelBlue3</td>
+            <td>162 181 205</td>
+            <td>#A2B5CD</td>
+            <td style="background-color: rgb(181, 181, 181); "></td>
+            <td>grey71</td>
+            <td>181 181 181</td>
+            <td>#B5B5B5</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(110, 123, 139); "></td>
+            <td>LightSteelBlue4</td>
+            <td>110 123 139</td>
+            <td>#6E7B8B</td>
+            <td style="background-color: rgb(207, 207, 207); "></td>
+            <td>gray81</td>
+            <td>207 207 207</td>
+            <td>#CFCFCF</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(191, 239, 255); "></td>
+            <td>LightBlue1</td>
+            <td>191 239 255</td>
+            <td>#BFEFFF</td>
+            <td style="background-color: rgb(232, 232, 232); "></td>
+            <td>gray91</td>
+            <td>232 232 232</td>
+            <td>#E8E8E8</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(178, 223, 238); "></td>
+            <td>LightBlue2</td>
+            <td>178 223 238</td>
+            <td>#B2DFEE</td>
+            <td style="background-color: rgb(169, 169, 169); "></td>
+            <td>DarkGrey</td>
+            <td>169 169 169</td>
+            <td>#A9A9A9</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(154, 192, 205); "></td>
+            <td>LightBlue3</td>
+            <td>154 192 205</td>
+            <td>#9AC0CD</td>
+            <td style="background-color: rgb(0, 0, 139); "></td>
+            <td>DarkBlue</td>
+            <td>0 0 139</td>
+            <td>#00008B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(104, 131, 139); "></td>
+            <td>LightBlue4</td>
+            <td>104 131 139</td>
+            <td>#68838B</td>
+            <td style="background-color: rgb(0, 139, 139); "></td>
+            <td>DarkCyan</td>
+            <td>0 139 139</td>
+            <td>#008B8B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(224, 255, 255); "></td>
+            <td>LightCyan1</td>
+            <td>224 255 255</td>
+            <td>#E0FFFF</td>
+            <td style="background-color: rgb(139, 0, 139); "></td>
+            <td>DarkMagenta</td>
+            <td>139 0 139</td>
+            <td>#8B008B</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(209, 238, 238); "></td>
+            <td>LightCyan2</td>
+            <td>209 238 238</td>
+            <td>#D1EEEE</td>
+            <td style="background-color: rgb(139, 0, 0); "></td>
+            <td>DarkRed</td>
+            <td>139 0 0</td>
+            <td>#8B0000</td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(180, 205, 205); "></td>
+            <td>LightCyan3</td>
+            <td>180 205 205</td>
+            <td>#B4CDCD</td>
+            <td></td>
+           </tr>
+           <tr>
+            <td style="background-color: rgb(122, 139, 139); "></td>
+            <td>LightCyan4</td>
+            <td>122 139 139</td>
+            <td>#7A8B8B</td>
+            <td style="background-color: rgb(144, 238, 144); "></td>
+            <td>LightGreen</td>
+            <td>144 238 144</td>
+            <td>#90EE90</td>
+           </tr>
+  		</tbody></table>
+					</div>
+				<!--RGB 颜色参考-->
+			  </div>
+			  <div class="tab-pane fade" id="code">
+				<!--HTTP 状态码详解-->
+<table class="table table-bordered table-striped" width="100%" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<th class="separateColor" width="60px;">状态码</th>
+		<th>含义</th>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</td>
+	</tr>
+	<tr>
+		<td>101</td>
+		<td>服务器已经理解了客户端的请求，并将通过Upgrade 消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。
+　　只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP 版本比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。</td>
+	</tr>
+	<tr>
+		<td>102</td>
+		<td>由WebDAV（RFC 2518）扩展的状态码，代表处理将被继续执行。</td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>请求已成功，请求所希望的响应头或数据体将随此响应返回。</td>
+	</tr>
+	<tr>
+		<td>201</td>
+		<td>请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其 URI 已经随Location 头信息返回。假如需要的资源无法及时建立的话，应当返回 '202 Accepted'。</td>
+	</tr>
+	<tr>
+		<td>202</td>
+		<td>服务器已接受请求，但尚未处理。正如它可能被拒绝一样，最终该请求可能会也可能不会被执行。在异步操作的场合下，没有比发送这个状态码更方便的做法了。
+　　返回202状态码的响应的目的是允许服务器接受其他过程的请求（例如某个每天只执行一次的基于批处理的操作），而不必让客户端一直保持与服务器的连接直到批处理操作全部完成。在接受请求处理并返回202状态码的响应应当在返回的实体中包含一些指示处理当前状态的信息，以及指向处理状态监视器或状态预测的指针，以便用户能够估计操作是否已经完成。</td>
+	</tr>
+	<tr>
+		<td>203</td>
+		<td>服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超级。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。</td>
+	</tr>
+	<tr>
+		<td>204</td>
+		<td>服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。
+　　如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。
+　　由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。</td>
+	</tr>
+	<tr>
+		<td>205</td>
+		<td>服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。
+　　与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。</td>
+	</tr>
+	<tr>
+		<td>206</td>
+		<td>服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或者迅雷这类的 HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。
+　　该请求必须包含 Range 头信息来指示客户端希望得到的内容范围，并且可能包含 If-Range 来作为请求条件。
+　　响应必须包含如下的头部域：
+　　Content-Range 用以指示本次响应中返回的内容的范围；如果是 Content-Type 为 multipart/byteranges 的多段下载，则每一 multipart 段中都应包含 Content-Range 域用以指示本段的内容范围。假如响应中包含 Content-Length，那么它的数值必须匹配它返回的内容范围的真实字节数。
+　　Date
+　　ETag 和/或 Content-Location，假如同样的请求本应该返回200响应。
+　　Expires, Cache-Control，和/或 Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。
+　　假如本响应请求使用了 If-Range 强缓存验证，那么本次响应不应该包含其他实体头；假如本响应的请求使用了 If-Range 弱缓存验证，那么本次响应禁止包含其他实体头；这避免了缓存的实体内容和更新了的实体头信息之间的不一致。否则，本响应就应当包含所有本应该返回200响应中应当返回的所有实体头部域。
+　　假如 ETag 或 Last-Modified 头部不能精确匹配的话，则客户端缓存应禁止将206响应返回的内容与之前任何缓存过的内容组合在一起。
+　　任何不支持 Range 以及 Content-Range 头的缓存都禁止缓存206响应返回的内容。</td>
+	</tr>
+	<tr>
+		<td>207</td>
+		<td>由WebDAV(RFC 2518)扩展的状态码，代表之后的消息体将是一个XML消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。</td>
+	</tr>
+	<tr>
+		<td>300</td>
+		<td>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。
+　　除非这是一个 HEAD 请求，否则该响应应当包括一个资源特性及地址的列表的实体，以便用户或浏览器从中选择最合适的重定向地址。这个实体的格式由 Content-Type 定义的格式所决定。浏览器可能根据响应的格式以及浏览器自身能力，自动作出最合适的选择。当然，RFC 2616规范并没有规定这样的自动选择该如何进行。
+　　如果服务器本身已经有了首选的回馈选择，那么在 Location 中应当指明这个回馈的 URI；浏览器可能会将这个 Location 值作为自动重定向的地址。此外，除非额外指定，否则这个响应也是可缓存的。</td>
+	</tr>
+	<tr>
+		<td>301</td>
+		<td>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个 URI 之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。除非额外指定，否则这个响应也是可缓存的。
+　　新的永久性的 URI 应当在响应的 Location 域中返回。除非这是一个 HEAD 请求，否则响应的实体中应当包含指向新的 URI 的超链接及简短说明。
+　　如果这不是一个 GET 或者 HEAD 请求，因此浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。
+　　注意：对于某些使用 HTTP/1.0 协议的浏览器，当它们发送的 POST 请求得到了一个301响应的话，接下来的重定向请求将会变成 GET 方式。</td>
+	</tr>
+	<tr>
+		<td>302</td>
+		<td>请求的资源现在临时从不同的 URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。
+　　新的临时性的 URI 应当在响应的 Location 域中返回。除非这是一个 HEAD 请求，否则响应的实体中应当包含指向新的 URI 的超链接及简短说明。
+　　如果这不是一个 GET 或者 HEAD 请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。
+　　注意：虽然RFC 1945和RFC 2068规范不允许客户端在重定向时改变请求的方法，但是很多现存的浏览器将302响应视作为303响应，并且使用 GET 方式访问在 Location 中规定的 URI，而无视原先请求的方法。状态码303和307被添加了进来，用以明确服务器期待客户端进行何种反应。</td>
+	</tr>
+		<tr>
+		<td>303</td>
+		<td>对应当前请求的响应可以在另一个 URI 上被找到，而且客户端应当采用 GET 的方式访问那个资源。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的 URI 不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。
+　　新的 URI 应当在响应的 Location 域中返回。除非这是一个 HEAD 请求，否则响应的实体中应当包含指向新的 URI 的超链接及简短说明。
+　　注意：许多 HTTP/1.1 版以前的 浏览器不能正确理解303状态。如果需要考虑与这些浏览器之间的互动，302状态码应该可以胜任，因为大多数的浏览器处理302响应时的方式恰恰就是上述规范要求客户端处理303响应时应当做的。</td>
+	</tr>
+		<tr>
+		<td>304</td>
+		<td>如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。304响应禁止包含消息体，因此始终以消息头后的第一个空行结尾。
+　　该响应必须包含以下的头信息：
+　　Date，除非这个服务器没有时钟。假如没有时钟的服务器也遵守这些规则，那么代理服务器以及客户端可以自行将 Date 字段添加到接收到的响应头中去（正如RFC 2068中规定的一样），缓存机制将会正常工作。
+　　ETag 和/或 Content-Location，假如同样的请求本应返回200响应。
+　　Expires, Cache-Control，和/或Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。
+　　假如本响应请求使用了强缓存验证，那么本次响应不应该包含其他实体头；否则（例如，某个带条件的 GET 请求使用了弱缓存验证），本次响应禁止包含其他实体头；这避免了缓存了的实体内容和更新了的实体头信息之间的不一致。
+　　假如某个304响应指明了当前某个实体没有缓存，那么缓存系统必须忽视这个响应，并且重复发送不包含限制条件的请求。
+　　假如接收到一个要求更新某个缓存条目的304响应，那么缓存系统必须更新整个条目以反映所有在响应中被更新的字段的值。</td>
+	</tr>
+		<tr>
+		<td>305</td>
+		<td>被请求的资源必须通过指定的代理才能被访问。Location 域中将给出指定的代理所在的 URI 信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问相应资源。只有原始服务器才能建立305响应。
+　　注意：RFC 2068中没有明确305响应是为了重定向一个单独的请求，而且只能被原始服务器建立。忽视这些限制可能导致严重的安全后果。</td>
+	</tr>
+		<tr>
+		<td>306</td>
+		<td>在最新版的规范中，306状态码已经不再被使用。</td>
+	</tr>
+		<tr>
+		<td>307</td>
+		<td>请求的资源现在临时从不同的URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。
+　　新的临时性的URI 应当在响应的 Location 域中返回。除非这是一个HEAD 请求，否则响应的实体中应当包含指向新的URI 的超链接及简短说明。因为部分浏览器不能识别307响应，因此需要添加上述必要信息以便用户能够理解并向新的 URI 发出访问请求。
+　　如果这不是一个GET 或者 HEAD 请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</td>
+	</tr>
+		<tr>
+		<td>400</td>
+		<td>1、语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。
+　　2、请求参数有误。</td>
+	</tr>
+			<tr>
+		<td>401</td>
+		<td>当前请求需要用户验证。该响应必须包含一个适用于被请求资源的 WWW-Authenticate 信息头用以询问用户信息。客户端可以重复提交一个包含恰当的 Authorization 头信息的请求。如果当前请求已经包含了 Authorization 证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。参见RFC 2617。</td>
+	</tr>		<tr>
+		<td>402</td>
+		<td>该状态码是为了将来可能的需求而预留的。</td>
+	</tr>		<tr>
+		<td>403</td>
+		<td>服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个 HEAD 请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个404响应，假如它不希望让客户端获得任何信息。</td>
+	</tr>		<tr>
+		<td>404</td>
+		<td>请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。</td>
+	</tr>		<tr>
+		<td>405</td>
+		<td>请求行中指定的请求方法不能被用于请求相应的资源。该响应必须返回一个Allow 头信息用以表示出当前资源能够接受的请求方法的列表。
+　　鉴于 PUT，DELETE 方法会对服务器上的资源进行写操作，因而绝大部分的网页服务器都不支持或者在默认配置下不允许上述请求方法，对于此类请求均会返回405错误。</td>
+	</tr>		<tr>
+		<td>406</td>
+		<td>请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体。
+　　除非这是一个 HEAD 请求，否则该响应就应当返回一个包含可以让用户或者浏览器从中选择最合适的实体特性以及地址列表的实体。实体的格式由 Content-Type 头中定义的媒体类型决定。浏览器可以根据格式及自身能力自行作出最佳选择。但是，规范中并没有定义任何作出此类自动选择的标准。</td>
+	</tr>		<tr>
+		<td>407</td>
+		<td>　与401响应类似，只不过客户端必须在代理服务器上进行身份验证。代理服务器必须返回一个 Proxy-Authenticate 用以进行身份询问。客户端可以返回一个 Proxy-Authorization 信息头用以验证。参见RFC 2617。</td>
+	</tr>		<tr>
+		<td>408</td>
+		<td>请求超时。客户端没有在服务器预备等待的时间内完成一个请求的发送。客户端可以随时再次提交这一请求而无需进行任何更改。</td>
+	</tr>		<tr>
+		<td>409</td>
+		<td>由于和被请求的资源的当前状态之间存在冲突，请求无法完成。这个代码只允许用在这样的情况下才能被使用：用户被认为能够解决冲突，并且会重新提交新的请求。该响应应当包含足够的信息以便用户发现冲突的源头。
+　　冲突通常发生于对 PUT 请求的处理中。例如，在采用版本检查的环境下，某次 PUT 提交的对特定资源的修改请求所附带的版本信息与之前的某个（第三方）请求向冲突，那么此时服务器就应该返回一个409错误，告知用户请求无法完成。此时，响应实体中很可能会包含两个冲突版本之间的差异比较，以便用户重新提交归并以后的新版本。</td>
+	</tr>		<tr>
+		<td>410</td>
+		<td>被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址。这样的状况应当被认为是永久性的。如果可能，拥有链接编辑功能的客户端应当在获得用户许可后删除所有指向这个地址的引用。如果服务器不知道或者无法确定这个状况是否是永久的，那么就应该使用404状态码。除非额外说明，否则这个响应是可缓存的。
+　　410响应的目的主要是帮助网站管理员维护网站，通知用户该资源已经不再可用，并且服务器拥有者希望所有指向这个资源的远端连接也被删除。这类事件在限时、增值服务中很普遍。同样，410响应也被用于通知客户端在当前服务器站点上，原本属于某个个人的资源已经不再可用。当然，是否需要把所有永久不可用的资源标记为'410 Gone'，以及是否需要保持此标记多长时间，完全取决于服务器拥有者。</td>
+	</tr>		<tr>
+		<td>411</td>
+		<td>服务器拒绝在没有定义 Content-Length 头的情况下接受请求。在添加了表明请求消息体长度的有效 Content-Length 头之后，客户端可以再次提交该请求。</td>
+	</tr>		<tr>
+		<td>412</td>
+		<td>服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。</td>
+	</tr>		<tr>
+		<td>413</td>
+		<td>服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围。此种情况下，服务器可以关闭连接以免客户端继续发送此请求。
+　　如果这个状况是临时的，服务器应当返回一个 Retry-After 的响应头，以告知客户端可以在多少时间以后重新尝试。</td>
+	</tr>		<tr>
+		<td>414</td>
+		<td>请求的URI 长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。这比较少见，通常的情况包括：
+　　本应使用POST方法的表单提交变成了GET方法，导致查询字符串（Query String）过长。
+　　重定向URI “黑洞”，例如每次重定向把旧的 URI 作为新的 URI 的一部分，导致在若干次重定向后 URI 超长。
+　　客户端正在尝试利用某些服务器中存在的安全漏洞攻击服务器。这类服务器使用固定长度的缓冲读取或操作请求的 URI，当 GET 后的参数超过某个数值后，可能会产生缓冲区溢出，导致任意代码被执行[1]。没有此类漏洞的服务器，应当返回414状态码。</td>
+	</tr>		<tr>
+		<td>415</td>
+		<td>对于当前请求的方法和所请求的资源，请求中提交的实体并不是服务器中所支持的格式，因此请求被拒绝。</td>
+	</tr>		<tr>
+		<td>416</td>
+		<td>如果请求中包含了 Range 请求头，并且 Range 中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义 If-Range 请求头，那么服务器就应当返回416状态码。
+　　假如 Range 使用的是字节范围，那么这种情况就是指请求指定的所有数据范围的首字节位置都超过了当前资源的长度。服务器也应当在返回416状态码的同时，包含一个 Content-Range 实体头，用以指明当前资源的长度。这个响应也被禁止使用 multipart/byteranges 作为其 Content-Type。</td>
+	</tr>		<tr>
+		<td>417</td>
+		<td>在请求头 Expect 中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服务器，它有明显的证据证明在当前路由的下一个节点上，Expect 的内容无法被满足。</td>
+	</tr>		<tr>
+		<td>421</td>
+		<td>从当前客户端所在的IP地址到服务器的连接数超过了服务器许可的最大范围。通常，这里的IP地址指的是从服务器上看到的客户端地址（比如用户的网关或者代理服务器地址）。在这种情况下，连接数的计算可能涉及到不止一个终端用户。</td>
+	</tr>		<tr>
+		<td>422</td>
+		<td>从当前客户端所在的IP地址到服务器的连接数超过了服务器许可的最大范围。通常，这里的IP地址指的是从服务器上看到的客户端地址（比如用户的网关或者代理服务器地址）。在这种情况下，连接数的计算可能涉及到不止一个终端用户。</td>
+	</tr>		<tr>
+		<td>422</td>
+		<td>请求格式正确，但是由于含有语义错误，无法响应。（RFC 4918 WebDAV）423 Locked
+　　当前资源被锁定。（RFC 4918 WebDAV）</td>
+	</tr>		<tr>
+		<td>424</td>
+		<td>由于之前的某个请求发生的错误，导致当前请求失败，例如 PROPPATCH。（RFC 4918 WebDAV）</td>
+	</tr>		<tr>
+		<td>425</td>
+		<td>在WebDav Advanced Collections 草案中定义，但是未出现在《WebDAV 顺序集协议》（RFC 3658）中。</td>
+	</tr>		<tr>
+		<td>426</td>
+		<td>客户端应当切换到TLS/1.0。（RFC 2817）</td>
+	</tr>		<tr>
+		<td>449</td>
+		<td>由微软扩展，代表请求应当在执行完适当的操作后进行重试。</td>
+	</tr>		<tr>
+		<td>500</td>
+		<td>服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。</td>
+	</tr>		<tr>
+		<td>501</td>
+		<td>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。</td>
+	</tr>		<tr>
+		<td>502</td>
+		<td>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。</td>
+	</tr>		<tr>
+		<td>503</td>
+		<td>由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个 Retry-After 头用以标明这个延迟时间。如果没有给出这个 Retry-After 信息，那么客户端应当以处理500响应的方式处理它。
+　　注意：503状态码的存在并不意味着服务器在过载的时候必须使用它。某些服务器只不过是希望拒绝客户端的连接。</td>
+	</tr>		<tr>
+		<td>504</td>
+		<td>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。
+　　注意：某些代理服务器在DNS查询超时时会返回400或者500错误</td>
+	</tr>		<tr>
+		<td>505</td>
+		<td>服务器不支持，或者拒绝支持在请求中使用的 HTTP 版本。这暗示着服务器不能或不愿使用与客户端相同的版本。响应中应当包含一个描述了为何版本不被支持以及服务器支持哪些协议的实体。</td>
+	</tr>		<tr>
+		<td>506</td>
+		<td>由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误：被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。</td>
+	</tr>
+	<tr>
+		<td>507</td>
+		<td>服务器无法存储完成请求所必须的内容。这个状况被认为是临时的。WebDAV (RFC 4918)</td>
+	</tr>
+		<tr>
+		<td>509</td>
+		<td>服务器达到带宽限制。这不是一个官方的状态码，但是仍被广泛使用。</td>
+	</tr>
+		<tr>
+		<td>510</td>
+		<td>获取资源所需要的策略并没有没满足。（RFC 2774）</td>
+	</tr>
+</tbody></table>
+				<!--HTTP 状态码详解-->
+			  </div>
+			</div>
+            <hr>
+            <footer>
+                <p>
+                    Hongbo Li &copy; 2012 Powered by
+                    <a href="../docs/bootstrap/index.html" target="_blank">
+                        Bootstrap
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

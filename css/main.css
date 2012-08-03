@@ -1,0 +1,37 @@
+
+body{
+	font:12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
+	background: url(../img/background.png);
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+.hero-unit h1{
+	font-family:"微软雅黑";
+	margin-bottom:10px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family:"微软雅黑";margin-bottom:10px;
+}
+
+.action button{
+	margin: 10px 0;
+}
+
+/* for code plugin */
+.CodeMirror {
+	  background-color: #fff;
+	  border-radius: 3px;
+	  border: solid 1px #999;
+	  margin: 10px 0;
+}
+.CodeMirror-scroll {
+	overflow-x: hidden;
+}
+
+.code {
+	height:300px;
+	width:100%;
+}

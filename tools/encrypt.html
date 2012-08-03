@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            前端百宝箱
+        </title>
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 10px; }
+        </style>
+        <link href="../css/bootstrap.css" rel="stylesheet">
+		<link href="../css/main.css" rel="stylesheet">
+		<script src="../js/jquery-1.7.1.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+
+		<script type="text/javascript" src="CryptoJS/components/core-min.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/aes.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/tripledes.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/rabbit.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/rc4.js"></script>
+
+		<script type="text/javascript" src="CryptoJS/components/core-min.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/sha1.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/sha256.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/sha512.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/md5.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-sha1.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-sha224.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-sha256.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-sha384.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-sha512.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/hmac-md5.js"></script>
+		<script type="text/javascript" src="CryptoJS/rollups/pbkdf2.js"></script>
+
+		<script type="text/javascript" src="CryptoJS/components/enc-base64-min.js"></script>
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+            </script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </a>
+                    <a class="brand" href="#">
+                        前端百宝箱
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="../index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html.html">
+                                    HTML
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../css.html">
+                                    CSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../javascript.html">
+                                    JavaScript
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="../tools.html">
+                                    工具
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">	
+			<div class="alert alert-info">
+				<i class="icon-star"></i>&nbsp;&nbsp;各种编码格式的相互转换。
+			</div>
+			<ul id="tab" class="nav nav-tabs">
+			  <li class="active"><a href="#encrypt" data-toggle="tab">加密/解密</a></li>
+			  <li><a href="#hash" data-toggle="tab">散列/哈希</a></li>
+			  <li><a href="#base64" data-toggle="tab">BASE64</a></li>
+			</ul>
+ 
+			<div class="tab-content">
+			  <div class="tab-pane fade in active" id="encrypt">
+<div class="row">
+				<div class="span4">
+					<div class="leftBar">
+		<div class="title">明文:</div>
+    	<textarea class="code" name="message" id="msg_source" value="this is a example" onfocus="if(this.value=='this is a example'){this.value='';};this.select();" onblur="(this.value=='')?this.value='this is a example':this.value;" class="text_source">this is a example</textarea>
+    </div>
+				</div>
+				<div class="span2" style="margin-left:90px">
+<div style="margin-top:30px;">
+		<div>
+    		<label>加密算法:</label>
+			<ul style="list-style:none">
+                <li><label for="aes" class="radio"><input type="radio" name="encrypt_type" value="aes" checked="checked" id="aes">AES</label></li>
+            	<li><label for="des" class="radio"><input type="radio" name="encrypt_type" value="des" id="des">DES</label></li>
+            	<li><label for="rc4" class="radio"><input type="radio" name="encrypt_type" value="rc4" id="rc4">RC4</label></li>
+    			<li><label for="rabbit" class="radio"><input type="radio" name="encrypt_type" value="rabbit" id="rabbit">Rabbit</label></li>
+    			<li><label for="tripledes" class="radio"><input type="radio" name="encrypt_type" value="tripledes" id="tripledes">TripleDes</label></li>
+            </ul>
+        </div>
+		<div class="OptDetail Button">
+			
+    		<label class="input">密码:
+    		<input type="text" id="pwd" style="width:100px" />
+			</label>
+            <button class="btn btn-primary" onclick="javascript:encrypt();">加密 <i class="icon-chevron-right icon-white"></i></button><br/>
+            <button class="btn btn-primary" style="margin-top:20px;" onclick="javascript:decrypt();"><i class="icon-chevron-left icon-white"></i> 解密 </button>        </div>
+	</div>
+				</div>
+				<div class="span4">
+					<div class="rightBar">
+		<div class="title">密文:</div>
+		<textarea class="code" name="cipher" id="encrypt_result" onclick="this.focus();this.select();"></textarea>
+	</div>
+				</div>
+			</div>
+			  </div>
+	<script type='text/javascript'>
+		$(document).ready(function (){
+		$("#crypto").popover({placement:"bottom",title:"Crypto-JS",content:"Crypto-JS是一个使用JS实现的加密库，提供AES、DES、PBKDF2、SHA、MD5、RC4等多种算法。此工具使用这个库实现。"
+			});
+		});
+	    function encrypt(){
+		    switch($('input[name="encrypt_type"]:checked').val()){
+		    	case "aes":
+			    	$("#encrypt_result").val(CryptoJS.AES.encrypt($("#msg_source").val(),$("#pwd").val()));
+			    	break;
+		    	case "des":
+		    		$("#encrypt_result").val(CryptoJS.DES.encrypt($("#msg_source").val(),$("#pwd").val()));
+			    	break;
+			    case "rabbit":
+			    	$("#encrypt_result").val(CryptoJS.Rabbit.encrypt($("#msg_source").val(),$("#pwd").val()));
+			    	break;
+			    case "rc4":
+			    	$("#encrypt_result").val(CryptoJS.RC4.encrypt($("#msg_source").val(),$("#pwd").val()));
+			    	break;
+			    case "tripledes":
+			    	$("#encrypt_result").val(CryptoJS.TripleDES.encrypt($("#msg_source").val(),$("#pwd").val()));
+			    	break;
+			}
+	    }
+		function decrypt(){
+		    switch($('input[name="encrypt_type"]:checked').val()){
+		    	case "aes":
+			    	$("#msg_source").val(CryptoJS.AES.decrypt($("#encrypt_result").val(),$("#pwd").val()).toString(CryptoJS.enc.Utf8));
+			    	break;
+		    	case "des":
+		    		$("#msg_source").val(CryptoJS.DES.decrypt($("#encrypt_result").val(),$("#pwd").val()).toString(CryptoJS.enc.Utf8));
+			    	break;
+			    case "rabbit":
+			    	$("#msg_source").val(CryptoJS.Rabbit.decrypt($("#encrypt_result").val(),$("#pwd").val()).toString(CryptoJS.enc.Utf8));
+			    	break;
+			    case "rc4":
+			    	$("#msg_source").val(CryptoJS.RC4.decrypt($("#encrypt_result").val(),$("#pwd").val()).toString(CryptoJS.enc.Utf8));
+			    	break;
+			    case "tripledes":
+			    	$("#msg_source").val(CryptoJS.TripleDES.decrypt($("#encrypt_result").val(),$("#pwd").val()).toString(CryptoJS.enc.Utf8));
+			    	break;
+			   }
+	    }
+	</script>
+		<!--tab1 end-->
+			  <div class="tab-pane fade" id="hash">
+			  <table sytle="margin-left:auto;margin-right:auto;">
+		<tbody><tr>
+			<td>
+				<label>明文：</label>
+					<div class="topBar">
+        				<textarea style="width:600px;height:100px" name="message" id="message_source" value="this is a example" onfocus="if(this.value=='this is a example'){this.value='';};this.select();" onblur="(this.value=='')?this.value='this is a example':this.value;" class="text_source">this is a example</textarea>
+                    </div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label>散列/哈希算法：</label>
+			<div>
+					<div style="height:45px;margin:5px 0 5px 0;">
+					<button id="btn_sha1" class="btn btn-primary span2" onclick="javascript:hash('sha1');">SHA1</button>
+					<button id="btn_sha224" class="btn btn-primary span2" onclick="javascript:hash('sha224');">SHA224</button>
+					<button id="btn_sha256" class="btn btn-primary span2" onclick="javascript:hash('sha256');">SHA256</button>
+					<button id="btn_sha384" class="btn btn-primary span2" onclick="javascript:hash('sha384');">SHA384</button>
+					<button id="btn_sha512" class="btn btn-primary span2" onclick="javascript:hash('sha512');">SHA512</button>
+					<button id="btn_md5" class="btn btn-primary span2" onclick="javascript:hash('md5');">MD5</button>
+					</div>
+					<div style="height:45px;margin:5px 0 5px 0;">
+						<div class="btn-group" data-toggle="buttons-radio">
+							<button id="btn_hmacsha1" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacsha1');">HmacSHA1</button>
+							<button id="btn_hmacsha224" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacsha224');">HmacSHA224</button>
+							<button id="btn_hmacsha256" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacsha256');">HmacSHA256</button>
+							<button id="btn_hmacsha384" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacsha384');">HmacSHA384</button>
+							<button id="btn_hmacsha512" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacsha512');">HmacSHA512</button>
+							<button id="btn_hmacmd5" class="btn btn-primary span2" onclick="javascript:show_pwd('hmacmd5');">HmacMD5</button>
+							<button id="btn_pbkdf2" class="btn btn-primary span2" onclick="javascript:show_pwd('pbkdf2');">PBKDF2</button>
+						</div>
+					</div>
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="display:none;height:45px;" id="p_div">
+				<form class="well form-inline">
+    				<input type="hidden" id="hmac_type" value="">
+    				<span style="display:none;height:45px;" id="p_span">
+						<div class="input-prepend">
+        				<span class="add-on">密钥</span><input type="text" length="40" id="pwd" placeholder="在此输入密钥">
+						</div>
+    				</span>
+				
+    				<span style="display:none;height:45px;" id="k_span">
+    					<label>key长度：
+    					<select id="key_size" class="input-small">
+    						<option value="4" selected="selected">128位</option>
+    						<option value="8">256位</option>
+    						<option value="16">512位</option>
+    					</select>
+    					</label>
+						<div class="input-prepend">
+    					<span class="add-on">盐：</span><input type="text" id="salt" class="input-small" placeholder="在此输入盐">
+						</div>
+						<div class="input-prepend">
+    					<span class="add-on">迭代次数：</span><input type="text" id="iterations" class="input-small" placeholder="输入迭代次数">
+						</div>
+    				</span>
+					<a class="btn" href="javascript:hash($('#hmac_type').val(),true);">哈希/散列 <i class="icon-chevron-down icon-black"></i></a>
+				</form>
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>哈希值:</label>
+				<div class="bottomBar">
+					<textarea style="width:600px;height:100px" name="cipher" id="hash_result" onclick="this.focus();this.select();"></textarea>
+                </div>
+			</td>
+		</tr>
+	</tbody></table>
+	<script type='text/javascript'>
+	    function hash(type,flag){
+		    if(!flag)$(".buttonSelected").removeClass("buttonSelected");
+	    	switch(type){
+		    	case "sha1":
+		    		hide_pwd();
+		    		$("#btn_sha1").addClass("buttonSelected");
+		    		$("#hash_result").val(CryptoJS.SHA1($("#message_source").val()));
+		    		break;
+		    	case "sha224":
+		    		hide_pwd();
+		    		$("#btn_sha224").addClass("buttonSelected");
+		    		$("#hash_result").val(CryptoJS.SHA224($("#message_source").val()));
+		    		break;
+		    	case "sha256":
+		    		hide_pwd();
+		    		$("#btn_sha256").addClass("buttonSelected");
+		    	    $("#hash_result").val(CryptoJS.SHA256($("#message_source").val()));
+		    		break;
+		    	case "sha384":
+		    		hide_pwd();
+		    		$("#btn_sha384").addClass("selected");
+		    		$("#hash_result").val(CryptoJS.SHA384($("#message_source").val()));
+		    		break;
+		    	case "sha512":
+		    		hide_pwd();
+		    		$("#btn_sha512").addClass("buttonSelected");
+		    	    $("#hash_result").val(CryptoJS.SHA512($("#message_source").val()));
+		    		break;
+		    	case "md5":
+		    		hide_pwd();
+		    		$("#btn_md5").addClass("buttonSelected");
+		    	    $("#hash_result").val(CryptoJS.MD5($("#message_source").val()));
+		    		break;
+		    	case "hmacsha1":
+		    	    $("#hash_result").val(CryptoJS.HmacSHA1($("#message_source").val(),$("#pwd").val()));
+		    		break;
+		    	case "hmacsha224":
+		    	    $("#hash_result").val(CryptoJS.HmacSHA224($("#message_source").val(),$("#pwd").val()));
+		    		break;
+		    	case "hmacsha256":
+		    	    $("#hash_result").val(CryptoJS.HmacSHA256($("#message_source").val(),$("#pwd").val()));
+		    		break;
+		    	case "hmacsha384":
+		    	    $("#hash_result").val(CryptoJS.HmacSHA384($("#message_source").val(),$("#pwd").val()));
+		    		break;
+		    	case "hmacsha512":
+		    	    $("#hash_result").val(CryptoJS.HmacSHA512($("#message_source").val(),$("#pwd").val()));
+		    		break;
+		    	case "hmacmd5":
+		    	    $("#hash_result").val(CryptoJS.HmacMD5($("#message_source").val(),$("#pwd").val()));
+		    		break;
+				case "pbkdf2":
+					if(isNAN($("#iterations").val()))
+					{
+						var salt=CryptoJS.enc.Utf8.parse($("#salt").val());
+						var hash_str_pbkdf2=CryptoJS.PBKDF2(
+							$("#message_source").val(), salt,
+							{ keySize: parseInt($("#key_size").val()),
+							iterations: parseInt($("#iterations").val()) }
+						);
+						$("#hash_result").val(hash_str_pbkdf2);
+					}
+					else{
+					alert("迭代次数必须为数字");$("#salt").val("")}
+					break;
+	    	}
+	    }
+	    function show_pwd(type)
+	    {
+		    $(".buttonSelected").removeClass("buttonSelected");
+			if("pbkdf2"!=type){
+				$("#p_span").show();
+				$("#k_span").hide();
+    	    	switch(type){
+    	    		case "hmacsha1":
+    		    		$("#btn_hmacsha1").addClass("buttonSelected");
+    		    		break;
+    		    	case "hmacsha224":
+    		    		$("#btn_hmacsha224").addClass("buttonSelected");
+    		    		break;
+    		    	case "hmacsha256":
+    		    		$("#btn_hmacsha256").addClass("buttonSelected");
+    		    		break;
+    		    	case "hmacsha384":
+    		    		$("#btn_hmacsha384").addClass("buttonSelected");
+    		    		break;
+    		    	case "hmacsha512":
+    		    		$("#btn_hmacsha512").addClass("buttonSelected");
+    		    		break;
+    		    	case "hmacmd5":
+    		    		$("#btn_hmacmd5").addClass("buttonSelected");
+    		    		break;
+    	    	}
+			}
+			else{
+				$("#p_span").hide();
+				$("#k_span").show();
+				$("#btn_pbkdf2").addClass("buttonSelected");
+			}
+	    	$("#p_div").css("display","inline");
+	    	$("#hmac_type").val(type);
+	    	$("#hash_result").val("");
+	    }
+	    function hide_pwd(){
+	    	$("#p_div").css("display","none");
+	    }
+	    function copy_code(){
+	  		clipboardData.setData('Text',$("#hash_result").val());
+	    }
+		function isNAN(NAN)  
+        {  
+            var temp,reg;  
+            reg= /\d*/i;        //\d表示数字,*表示匹配多个数字  
+            temp = NAN.match(reg);  
+            return (temp==NAN)?true:false;  
+        }
+	</script>
+	<!--tab2 end-->
+			  </div>
+			  <div class="tab-pane fade" id="base64">
+				<div class="span4">
+<div class="leftBar">
+	<div class="title">明文:</div>
+	<textarea class="code" name="message" id="source" class="text_source">this is a example</textarea>
+</div>
+				</div>
+				<div class="span2" style="text-align:center;margin-top:100px;">
+<div class="operateLR">
+	<div class="OptDetail Button">
+        <button class="btn btn-primary" onclick="javascript:base64_encode();" style="margin-bottom:10px;">BASE64编码<i class="icon-chevron-right icon-white"></i></button>
+        <button class="btn btn-primary" onclick="javascript:base64_decode();"><i class="icon-chevron-left icon-white"></i>BASE64解码 </button>
+    </div>
+</div>
+				</div>
+				<div class="span4">
+<div class="rightBar">
+	<div class="title">BASE64:</div>
+	<textarea class="code" name="cipher" id="result"></textarea>
+</div>
+				</div>
+			  </div>
+				<script>
+				function base64_encode(){
+					var str=CryptoJS.enc.Utf8.parse($("#source").val());
+					var base64=CryptoJS.enc.Base64.stringify(str);
+					$("#result").val(base64);
+				}
+				function base64_decode(){
+					var words  = CryptoJS.enc.Base64.parse($("#result").val());
+					$("#source").val(words.toString(CryptoJS.enc.Utf8));
+				}
+				</script>
+
+			</div>
+
+            <hr>
+            <footer>
+                <p>
+                    Hongbo Li &copy; 2012 Powered by
+                    <a href="../docs/bootstrap/index.html" target="_blank">
+                        Bootstrap
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

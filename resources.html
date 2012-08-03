@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            前端百宝箱
+        </title>
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 10px; }
+        </style>
+        <link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+		<script>
+			function makeTable(table,data){
+				var buf=[];
+				for(var i=0;i<data.length;i++){
+					var item=data[i];
+					buf.push('<tr>');
+					buf.push('<td>'+item.name+'</td>');
+					buf.push('<td><a href="'+item.url+'" target="_blank">'+item.url+'</a></td>');
+					buf.push('</tr>');
+				}
+				table.find("tbody").append(buf.join(''));
+			}
+		</script>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+            </script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </a>
+                    <a class="brand" href="#">
+                        前端百宝箱
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="html.html">HTML</a></li>
+                            <li><a href="css.html">CSS</a></li>
+                            <li><a href="javascript.html">JavaScript</a></li>
+                            <li><a href="tools.html">工具</a>
+							<li class="active"><a href="resources.html">资源</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+			<div class="alert alert-info">
+				<i class="icon-star"></i>&nbsp;&nbsp;各种编码格式的相互转换。
+			</div>
+			<ul id="tab" class="nav nav-tabs">
+			  <li class="active"><a href="#front" data-toggle="tab">HTML/CSS/JavaScript 资源</a></li>
+			  <li><a href="#blog" data-toggle="tab">博客收集</a></li>
+			</ul>
+ 
+			<div class="tab-content">
+			  <div class="tab-pane fade in active" id="front">
+					<table class="table table-striped table-bordered" id="front-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'Google HTML/CSS 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml'},
+							{name:'Google JavaScript 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml'},
+							{name:'Flux Slider 2D/3D 幻灯片效果',url:'http://www.joelambert.co.uk/flux/'}
+						];
+						makeTable($("#front-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <div class="tab-pane fade" id="blog">
+					<table class="table table-striped table-bordered" id="blog-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'Roberts talk',url:'http://robertnyman.com/'}
+						];
+						makeTable($("#blog-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			</div>
+
+			<hr>
+            <footer>
+                <p>
+                    Hongbo Li &copy; 2012 Powered by
+                    <a href="docs/bootstrap/index.html" target="_blank">
+                        Bootstrap
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

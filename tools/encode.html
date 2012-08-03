@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            前端百宝箱
+        </title>
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 10px; }
+        </style>
+        <link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../js/CodeMirror/lib/codemirror.css">
+		<link href="../css/main.css" rel="stylesheet">
+
+		<script src="../js/CodeMirror/lib/codemirror.js"></script>
+		<script src="../js/CodeMirror/mode/xml/xml.js"></script>
+		<script src="../js/CodeMirror/mode/javascript/javascript.js"></script>
+		<script src="../js/CodeMirror/mode/css/css.js"></script>
+		<script src="../js/CodeMirror/mode/htmlmixed/htmlmixed.js"></script>
+
+		<script src="../js/jquery-1.7.1.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+            </script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </a>
+                    <a class="brand" href="#">
+                        前端百宝箱
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="../index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html.html">
+                                    HTML
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../css.html">
+                                    CSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../javascript.html">
+                                    JavaScript
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="../tools.html">
+                                    工具
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">	
+			<div class="alert alert-info">
+				<i class="icon-star"></i>&nbsp;&nbsp;各种编码格式的相互转换。
+			</div>
+			<ul id="tab" class="nav nav-tabs">
+			  <li class="active"><a href="#home" data-toggle="tab">HTML 特殊字符转义</a></li>
+			  <li><a href="#ascii" data-toggle="tab">ASCII 码转换</a></li>
+			  <li><a href="#unicode" data-toggle="tab">Unicode 编码</a></li>
+			  <li><a href="#utf8" data-toggle="tab">UTF8 编码</a></li>
+			</ul>
+ 
+			<div class="tab-content">
+			  <div class="tab-pane fade in active" id="home">
+			  <!-- convert html code begin -->
+			<div class="row">
+				<div class="span5">
+					<textarea id="source">
+<html style="color: green">
+  <!-- this is a comment -->
+  <head>
+	<title>Mixed HTML Example</title>
+	<style type="text/css">
+	  h1 {font-family: comic sans; color: #f0f;}
+	  div {background: yellow !important;}
+	  body {
+		max-width: 50em;
+		margin: 1em 2em 1em 5em;
+	  }
+	</style>
+  </head>
+  <body>
+	<h1>Mixed HTML Example</h1>
+	<script>
+	  function jsFunc(arg1, arg2) {
+		if (arg1 && arg2) document.body.innerHTML = "achoo";
+	  }
+	</script>
+  </body>
+</html></textarea>
+				</div>
+				<div class="span1">
+					<div class="action">
+						<button class="btn btn-large btn-primary" id="convert" style="margin-top:140px;">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-right icon-white"></i>&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</div>
+				<div class="span5">
+					<textarea id="result"></textarea>
+				</div>
+			</div>
+			<script type="text/javascript">
+			(function(){
+				function convert(sourceEditor,resultEditor){
+					var r=sourceEditor.getValue()
+								.replace(/</g,"&lt;")
+								.replace(/>/g,"&gt;")
+								.replace(/\"/g,"&quot;")
+								.replace(/&/g,"&amp;");
+					resultEditor.setValue(r);
+				}
+				var sourceEditor = CodeMirror.fromTextArea($("#source")[0], {
+					mode: "text/html", 
+					lineNumbers: true,
+					tabMode: "indent",
+					onChange: function(ctx,data){
+						convert(ctx,resultEditor);
+					}
+				});
+				var resultEditor = CodeMirror.fromTextArea($("#result")[0], {
+					mode: "text/html", 
+					lineNumbers: true,
+					tabMode: "indent"
+				});
+				
+				$("#convert").click(function(){
+					convert(sourceEditor,resultEditor);
+				});
+
+				convert(sourceEditor,resultEditor);
+			})();
+			</script>
+			   <!-- convert html code end -->
+			  </div>
+			  <div class="tab-pane fade" id="ascii">
+			  <!-- convert ascii code begin -->
+			<div class="row">
+				<div class="span4">
+					<textarea id="ascii-source" class="code">
+微软雅黑 12345 abc</textarea>
+				</div>
+				<div class="span2">
+					<div class="action"style="margin-top:100px;text-align:center">
+						<input type="checkbox" id="ignoreLetter" checked="checked"/> 不转换字符和数字
+						<button class="btn btn-large btn-primary" id="to-ascii">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-right icon-white"></i>&nbsp;&nbsp;&nbsp;</button><br/>
+						<button class="btn btn-large btn-primary" id="from-ascii">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-left icon-white"></i>&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</div>
+				<div class="span4">
+					<textarea id="ascii-result" class="code"></textarea>
+				</div>
+			</div>
+			<script type="text/javascript">
+			(function(){
+
+				function native2ascii(source){
+					var character=source.split("");
+					var ascii="";
+					for(var i=0;i<character.length;i++){
+						var code=Number(character[i].charCodeAt(0));
+						if(!document.getElementById("ignoreLetter").checked||code>127){
+							var charAscii=code.toString(16);
+							charAscii=new String("0000").substring(charAscii.length,4)+charAscii;
+							ascii+="\\u"+charAscii;
+						}
+						else{
+							ascii+=character[i];
+						}
+					}
+					return ascii;
+				}
+				function ascii2native(source){
+					var character=source.split("\\u");
+					var native1=character[0];
+					for(var i=1;i<character.length;i++){
+						var code=character[i];
+						native1+=String.fromCharCode(parseInt("0x"+code.substring(0,4)));
+						if(code.length>4){
+							native1+=code.substring(4,code.length);
+						}
+					}
+					return native1;
+				}
+				$("#ascii-result").val(native2ascii($("#ascii-source").val()));
+				$("#to-ascii").click(function(){
+					$("#ascii-result").val(native2ascii($("#ascii-source").val()));
+				});
+				$("#from-ascii").click(function(){
+					$("#ascii-source").val(ascii2native($("#ascii-result").val()));
+				});
+			})();
+			</script>
+			   <!-- convert html code end -->
+			  </div>
+			  <div class="tab-pane fade" id="unicode">
+			  <!-- convert unicode code begin -->
+			<div class="row">
+				<div class="span4">
+					<textarea id="unicode-source" class="code">< ></textarea>
+				</div>
+				<div class="span2">
+					<div class="action"style="margin-top:100px;text-align:center">
+						<button class="btn btn-large btn-primary" id="to-unicode">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-right icon-white"></i>&nbsp;&nbsp;&nbsp;</button><br/>
+						<button class="btn btn-large btn-primary" id="from-unicode">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-left icon-white"></i>&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</div>
+				<div class="span4">
+					<textarea id="unicode-result" class="code"></textarea>
+				</div>
+			</div>
+			<script type="text/javascript">
+			(function(){
+				//Native 转换 Unicode
+				function Native2Unicode(source) {
+					
+					var a_s=source;
+					if ('' == a_s) { 
+						alert('请输入Native字符串'); 
+						return; 
+					}
+					var buf=[];
+					for (var i=0; i<source.length; i++)
+						buf.push('&#' + a_s.charCodeAt(i) + ';');
+					return buf.join('');
+				}
+
+				//Unicode 转换 Native
+				function Unicode2Native(source) { 
+					var code = source.match(/&#(\d+);/g);
+					if (code == null) { 
+						alert('请输入正确的Unicode代码！');
+						return; 
+					}
+					var buf=[];
+					for (var i=0; i<code.length; i++)
+						buf.push(String.fromCharCode(code[i].replace(/[&#;]/g, '')));
+					return buf.join('');
+				}
+
+				$("#unicode-result").val(Native2Unicode($("#unicode-source").val()));
+				$("#to-unicode").click(function(){
+					$("#unicode-result").val(Native2Unicode($("#unicode-source").val()));
+				});
+				$("#from-unicode").click(function(){
+					$("#unicode-source").val(Unicode2Native($("#unicode-result").val()));
+				});
+			})();
+			</script>
+			  <!-- convert unicode code end -->
+			  </div>
+			  <div class="tab-pane fade" id="utf8">
+			  <!-- convert utf8 code begin -->
+			<div class="row">
+				<div class="span4">
+					<textarea id="utf8-source" class="code">你好</textarea>
+				</div>
+				<div class="span2">
+					<div class="action"style="margin-top:100px;text-align:center">
+						<button class="btn btn-large btn-primary" id="to-utf8">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-right icon-white"></i>&nbsp;&nbsp;&nbsp;</button><br/>
+						<button class="btn btn-large btn-primary" id="from-utf8">&nbsp;&nbsp;&nbsp;<i class=" icon-chevron-left icon-white"></i>&nbsp;&nbsp;&nbsp;</button>
+					</div>
+				</div>
+				<div class="span4">
+					<textarea id="utf8-result" class="code"></textarea>
+				</div>
+			</div>
+			<script type="text/javascript">
+			(function(){
+				//native 转换 utf8
+				function Native2UTF8(source) {
+					
+					var n_s=source;
+					if ('' == n_s) { 
+						alert('请输入Native字符串'); 
+						return; 
+					}
+					var r=n_s.replace(/[^\u0000-\u00FF]/g, function ($0) { return escape($0).replace(/(%u)(\w{4})/gi, "&#x$2;") });
+					return r;
+				}
+
+				//UTF-8 转换 Native
+				function UTF82Native(source) { 
+					var code = source;
+					var r=unescape(code.replace(/&#x/g, '%u').replace(/;/g, ''));
+					return r;
+				}
+
+				$("#utf8-result").val(Native2UTF8($("#utf8-source").val()));
+				$("#to-utf8").click(function(){
+					$("#utf8-result").val(Native2UTF8($("#utf8-source").val()));
+				});
+				$("#from-utf8").click(function(){
+					$("#utf8-source").val(UTF82Native($("#utf8-result").val()));
+				});
+			})();
+			</script>
+			  <!-- convert utf8 code end -->
+				</div>
+			</div>
+
+            <hr>
+            <footer>
+                <p>
+                    Hongbo Li &copy; 2012 Powered by
+                    <a href="../docs/bootstrap/index.html" target="_blank">
+                        Bootstrap
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
