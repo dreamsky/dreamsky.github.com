@@ -31,11 +31,15 @@ h1,h2,h3,h4,h5,h6 {
 	overflow-x: hidden;
 }
 
-iframe{
-	width:100%;
-}
-
 .code {
 	height:300px;
 	width:100%;
+}
+
+.brand{
+	text-shadow: 1px 1px 3px #888;
+}
+
+.nav-list li{
+	line-height:30px;
 }

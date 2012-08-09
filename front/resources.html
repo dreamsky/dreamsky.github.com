@@ -70,6 +70,7 @@
 			<ul id="tab" class="nav nav-tabs">
 			  <li class="active"><a href="#front" data-toggle="tab">HTML/CSS/JavaScript 资源</a></li>
 			  <li><a href="#blog" data-toggle="tab">博客收集</a></li>
+			  <li><a href="#future" data-toggle="tab">HTML5/CSS3</a></li>
 			</ul>
  
 			<div class="tab-content">
@@ -87,7 +88,8 @@
 						var data=[
 							{name:'Google HTML/CSS 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml'},
 							{name:'Google JavaScript 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml'},
-							{name:'Flux Slider 2D/3D 幻灯片效果',url:'http://www.joelambert.co.uk/flux/'}
+							{name:'Flux Slider 2D/3D 幻灯片效果',url:'http://www.joelambert.co.uk/flux/'},
+							{name:'IE CSS Bug 列表',url:'http://haslayout.net/css/'}
 						];
 						makeTable($("#front-table"),data);
 					})();
@@ -110,6 +112,29 @@
 							{name:'Roberts talk',url:'http://robertnyman.com/'}
 						];
 						makeTable($("#blog-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <div class="tab-pane fade" id="future">
+					<table class="table table-striped table-bordered" id="future-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'CSS3 Please',url:'http://css3please.com/'},
+							{name:'CSS3 Generator',url:'http://css3generator.com/'},
+							{name:'HTML5/CSS3兼容性',url:'http://www.caniuse.com/'},
+							{name:'CSS3 Maker',url:'http://www.css3maker.com/'}
+						];
+						makeTable($("#future-table"),data);
 					})();
 				  </script>
 					</tbody>

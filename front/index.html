@@ -35,8 +35,8 @@
                     </a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li>
-                                <a href="index.html">
+                            <li class="active">
+                                <a href="#">
                                     首页
                                 </a>
                             </li>
@@ -55,14 +55,15 @@
                                     JavaScript
                                 </a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="tools.html">
                                     工具
                                 </a>
                             </li>
+							 <li><a href="resources.html">资源</a></li>
                             <li>
-                                <a href="resources.html">
-                                    资源
+                                <a href="#about" data-toggle="modal" data-keyboard="false" data-backdrop="false">
+                                    关于
                                 </a>
                             </li>
                         </ul>
@@ -72,87 +73,62 @@
             </div>
         </div>
         <div class="container">
+            <div class="hero-unit">
+                <h1>
+                    前端开发百宝箱！
+                </h1>
+                <p>
+                    收集前端开发常用到的 HTML、CSS、JavaScript 资源和工具！包括代码编写技巧，代码美化工具，代码质量保证工具，常用代码片段，优秀开发框架和学习资源等等。帮助开发人员节省时间和精力！
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large">
+                        详细内容 &raquo;
+                    </a>
+                </p>
+            </div>
+            <!-- Example row of columns -->
             <div class="row">
                 <div class="span4">
                     <h2>
-                        <a href="tools/encode.html">编码转换</a>
+                        HTML
                     </h2>
                     <p>
-                        提供对 HTML 代码的转义，ASCII 码，Unicode  编码转换工具。
+                        收集 HTML 代码代码编写技巧，HTML 美化工具，HTML 在线编辑工具，HTML 代码检查工具等等
+                    </p>
+                    <p>
+                        <a class="btn" href="#">
+                            查看详情 &raquo;
+                        </a>
                     </p>
                 </div>
                 <div class="span4">
                     <h2>
-                        <a href="tools/reference.html">常用对照表</a>
+                        CSS
                     </h2>
                     <p>
-                        提供 ASCII 对照表，HTML 转义字符对照表，RGB 颜色参考表等等。
+                        收集 CSS 代码编写技巧，CSS 代码美化工具，CSS 在线编辑工具，在线 CSS 按钮生成工具等等
+                    </p>
+                    <p>
+                        <a class="btn" href="#">
+                            查看详情 &raquo;
+                        </a>
                     </p>
                 </div>
                 <div class="span4">
                     <h2>
-                        <a href="tools/code/index.html">在线编辑器</a>
+                        JavaScript
                     </h2>
                     <p>
-                        一个简单的在线代码编码和调试工具。
+                        收集 JavaScript 代码编写技巧，代码美化工具，JavaScript 质量保证工具以及常用的功能组件等等
+                    </p>
+                    <p>
+                        <a class="btn" href="#">
+                            查看详情 &raquo;
+                        </a>
                     </p>
                 </div>
             </div>
             <hr>
-            <div class="row">
-                <div class="span4">
-                    <h2>
-                        <a href="tools/js.html">JavaScript 工具</a>
-                    </h2>
-                    <p>
-                        JS 代码压缩和混淆，JSON 格式验证，JSON 格式化。
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>
-                        <a href="tools/encrypt.html">JS 在线加密解密</a>
-                    </h2>
-                    <p>
-                        JavaScript 实现的在线加密解密功能。
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>
-                        <a href="encode">编码转换</a>
-                    </h2>
-                    <p>
-                        demo
-                    </p>
-                </div>
-            </div>
-			<hr>
-            <div class="row">
-                <div class="span4">
-                    <h2>
-                        <a href="encode">编码转换</a>
-                    </h2>
-                    <p>
-                        demo
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>
-                        <a href="encode">编码转换</a>
-                    </h2>
-                    <p>
-                        demo
-                    </p>
-                </div>
-                <div class="span4">
-                    <h2>
-                        <a href="encode">编码转换</a>
-                    </h2>
-                    <p>
-                        demo
-                    </p>
-                </div>
-            </div>
-			<hr>
             <footer>
                 <p>
                     Hongbo Li &copy; 2012 Powered by
@@ -161,8 +137,45 @@
                     </a>
                 </p>
             </footer>
+            <!--modal dialog-->
+            <div class="modal fade" id="about">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal">×</a>
+                    <h3>关于</h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：李洪波
+                    </p>
+                    <p>创建时间：2012.7.26</p>
+					<p>修订记录：
+						<br/>
+						<ul>
+							<li>
+								建立框架 2012.7.26
+							</li>
+							<li>
+								添加HTML专题页面
+							</li>
+							<li>
+								添加CSS专题页面
+							</li>
+							<li>
+								添加JavaScript专题页面
+							</li>
+						</ul>
+					</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn" data-dismiss="modal">
+                        关闭
+                    </a>
+                    <!--<a href="#" class="btn btn-primary">保存更新</a>-->
+                </div>
+            </div>
         </div>
         <script src="js/jquery-1.7.1.min.js"></script>
         <script src="js/bootstrap.js"></script>
     </body>
+
 </html>

@@ -71,12 +71,6 @@
               <li class="nav-header"><i class="icon-bookmark"></i>编写技巧</li>
               <li class="active"><a href="#practice"><i class="icon-book icon-white"></i>HTML5 文档类型</a></li>
 			  <li class="divider"></li>
-              <li class="nav-header"><i class="icon-bookmark"></i>辅助工具</li>
-              <li><a href="#practice"><i class="icon-book"></i>tool</a></li>
-			  <li class="divider"></li>
-			  <li class="nav-header"><i class="icon-bookmark"></i>资源收集</li>
-              <li><a href="#practice"><i class="icon-book"></i>resources</a></li>
-			  <li class="divider"></li>
 			<li><a href="#"><i class="icon-flag"></i> 帮助</a></li>
             </ul>
           </div>
@@ -126,5 +120,25 @@
         <script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/google-code-prettify/prettify.js"></script>
         <script src="js/bootstrap.js"></script>
+		<script>
+			$(function(){
+				$(".nav-list > li").click(function(){
+					if($(this).hasClass("help"))
+						return;
+					$(this).parent()
+						.find(".active")
+						.removeClass("active")
+						.find("i").removeClass("icon-white");;
+					$(this).addClass("active");
+					$(this).find("i").addClass("icon-white");
+					
+					var tar=$($(this).find("a").attr("href"));
+					$('body').animate({
+						scrollTop: tar.offset().top-60
+					}, "fast");
+					return false;
+				});
+			});
+		</script>
     </body>
 </html>
