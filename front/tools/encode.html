@@ -132,8 +132,7 @@
 					var r=sourceEditor.getValue()
 								.replace(/</g,"&lt;")
 								.replace(/>/g,"&gt;")
-								.replace(/\"/g,"&quot;")
-								.replace(/&/g,"&amp;");
+								.replace(/\"/g,"&quot;");
 					resultEditor.setValue(r);
 				}
 				var sourceEditor = CodeMirror.fromTextArea($("#source")[0], {

@@ -65,12 +65,14 @@
         </div>
         <div class="container">
 			<div class="alert alert-info">
-				<i class="icon-star"></i>&nbsp;&nbsp;各种编码格式的相互转换。
+				<i class="icon-star"></i>&nbsp;&nbsp;收集的各种网络资源。
 			</div>
 			<ul id="tab" class="nav nav-tabs">
 			  <li class="active"><a href="#front" data-toggle="tab">HTML/CSS/JavaScript 资源</a></li>
+			  <li><a href="#jquery" data-toggle="tab">jQuery插件</a></li>
 			  <li><a href="#blog" data-toggle="tab">博客收集</a></li>
 			  <li><a href="#future" data-toggle="tab">HTML5/CSS3</a></li>
+			  <li><a href="#other" data-toggle="tab">其它资源</a></li>
 			</ul>
  
 			<div class="tab-content">
@@ -88,8 +90,11 @@
 						var data=[
 							{name:'Google HTML/CSS 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml'},
 							{name:'Google JavaScript 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml'},
-							{name:'Flux Slider 2D/3D 幻灯片效果',url:'http://www.joelambert.co.uk/flux/'},
-							{name:'IE CSS Bug 列表',url:'http://haslayout.net/css/'}
+							{name:'IE CSS Bug 列表',url:'http://haslayout.net/css/'},
+							{name:'JSON转换：JSON2',url:'http://www.json.org/js.html'},
+							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
+							{name:'Underscore',url:'http://underscorejs.org/'},
+							{name:'Backbone',url:'http://backbonejs.org/'}
 						];
 						makeTable($("#front-table"),data);
 					})();
@@ -97,6 +102,42 @@
 					</tbody>
 				  </table>
 			  </div>
+			  <!-- tab begin -->
+			  <div class="tab-pane fade" id="jquery">
+					<table class="table table-striped table-bordered" id="jquery-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
+							{name:'jQuery UI',url:'http://jqueryui.com/'},
+							{name:'jQuery Tools',url:'http://jquerytools.org/'},
+							{name:'基于jQuery UI的日期时间选择插件',url:'http://trentrichardson.com/examples/timepicker/'},
+							{name:'基于jQuery Tools的弹窗插件',url:'https://github.com/dreamsky/freshbox'},
+							{name:'Flux Slider 2D/3D 幻灯片效果',url:'http://www.joelambert.co.uk/flux/'},
+							{name:'幻灯片插件：Nivo Slider',url:'http://nivo.dev7studios.com/'},
+							{name:'幻灯片插件：slidesjs',url:'http://slidesjs.com/'},
+							
+							{name:'jQuery Tooltip Plugin',url:'http://code.drewwilson.com/entry/tiptip-jquery-plugin'},
+							{name:'jQuery Form Plugin',url:'http://jquery.malsup.com/form/'},
+							{name:'Form Validator Plugin',url:'https://github.com/dreamsky/formvalidator'},
+							{name:'jQuery Cookie Plugin',url:'https://github.com/carhartl/jquery-cookie'},
+							{name:'jQuery JSON Plugin',url:'http://code.google.com/p/jquery-json/downloads/list'}
+						];
+						makeTable($("#jquery-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <!-- tab end -->
+			  <!-- tab begin -->
 			  <div class="tab-pane fade" id="blog">
 					<table class="table table-striped table-bordered" id="blog-table">
 					<thead>
@@ -117,6 +158,7 @@
 					</tbody>
 				  </table>
 			  </div>
+			  <!-- tab end -->
 			  <div class="tab-pane fade" id="future">
 					<table class="table table-striped table-bordered" id="future-table">
 					<thead>
@@ -140,6 +182,29 @@
 					</tbody>
 				  </table>
 			  </div>
+			  <!-- tab begin -->
+			  <div class="tab-pane fade" id="other">
+					<table class="table table-striped table-bordered" id="other-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'站位图片',url:'http://placehold.it/'},
+							{name:'背景纹理',url:'http://subtlepatterns.com/'}
+						];
+						makeTable($("#other-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <!-- tab end -->
 			</div>
 
 			<hr>

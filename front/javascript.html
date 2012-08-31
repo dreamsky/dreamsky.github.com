@@ -78,10 +78,8 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"></li>
-              <li class="active"><a href="#practice"><i class="icon-star icon-white"></i>编写技巧</a></li>
-              <li><a href="#tools"><i class="icon-star"></i>辅助工具</a></li>
-              <li><a href="#rescoures"><i class="icon-star"></i>资源收集</a></li>
+              <li class="nav-header"><i class="icon-bookmark"></i>编写技巧</li>
+              <li class="active"><a href="#practice"><i class="icon-book icon-white"></i>JavaScript 编写</a></li>
 			  <li class="divider"></li>
 			<li><a href="#"><i class="icon-flag"></i> 帮助</a></li>
             </ul>
@@ -98,117 +96,34 @@
 			<!--section begin-->
 			<section id="practice">
 				<div class="well">
-				<h2>HTML 编写技巧</h2>
-				<p>HTML 编写最佳实践。</p>
+				<h2>JavaScript 编写技巧</h2>
+				<p>奇特的禁止网页后退方法。</p>
 				</div>
 				<div class="row-fluid">
 				  <h4>HTML5 DCOTYPE</h4>
 				  <p>说得对</p>
-				<pre class="prettyprint lang-html linenums">
-&lt;blockquote&gt;
-  &lt;p&gt;一天吃六个胶囊，一天三次、一次两个，没有吃掉多少铬。&lt;/p&gt;
-  &lt;small&gt;卫生部合理用药专家孙忠实&lt;/small&gt;
-&lt;/blockquote&gt;
+				<pre class="prettyprint lang-js linenums">
+function changeHashOnLoad() {
+     window.location.href += &quot;#&quot;;
+     setTimeout(&quot;changeHashAgain()&quot;, &quot;50&quot;); 
+}
+
+function changeHashAgain() {
+  window.location.href += &quot;1&quot;;
+}
+
+var storedHash = window.location.hash;
+window.setInterval(function () {
+    if (window.location.hash != storedHash) {
+         window.location.hash = storedHash;
+    }
+}, 50);
+
+
+&lt;body onload=&quot;changeHashOnLoad();&quot;&gt;
 </pre>
 				</div>
 				<hr>
-				<div class="row-fluid">
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-				</div>
-			</section>
-			<!--section end-->
-			<!--section begin-->
-			<section id="tools">
-				<div class="well">
-				<h2>HTML 编写工具</h2>
-				<p>HTML 编写最近实践。</p>
-				</div>
-				<div class="row-fluid">
-				  <h4>HTML5 DCOTYPE</h4>
-				  <p>说得对</p>
-				<pre class="prettyprint lang-html linenums">
-&lt;blockquote&gt;
-  &lt;p&gt;一天吃六个胶囊，一天三次、一次两个，没有吃掉多少铬。&lt;/p&gt;
-  &lt;small&gt;卫生部合理用药专家孙忠实&lt;/small&gt;
-&lt;/blockquote&gt;
-				</pre>
-				</div>
-				<hr>
-				<div class="row-fluid">
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-				</div>
-			</section>
-			<!--section end-->
-			<!--section begin-->
-			<section id="resources">
-				<div class="well">
-				<h2>HTML 资源收集</h2>
-				<p>HTML 编写最近实践。</p>
-				</div>
-				<div class="row-fluid">
-				  <h4>HTML5 DCOTYPE</h4>
-				  <p>说得对</p>
-				<pre class="prettyprint lang-html linenums">
-&lt;blockquote&gt;
-  &lt;p&gt;一天吃六个胶囊，一天三次、一次两个，没有吃掉多少铬。&lt;/p&gt;
-  &lt;small&gt;卫生部合理用药专家孙忠实&lt;/small&gt;
-&lt;/blockquote&gt;
-				</pre>
-				</div>
-				<hr>
-				<div class="row-fluid">
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-				</div>
-			</section>
-			<!--section end-->
-			<!--section begin-->
-			<section id="html5">
-				<div class="well">
-				<h2>HTML5 学习笔记</h2>
-				<p>HTML 编写最近实践。</p>
-				</div>
-				<div class="row-fluid">
-				  <h4>HTML5 DCOTYPE</h4>
-				  <p>说得对</p>
-				<pre class="prettyprint lang-html linenums">
-&lt;blockquote&gt;
-  &lt;p&gt;一天吃六个胶囊，一天三次、一次两个，没有吃掉多少铬。&lt;/p&gt;
-  &lt;small&gt;卫生部合理用药专家孙忠实&lt;/small&gt;
-&lt;/blockquote&gt;
-				</pre>
-				</div>
-				<hr>
-				<div class="row-fluid">
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-					<div class="span6">
-						<h4>HTML5 DCOTYPE</h4>
-						<p>说得对</p>
-					</div>
-				</div>
 			</section>
 			<!--section end-->
         </div>
