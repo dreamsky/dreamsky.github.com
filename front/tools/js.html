@@ -112,7 +112,8 @@ function jsFunc(arg1, arg2) {
 					<div class="action" style="text-align:center;margin-top:70px;">
 						<input type="checkbox" id="base62" checked="checked">&nbsp;Base62 编码
 						<input type="checkbox" id="shrink" checked="checked">&nbsp;简化变量<br/>
-						<button class="btn btn-large btn-primary" id="compress" style="margin-top:20px;">压缩</button><br/>
+						<button class="btn btn-large btn-primary" id="compress" style="margin-top:20px;">压缩 &gt;</button><br/>
+						<button class="btn btn-large btn-primary" id="decode" style="margin-top:20px;">解压 &lt;</button><br/>
 						<button class="btn btn-large btn-primary" id="clear" style="margin-top:10px;">清空</button>
 					</div>
 				</div>
@@ -122,10 +123,17 @@ function jsFunc(arg1, arg2) {
 			</div>
 			<script type="text/javascript">
 			(function(){
+				//压缩
 				function confuse(sourceEditor,resultEditor){
 					var packer=new Packer();
 					var r=packer.pack(sourceEditor.getValue(), $("#base62").prop("checked"), $("#shrink").prop("checked"));
 					resultEditor.setValue(r);
+				}
+				//解码
+				function decode(sourceEditor,resultEditor){
+					var confuse_value=resultEditor.getValue();
+					eval("var value=String" + confuse_value.slice(4));
+					sourceEditor.setValue(value);
 				}
 				var sourceEditor = CodeMirror.fromTextArea($("#source")[0], {
 					mode: "text/javascript", 
@@ -146,6 +154,10 @@ function jsFunc(arg1, arg2) {
 				$("#compress").click(function(){
 					confuse(sourceEditor,resultEditor);
 				});
+				$("#decode").click(function(){
+					decode(sourceEditor,resultEditor);
+				});
+				
 				$("#clear").click(function(){
 					sourceEditor.setValue('');
 					resultEditor.setValue('');

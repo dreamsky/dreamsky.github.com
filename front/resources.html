@@ -68,10 +68,12 @@
 				<i class="icon-star"></i>&nbsp;&nbsp;收集的各种网络资源。
 			</div>
 			<ul id="tab" class="nav nav-tabs">
-			  <li class="active"><a href="#front" data-toggle="tab">HTML/CSS/JavaScript 资源</a></li>
-			  <li><a href="#jquery" data-toggle="tab">jQuery插件</a></li>
-			  <li><a href="#blog" data-toggle="tab">博客收集</a></li>
-			  <li><a href="#future" data-toggle="tab">HTML5/CSS3</a></li>
+			  <li class="active"><a href="#front" data-toggle="tab">HTML & CSS</a></li>
+			  <li><a href="#javascript" data-toggle="tab">JavaScript</a></li>
+			  <li><a href="#jquery" data-toggle="tab">jQuery 插件</a></li>
+			  <li><a href="#future" data-toggle="tab">HTML5 & CSS3</a></li>
+			  <li><a href="#blog" data-toggle="tab">前端博客收集</a></li>
+			  <li><a href="#site" data-toggle="tab">前端网站收集</a></li>
 			  <li><a href="#other" data-toggle="tab">其它资源</a></li>
 			</ul>
  
@@ -89,12 +91,9 @@
 					(function(){
 						var data=[
 							{name:'Google HTML/CSS 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml'},
-							{name:'Google JavaScript 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml'},
 							{name:'IE CSS Bug 列表',url:'http://haslayout.net/css/'},
-							{name:'JSON转换：JSON2',url:'http://www.json.org/js.html'},
 							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
-							{name:'Underscore',url:'http://underscorejs.org/'},
-							{name:'Backbone',url:'http://backbonejs.org/'}
+							{name:'CSS属性排序',url:'http://csscomb.com/'}
 						];
 						makeTable($("#front-table"),data);
 					})();
@@ -102,6 +101,38 @@
 					</tbody>
 				  </table>
 			  </div>
+			  <!-- tab begin -->
+			  <div class="tab-pane fade" id="javascript">
+					<table class="table table-striped table-bordered" id="javascript-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'Google JavaScript 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml'},
+							{name:'JavaScript 秘密花园',url:'http://bonsaiden.github.com/JavaScript-Garden/zh/'},
+							{name:'JSON转换：JSON2',url:'http://www.json.org/js.html'},
+							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
+							{name:'Underscore',url:'http://underscorejs.org/'},
+							{name:'Backbone',url:'http://backbonejs.org/'},
+							{name:'$script.js',url:'https://github.com/ded/script.js'},
+							{name:'JavaScript Patterns',url:'http://shichuan.github.com/javascript-patterns/'},
+							{name:'Raphael:JS图形库',url:'http://raphaeljs.com/'},
+							{name:'zeptojs',url:'http://zeptojs.com/'},
+							{name:'CDNjs',url:'http://cdnjs.com/'}
+						];
+						makeTable($("#javascript-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <!-- tab end -->
 			  <!-- tab begin -->
 			  <div class="tab-pane fade" id="jquery">
 					<table class="table table-striped table-bordered" id="jquery-table">
@@ -116,6 +147,7 @@
 					(function(){
 						var data=[
 							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
+							{name:'jquip',url:'https://github.com/mythz/jquip'},
 							{name:'jQuery UI',url:'http://jqueryui.com/'},
 							{name:'jQuery Tools',url:'http://jquerytools.org/'},
 							{name:'基于jQuery UI的日期时间选择插件',url:'http://trentrichardson.com/examples/timepicker/'},
@@ -128,9 +160,43 @@
 							{name:'jQuery Form Plugin',url:'http://jquery.malsup.com/form/'},
 							{name:'Form Validator Plugin',url:'https://github.com/dreamsky/formvalidator'},
 							{name:'jQuery Cookie Plugin',url:'https://github.com/carhartl/jquery-cookie'},
-							{name:'jQuery JSON Plugin',url:'http://code.google.com/p/jquery-json/downloads/list'}
+							{name:'jQuery JSON Plugin',url:'http://code.google.com/p/jquery-json/downloads/list'},
+							{name:'jQuery Easing Plugin',url:'http://gsgd.co.uk/sandbox/jquery/easing/'},
+							{name:'jQuery Lazyload Plugin',url:'http://www.appelsiini.net/projects/lazyload'},
+							{name:'jQuery source viewer',url:'http://james.padolsey.com/jquery/'}
 						];
 						makeTable($("#jquery-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <!-- tab begin -->
+			  <!-- tab end -->
+			  <div class="tab-pane fade" id="future">
+					<table class="table table-striped table-bordered" id="future-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'HTML5/CSS3兼容性',url:'http://www.caniuse.com/'},
+							{name:'HTML5 Test',url:'http://html5test.com/'},
+							{name:'CSS3 Please',url:'http://css3please.com/'},
+							{name:'CSS3 Generator',url:'http://css3generator.com/'},
+							{name:'CSS3 Maker',url:'http://www.css3maker.com/'},
+							{name:'CSS 图片拼合生成器',url:'http://cn.spritegen.website-performance.org/'},
+							{name:'CSS SpriteMe',url:'http://spriteme.org/'},
+							{name:'Sprite Cow',url:'http://www.spritecow.com/'},
+							{name:'Sprite Pad',url:'http://spritepad.wearekiss.com/'},
+							{name:'HTML5shive',url:'https://github.com/aFarkas/html5shiv'}
+						];
+						makeTable($("#future-table"),data);
 					})();
 				  </script>
 					</tbody>
@@ -150,7 +216,38 @@
 				  <script>
 					(function(){
 						var data=[
-							{name:'Roberts talk',url:'http://robertnyman.com/'}
+							{name:'Roberts talk',url:'http://robertnyman.com/'},
+							{name:'NCZOnline',url:'http://www.nczonline.net/'},
+							{name:'perfection kills',url:'http://perfectionkills.com/'},
+							{name:'Paul Irish',url:'http://paulirish.com/'},
+							{name:'John Resig',url:'http://ejohn.org/category/blog/'},
+							{name:'淘宝UED',url:'http://ued.taobao.com/blog/'},
+							{name:'阿里巴巴中文UED',url:'http://www.aliued.cn/'},
+							{name:'阿里巴巴国际UED',url:'http://www.aliued.com/'},
+							{name:'阿里妈妈UED',url:'http://ued.alimama.com/'},
+							{name:'支付宝UED',url:'http://ued.alipay.com/'},
+							{name:'一淘UED',url:'http://ux.etao.com/'},
+							{name:'腾讯ISUX',url:'http://isux.tencent.com/blog'},
+							{name:'腾讯CDC',url:'http://cdc.tencent.com/'},
+							{name:'百度MUX',url:'http://www.baiduux.com/'},
+							{name:'网易UEDC',url:'http://uedc.163.com/'},
+							{name:'新浪UED',url:'http://ued.sina.com/'},
+							{name:'人人FED',url:'http://fed.renren.com/'},
+							{name:'携程UED',url:'http://ued.ctrip.com/blog/'},
+							{name:'腾讯WSD',url:'http://wsd.tencent.com/'},
+							{name:'Tencent AlloyTeam',url:'http://www.alloyteam.com/'},
+							{name:'支付宝PED',url:'http://ped.alipay.com/'},
+							{name:'aimingoo',url:'http://blog.csdn.net/aimingoo'},
+							{name:'Yuguo Blog',url:'http://yuguo.us/weblog/'},
+							{name:'Vivien Blog',url:'http://vivienchen.me/'},
+							{name:'GraceCode',url:'http://www.gracecode.com/'},
+							{name:'大前端',url:'http://www.daqianduan.com/'},
+							{name:'幸福收藏夹',url:'http://sofish.de/'},
+							{name:'前端观察',url:'http://www.qianduan.net/'},
+							{name:'我爱互联网',url:'http://www.woiweb.net/'},
+							{name:'Web前端开发',url:'http://www.css88.com/'},
+							{name:'走走停停看看',url:'http://shawphy.com/'},
+							{name:'为之漫笔',url:'http://www.cn-cuckoo.com/'}
 						];
 						makeTable($("#blog-table"),data);
 					})();
@@ -159,8 +256,9 @@
 				  </table>
 			  </div>
 			  <!-- tab end -->
-			  <div class="tab-pane fade" id="future">
-					<table class="table table-striped table-bordered" id="future-table">
+				<!-- tab begin -->
+			  <div class="tab-pane fade" id="site">
+					<table class="table table-striped table-bordered" id="site-table">
 					<thead>
 					  <tr>
 						<th>功能</th>
@@ -171,17 +269,21 @@
 				  <script>
 					(function(){
 						var data=[
-							{name:'CSS3 Please',url:'http://css3please.com/'},
-							{name:'CSS3 Generator',url:'http://css3generator.com/'},
-							{name:'HTML5/CSS3兼容性',url:'http://www.caniuse.com/'},
-							{name:'CSS3 Maker',url:'http://www.css3maker.com/'}
+							{name:'w3cfuns',url:'http://www.w3cfuns.com/'},
+							{name:'伯乐在线',url:'http://blog.jobbole.com/'},
+							{name:'前端网址导航',url:'http://www.ux265.net/'},
+							{name:'编程参考手册',url:'http://overapi.com/'},
+							{name:'D2前端技术论坛',url:'http://www.d2forum.org/'},
+							{name:'阿里技术嘉年华',url:'http://adc.taobao.com/carnival/'},
+							{name:'腾讯大讲堂',url:'http://djt.qq.com/'}
 						];
-						makeTable($("#future-table"),data);
+						makeTable($("#site-table"),data);
 					})();
 				  </script>
 					</tbody>
 				  </table>
 			  </div>
+			  <!-- tab end -->
 			  <!-- tab begin -->
 			  <div class="tab-pane fade" id="other">
 					<table class="table table-striped table-bordered" id="other-table">
@@ -195,8 +297,11 @@
 				  <script>
 					(function(){
 						var data=[
-							{name:'站位图片',url:'http://placehold.it/'},
-							{name:'背景纹理',url:'http://subtlepatterns.com/'}
+							{name:'占位图片',url:'http://placehold.it/'},
+							{name:'背景纹理资源',url:'http://subtlepatterns.com/'},
+							{name:'纹理生成工具',url:'http://www.patterncooler.com/editor/'},
+							{name:'图标搜索',url:'http://www.iconfinder.com/'},
+							{name:'PNG无损压缩',url:'http://tinypng.org/'},
 						];
 						makeTable($("#other-table"),data);
 					})();

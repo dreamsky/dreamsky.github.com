@@ -11,18 +11,7 @@
         </style>
         <link href="css/bootstrap.css" rel="stylesheet">
 		<link href="js/google-code-prettify/prettify.css" rel="stylesheet">
-        <style type="text/css">
-			body{
-				font:12px/1.5 Arial,Tahoma,Helvetica,sans-serif;
-				background: url(img/background.png);
-			}
-			.sidebar-nav {
-				padding: 9px 0;
-			}
-			h1,h2,h3,h4,h5,h6 {
-				font-family:"微软雅黑";margin-bottom:10px;
-			}
-        </style>
+		<link href="css/main.css" rel="stylesheet">
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -61,7 +50,7 @@
           </div>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">首页</a></li>
               <li><a href="html.html">HTML</a></li>
               <li><a href="css.html">CSS</a></li>
               <li class="active"><a href="javascript.html">JavaScript</a></li>
@@ -78,10 +67,6 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"><i class="icon-bookmark"></i>编写技巧</li>
-              <li class="active"><a href="#practice"><i class="icon-book icon-white"></i>JavaScript 编写</a></li>
-			  <li class="divider"></li>
-			<li><a href="#"><i class="icon-flag"></i> 帮助</a></li>
             </ul>
           </div>
 			<!--<div class="well sidebar-nav">
@@ -97,11 +82,60 @@
 			<section id="practice">
 				<div class="well">
 				<h2>JavaScript 编写技巧</h2>
-				<p>奇特的禁止网页后退方法。</p>
+				<p>积累优秀的 JavaScript 编写方法。</p>
 				</div>
 				<div class="row-fluid">
-				  <h4>HTML5 DCOTYPE</h4>
-				  <p>说得对</p>
+				  <h4 id="1">回到页面顶部</h4>
+				  <p>jQuery实现回到页面顶部</p>
+<pre class="prettyprint lang-js linenums">
+$(window).scroll(function() {
+	if ($(this).scrollTop() > 500) {
+		$('#go-top').fadeIn();
+	} else {
+		$('#go-top').fadeOut();
+	}
+});
+$('#go-top a').click(function() {
+	$('body,html').animate({
+		scrollTop : 0
+	}, 500);
+	return false;
+});
+</pre>
+				</div>
+				<div class="row-fluid">
+				  <h4 id="2">jQuery prop 方法的使用</h4>
+				  <p>jQuery 1.6版本开始支持prop方法，可以在async,autofocus,checked,multiple,readonly,selected,disabled属性使用</p>
+<pre class="prettyprint lang-js linenums">
+$("#demo").prop("checked");
+$("#demo").prop("disabled",true);
+</pre>
+				</div>
+				<div class="row-fluid">
+				  <h4 id="3">Bootstrap 导航切换</h4>
+				  <p>Bootstrap 导航动态切换的实现方法。</p>
+<pre class="prettyprint lang-js linenums">
+$(".nav-list > li").click(function(){
+	if($(this).hasClass("help"))
+		return;
+	$(this).parent()
+		.find(".active")
+		.removeClass("active")
+		.find("i").removeClass("icon-white");;
+	$(this).addClass("active");
+	$(this).find("i").addClass("icon-white");
+	
+	var tar=$($(this).find("a").attr("href"));
+	$('body,html').animate({
+		scrollTop: tar.offset().top-60
+	}, "fast");
+	return false;
+});
+</pre>
+				</div>
+				<div class="row-fluid">
+				  <h4 id="4">禁止网页后退</h4>
+				  <p>奇特的禁止网页后退方法。</p>
 				<pre class="prettyprint lang-js linenums">
 function changeHashOnLoad() {
      window.location.href += &quot;#&quot;;
@@ -118,12 +152,9 @@ window.setInterval(function () {
          window.location.hash = storedHash;
     }
 }, 50);
-
-
 &lt;body onload=&quot;changeHashOnLoad();&quot;&gt;
 </pre>
 				</div>
-				<hr>
 			</section>
 			<!--section end-->
         </div>
@@ -141,5 +172,6 @@ window.setInterval(function () {
         <script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/google-code-prettify/prettify.js"></script>
         <script src="js/bootstrap.js"></script>
+		<script src="js/main.js"></script>
     </body>
 </html>

@@ -4,6 +4,8 @@ body{
 	background: url(../img/background.png);
 }
 .sidebar-nav {
+	position:fixed;
+	width: 23.076923077%;
 	padding: 9px 0;
 }
 

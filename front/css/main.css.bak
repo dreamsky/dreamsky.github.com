@@ -4,6 +4,7 @@ body{
 	background: url(../img/background.png);
 }
 .sidebar-nav {
+	position:fixed;
 	padding: 9px 0;
 }
 
@@ -38,4 +39,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .brand{
 	text-shadow: 1px 1px 3px #888;
+}
+
+.nav-list li{
+	line-height:30px;
 }
