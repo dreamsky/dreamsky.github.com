@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>动感的网页图标！</title>
+  <link rel="icon" href="favicon.ico" />
+  <script src="piecon.js"></script>
+  <script>
+  (function(){
+    var count = 86;
+    Piecon.setOptions({
+		color: '#ff0084', // Pie chart color
+		background: '#eee', // Empty pie chart color
+		shadow: '#fff', // Outer ring color
+		fallback: 'force' // Toggles displaying percentage in the title bar (possible values - true, false, 'force')
+	});
+    var i = setInterval(function(){
+      if (++count > 100) { Piecon.reset(); clearInterval(i); return false; }
+      Piecon.setProgress(count);
+    }, 250);
+  })();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h1>Demo</h1>
+    <p><a href="http://www.cnblogs.com/lhb25/archive/2012/10/25/dynamic-favicon-with-piecon.html" target="_blank">http://www.cnblogs.com/lhb25/</p>
+  </div>
+</body>
+</html>

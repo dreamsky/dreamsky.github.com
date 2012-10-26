@@ -45,3 +45,7 @@ h1,h2,h3,h4,h5,h6 {
 .nav-list li{
 	line-height:30px;
 }
+/*代理注释的颜色*/
+.com{
+	color:green !important;
+}
