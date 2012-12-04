@@ -85,7 +85,7 @@
 				<p>积累优秀的 CSS 编写方法。</p>
 				</div>
 				<div class="row-fluid">
-				  <h4 id="1">浏览器兼容的CSS Hack</h4>
+				  <h4 id="bs-hack">浏览器兼容的CSS Hack</h4>
 				  <p>兼容 IE 6,7,8,9 和 Firefox,Chrome 的 hack 写法</p>
 <pre class="prettyprint lang-css linenums">
 .demo{
@@ -100,7 +100,7 @@
 </pre>
 				</div>
 				<div class="row-fluid">
-				  <h4 id="2">清除浮动</h4>
+				  <h4 id="clearfix">清除浮动的方法</h4>
 				  <p>兼容各种浏览器的清除浮动方法</p>
 				<pre class="prettyprint lang-css linenums">
 /* clear element float */
@@ -116,7 +116,7 @@
 </pre>
 				</div>
 				<div class="row-fluid">
-				  <h4 id="2">进度条显示</h4>
+				  <h4 id="progress">进度条显示</h4>
 				  <p>类似点评网效果的进度<br/>
 <div class="status">
 <span class="progress" title="36%">
@@ -158,6 +158,67 @@
 	width:36%;
 	height:12px;
 	background-color:#F96;
+}
+</style>
+</pre>
+				</div>
+				<div class="row-fluid">
+				  <h4 id="middle">垂直居中兼容方法</h4>
+				  <p>DIV内容垂直居中的兼容实现方案。<br/>
+<div class="wrap">
+	<div class="hack">
+		<div class="cnt">
+			Content
+		</div>
+	</div>
+</div>
+
+<style>
+.wrap{
+	display:table;
+	width:300px;
+	height:50px;
+	background-color:#aaa;
+	*position:relative;
+}
+.hack{
+	display:table-cell;
+	vertical-align:middle;
+	*position:absolute;
+	*top:50%;
+}
+.cnt{
+	*position:relative;
+	*top:-50%;
+}
+</style>				  
+				  </p>
+				<pre class="prettyprint lang-html linenums cv">
+<div class="wrap">
+	<div class="hack">
+		<div class="cnt">
+			Content
+		</div>
+	</div>
+</div>
+
+<style>
+.wrap{
+	display:table;
+	width:300px;
+	height:50px;
+	background-color:#aaa;
+	*position:relative;
+}
+.hack{
+	display:table-cell;
+	vertical-align:middle;
+	*position:absolute;
+	*top:50%;
+}
+.cnt{
+	*position:relative;
+	*top:-50%;
 }
 </style>
 </pre>

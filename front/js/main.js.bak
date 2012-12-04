@@ -21,7 +21,7 @@ $(function(){
 		$(this).addClass("active");
 		$(this).find("i").addClass("icon-white");
 		
-		var tar=$($(this).find("a")[0].hash);
+		var tar=$($(this).find("a").attr("hash"));
 		$('body,html').animate({
 			scrollTop: tar.offset().top-55
 		}, "fast");

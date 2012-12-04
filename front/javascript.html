@@ -139,7 +139,7 @@ $(".nav-list > li").click(function(){
 	$(this).addClass("active");
 	$(this).find("i").addClass("icon-white");
 	
-	var tar=$($(this).find("a").attr("href"));
+	var tar=$($(this).find("a")[0].hash);
 	$('body,html').animate({
 		scrollTop: tar.offset().top-60
 	}, "fast");
@@ -210,6 +210,28 @@ function isArray(value){
 				<div class="row-fluid">
 				  <h4 id="js-quiz">JavaScript Quiz（小测验）</h4>
 				  <p>JavaScript 中相等运算符特殊用法。</p>
+					<table class="table table-striped table-bordered" id="quiz-list-table">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>网址</th>
+							</tr>
+						</thead>
+						<tbody>
+						  <script>
+							(function(){
+								var data=[
+									{name:'1',value:'http://perfectionkills.com/javascript-quiz/'},
+									{name:'2',value:'http://james.padolsey.com/javascript/another-javascript-quiz/'},
+									{name:'3',value:'http://www.nczonline.net/blog/2010/02/16/my-javascript-quiz/'},
+									{name:'4',value:'http://javascript.about.com/library/bltut36q.htm'},
+									{name:'5',value:'http://dmitry.baranovskiy.com/post/91403200'}
+								];
+								makeTable($("#quiz-list-table"),data);
+							})();
+						  </script>
+						</tbody>
+					</table>
 					<table class="table table-striped table-bordered" id="quiz-table">
 						<thead>
 							<tr>
@@ -221,9 +243,11 @@ function isArray(value){
 						  <script>
 							(function(){
 								var data=[
-									{name:'w3cfuns',value:'http://www.w3cfuns.com/'},
-									{name:'伯乐在线',value:'http://blog.jobbole.com/'},
-									{name:'腾讯大讲堂',value:'http://djt.qq.com/'}
+									{name:'(1,2,3)',value:'3'},
+									{name:'1 && "foo" || 0',value:'\"foo\"'},
+									{name:'[true, false][+true, +false]',value:'true'},
+									{name:"++'52'.split('')[0]",value:'6'},
+									{name:'delete [].length;',value:'false'}
 								];
 								makeTable($("#quiz-table"),data);
 							})();

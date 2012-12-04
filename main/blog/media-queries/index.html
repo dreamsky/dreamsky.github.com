@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Media Query Demos</title>
+<style type="text/css">
+.wrapper {
+	border: solid 1px #666;	
+	padding: 5px 10px;
+	margin: 40px;
+}
+
+.viewing-area span {
+	color: #666;
+	display: none;
+}
+
+/* max-width */
+@media screen and (max-width: 600px) {
+	.one {
+		background: #F9C;
+	}
+	span.lt600 {
+		display: inline-block;
+	}
+}
+
+/* min-width */
+@media screen and (min-width: 900px) {
+	.two {
+		background: #F90;
+	}
+	span.gt900 {
+		display: inline-block;
+	}
+}
+
+/* min-width & max-width */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	.three {
+		background: #9CF;
+	}
+	span.bt600-900 {
+		display: inline-block;
+	}
+}
+
+/* max device width */
+@media screen and (max-device-width: 480px) {
+	.iphone {
+		background: #ccc;
+	}
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper one">This box will turn to pink if the viewing area is less than 600px</div>
+	<div class="wrapper two">This box will turn to orange if the viewing area is greater than 900px</div>
+	<div class="wrapper three">This box will turn to blue if the viewing area is between 600px and 900px</div>
+	<div class="wrapper iphone">This box will only apply to devices with max-device-width: 480px (ie. iPhone)</div>
+	<p class="viewing-area"><strong>Your current viewing area is:</strong> <span class="lt600">less than 600px</span> <span class="bt600-900">between 600 - 900px</span> <span class="gt900">greater than 900px</span></p>
+	<p>返回教程：<a href="http://www.cnblogs.com/lhb25/archive/2012/12/04/css3-media-queries.html">CSS3 Media Queries 实现响应式设计</a></p>
+</body>
+</html>
