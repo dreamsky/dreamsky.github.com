@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>gRaphaël Static Pie Chart</title>
+        <link rel="stylesheet" href="assets/base.css">
+        <link rel="stylesheet" href="assets/demo.css">
+        <script src="assets/raphael-min.js"></script>
+        <script src="assets/g.raphael.js"></script>
+        <script src="assets/g.pie.js"></script>
+        <script>
+            window.onload = function () {
+                var r = Raphael("holder");
+
+                r.text(320, 50, "Static Pie Chart").attr({ font: "20px sans-serif" });
+                r.piechart(320, 250, 160, [55, 20, 13, 32, 5, 1, 2, 10]);
+            };
+        </script>
+    </head>
+    <body class="raphael">
+        <div id="holder"></div>
+        <p style="text-align:center">
+            梦想天空—— <a href="http://www.cnblogs.com/lhb25/archive/2013/01/07/gRaphael-javascript-chart-library.html">gRaphaël</a> 矢量图表库示例。
+        </p>
+    </body>
+</html>
