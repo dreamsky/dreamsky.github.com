@@ -152,7 +152,7 @@ $(".nav-list > li").click(function(){
 				  <p>jQuery 中判断变量类型的方法。</p>
 					<pre class="prettyprint lang-js linenums">
 //type list: “Boolean Number String Function Array Date RegExp Object”
-toString.call([1,2,3])=="object Array"; //true
+toString.call([1,2,3])=="[object Array]"; //true
 toString.call({name:'John'})=="[object Object]"; //true
 
 //对于数组有更简便的方法
@@ -298,6 +298,15 @@ $('a', $('#container')[0]).live('click', function() {
 $('#container').delegate('a', 'click', function() {
 	//TODO
 });
+</pre>
+				</div>
+
+				<div class="row-fluid">
+				  <h4 id="firefox-close">Firefox 关闭页面的方法</h4>
+				  <p>Firefox 关闭非脚本打开的页面的方法</p>
+					<pre class="prettyprint lang-js linenums">
+window.open('', '_self', '');
+window.close();
 </pre>
 				</div>
 			</section>

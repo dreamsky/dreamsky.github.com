@@ -87,15 +87,36 @@
 				<div class="row-fluid">
 				  <h4 id="bs-hack">浏览器兼容的CSS Hack</h4>
 				  <p>兼容 IE 6,7,8,9 和 Firefox,Chrome 的 hack 写法</p>
+				  <style>
+					.demo{
+						width:300px;
+						height:20px;
+						background-color:blue\9;  /* ie8 */
+						*background-color:yellow; /* ie7 */
+						_background-color:black;  /* ie6 */
+					}
+					:root .demo{
+						background-color:green;   /* ie9,ff,chrome */
+					}
+				  </style>
+				  <p class="demo"></p>
 <pre class="prettyprint lang-css linenums">
 .demo{
-	background-color:red;     /* ff,chrome */
 	background-color:blue\9;  /* ie8 */
 	*background-color:yellow; /* ie7 */
 	_background-color:black;  /* ie6 */
 }
 :root .demo{
-	background-color:green;   /* ie9 */
+	background-color:green;   /* ie9,ff,chrome */
+}
+</pre>
+				  <p>IE8 和 IE9 不需要区分的话还可以这样写</p>
+<pre class="prettyprint lang-css linenums">
+.demo{
+	background-color:red;     /* ff,chrome */
+	background-color:blue\9;  /* ie8,ie9 */
+	*background-color:yellow; /* ie7 */
+	_background-color:black;  /* ie6 */
 }
 </pre>
 				</div>
