@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+        
+            function xss_ajax(url, callback) 
+            {
+               var script_id = null;
+               var script = document.createElement('script');
+               script.setAttribute('type', 'text/javascript');
+               script.setAttribute('src', url);
+               script.setAttribute('id', 'coolshell_script_id');
+
+                script.onload = script.onreadystatechange = function(){
+                    if((!this.readyState || this.readyState === "loaded" || this.readyState === "complete")){
+                        callback && callback();
+                    }
+                };
+
+               script_id = document.getElementById('coolshell_script_id');
+               if(script_id){
+                   document.getElementsByTagName('head')[0].removeChild(script_id);
+               }
+
+               // Insert <script> into DOM
+               document.getElementsByTagName('head')[0].appendChild(script);
+            }
+
+
+            function xss_rpc_call(n, callback)
+            { 
+                var callbackName="xss_rpc_callback";
+                var url = "http://coolshell.cn/t.php?n="+n+"&callback="+callbackName;
+                xss_ajax(url);
+                xss_rpc_callback = function(result){
+                   //var timeout =  Math.round(Math.random() * 1000)
+                   //callback && setTimeout(function(){callback(result);}, timeout);
+                   callback && callback(result) ;
+                }
+            }
+
+            function xss_rpc_call2(n, callback)
+            {
+                var callbackName="xss_rpc_callback"+ n + Math.round(Math.random() * 100000);
+                var url = "http://coolshell.cn/t.php?n="+n+"&callback="+callbackName;
+                xss_ajax(url);
+                window[callbackName] = function(result){
+                   //var timeout =  Math.round(Math.random() * 1000)
+                   //callback && setTimeout(function(){callback(result);}, timeout);
+                   callback && callback(result);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="result"></div>
+        <script>
+            var show = document.getElementById('result')
+
+            /*var total=20;
+            var fragment=document.createDocumentFragment();
+            for(var i=0;i<total;i++){
+                xss_rpc_call2(i,function(result){
+                    fragment.innerHTML+=(i+","+result+"<br/>");
+                });
+            }
+            show.appendChild(fragment)*/
+
+            var total=3;
+            var buf=[];
+            function recursive(i){
+                if(i>=total) {
+                    show.innerHTML=buf.join('');
+                    return;
+                };
+                xss_rpc_call2(i,function(result){
+                    buf.push(i+","+result+"<br/>");
+                    recursive(i+1);
+                })
+            }
+            recursive(0);
+        </script>
+    </body>
+</html>

@@ -72,8 +72,9 @@
 			  <li><a href="#javascript" data-toggle="tab">JavaScript</a></li>
 			  <li><a href="#jquery" data-toggle="tab">jQuery 插件</a></li>
 			  <li><a href="#future" data-toggle="tab">HTML5 & CSS3</a></li>
-			  <li><a href="#blog" data-toggle="tab">前端博客收集</a></li>
-			  <li><a href="#site" data-toggle="tab">前端网站收集</a></li>
+			  <li><a href="#blog" data-toggle="tab">前端博客</a></li>
+			  <li><a href="#site" data-toggle="tab">前端网站</a></li>
+			  <li><a href="#image" data-toggle="tab">图片工具</a></li>
 			  <li><a href="#other" data-toggle="tab">其它资源</a></li>
 			</ul>
  
@@ -90,6 +91,7 @@
 				  <script>
 					(function(){
 						var data=[
+							{name:'浏览器 Hack 查询',url:'http://browserhacks.com'},
 							{name:'Google HTML/CSS 编码规范',url:'http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml'},
 							{name:'IE CSS Bug 列表',url:'http://haslayout.net/css/'},
 							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
@@ -150,7 +152,7 @@
 				  <script>
 					(function(){
 						var data=[
-							{name:'Twitter Bootstrap',url:'http://twitter.github.com/bootstrap/'},
+							{name:'jQuery 插件仓库',url:'http://www.unheap.com/'},
 							{name:'jquip',url:'https://github.com/mythz/jquip'},
 							{name:'jQuery UI',url:'http://jqueryui.com/'},
 							{name:'jQuery Tools',url:'http://jquerytools.org/'},
@@ -196,13 +198,15 @@
 						var data=[
 							{name:'HTML5/CSS3兼容性',url:'http://www.caniuse.com/'},
 							{name:'HTML5 Test',url:'http://html5test.com/'},
-							{name:'HTML5/CSS3视频教程网站',url:'http://thecodeplayer.com/'},
+							{name:'HTML5 实验室',url:'http://hakim.se/experiments'},
+							{name:'HTML5/CSS3实验室',url:'http://cssdeck.com/'},
+							{name:'HTML5/CSS3演示教程',url:'http://thecodeplayer.com/'},
 							{name:'HTML5shive',url:'https://github.com/aFarkas/html5shiv'},
 							{name:'CSS3 Please',url:'http://css3please.com/'},
 							{name:'CSS3 Generator',url:'http://css3generator.com/'},
 							{name:'CSS3 Maker',url:'http://www.css3maker.com/'},
 							{name:'CSS3 UI 库',url:'http://css3lib.alloyteam.com/'},
-							{name:'CSS3 动画库',url:'http://ecd.tencent.com/css3/'}
+							{name:'CSS3 动画库',url:'http://ecd.tencent.com/css3/'},
 						];
 						makeTable($("#future-table"),data);
 					})();
@@ -293,6 +297,39 @@
 				  </table>
 			  </div>
 			  <!-- tab end -->
+				<!-- tab begin -->
+			  <div class="tab-pane fade" id="image">
+					<table class="table table-striped table-bordered" id="image-table">
+					<thead>
+					  <tr>
+						<th>功能</th>
+						<th>网址</th>
+					  </tr>
+					</thead>
+					<tbody>
+				  <script>
+					(function(){
+						var data=[
+							{name:'占位图片',url:'http://placehold.it/'},
+							{name:'图片搜索引擎',url:'http://findicons.com/'},
+							{name:'图片搜索引擎',url:'http://www.iconfinder.com/'},
+							{name:'图片搜索-vector',url:'http://vector.us/'},
+							{name:'图片搜索-freepik',url:'http://www.freepik.com/'},
+							{name:'PSD资源-365PSD',url:'http://365psd.com/'},
+							{name:'PSD资源-FreePSD',url:'http://freepsdfiles.net/'},
+							{name:'背景纹理资源',url:'http://subtlepatterns.com/'},
+							{name:'背景纹理制作',url:'http://www.bgpatterns.com/'},
+							{name:'纹理生成工具',url:'http://www.patterncooler.com/editor/'},
+							{name:'PNG压缩-tinypng',url:'http://tinypng.org/'},
+							{name:'PNG压缩-compresspng',url:'http://compresspng.com/'}
+						];
+						makeTable($("#image-table"),data);
+					})();
+				  </script>
+					</tbody>
+				  </table>
+			  </div>
+			  <!-- tab end -->			  
 			  <!-- tab begin -->
 			  <div class="tab-pane fade" id="other">
 					<table class="table table-striped table-bordered" id="other-table">
@@ -309,11 +346,6 @@
 							{name:'jsFiddle',url:'http://jsfiddle.net/'},
 							{name:'jsbin',url:'http://jsbin.com'},
 							{name:'js 性能测试工具',url:'http://jsperf.com/'},
-							{name:'占位图片',url:'http://placehold.it/'},
-							{name:'背景纹理资源',url:'http://subtlepatterns.com/'},
-							{name:'纹理生成工具',url:'http://www.patterncooler.com/editor/'},
-							{name:'图标搜索',url:'http://www.iconfinder.com/'},
-							{name:'PNG无损压缩',url:'http://tinypng.org/'},
 							{name:'CSS SpriteMe',url:'http://spriteme.org/'},
 							{name:'Sprite Cow',url:'http://www.spritecow.com/'},
 							{name:'Sprite Pad',url:'http://spritepad.wearekiss.com/'},
@@ -324,7 +356,7 @@
 							{name:'皮皮书屋',url:'http://www.ppurl.com/'},
 							{name:'阿里技术嘉年华PDF',url:'http://vdisk.weibo.com/u/1939498534'},
 							{name:'百度编辑器',url:'http://ueditor.baidu.com/website/index.html'},
-							{name:'HTML5&CSS3在线教程',url:'http://thecodeplayer.com/'}
+							
 						];
 						makeTable($("#other-table"),data);
 					})();

@@ -246,6 +246,60 @@
 				</div>
 			</section>
 			<!--section end-->
+
+				<div class="row-fluid">
+				  <h4 id="tb-middle">垂直居中兼容方法（淘宝）</h4>
+				  <p>淘宝提供的DIV内容垂直居中的兼容实现方案。<br/>
+<div class="box">
+	<img src="http://pic.cnitblog.com/avatar/a36987.jpg?id=27111710"  alt="" />
+</div>
+
+<style type="text/css">
+.box {
+	display: table-cell;
+	vertical-align:middle;
+	width:200px;
+	height:200px;
+	text-align:center;
+	/* hack for ie */
+	*display: block;
+	*font-size: 175px;
+	/* end */
+	border: 5px solid red;
+}
+
+.box img{
+	vertical-align: middle; /* for lt ie7 */
+}
+</style>				  
+				  </p>
+				<pre class="prettyprint lang-html linenums cv">
+<div class="box">
+	<img src="http://pic.cnitblog.com/avatar/a36987.jpg?id=27111710"  alt="" />
+</div>
+
+<style type="text/css">
+.box {
+	display: table-cell;
+	vertical-align:middle;
+	width:200px;
+	height:200px;
+	text-align:center;
+	/* hack for ie */
+	*display: block;
+	*font-size: 175px;
+	/* end */
+	border: 5px solid red;
+}
+
+.box img{
+	vertical-align: middle; /* for lt ie7 */
+}
+</style>
+</pre>
+				</div>
+			</section>
+			<!--section end-->
         </div>
         </div>
 		<hr>
