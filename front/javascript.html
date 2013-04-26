@@ -277,6 +277,21 @@ ClassB.prototype.sayAge=function(){
 </pre>
 				</div>
 				<div class="row-fluid">
+				  <h4 id="js-callee">JavaScript callee 用法示例</h4>
+				  <p>返回正被执行的 Function 对象，即指定的 Function 对象的正文。</p>
+					<pre class="prettyprint lang-js linenums">
+function factorial(num) {
+	if (num <= 1) {
+		return 1;
+	} else {
+		return num * arguments.callee(num - 1);
+	}
+}
+
+console.log(factorial(10)); //3628800
+</pre>
+				</div>
+				<div class="row-fluid">
 				  <h4 id="jq-event">jQuery 事件绑定方法</h4>
 				  <p>jQuery 中各种事件绑定方法的区别。</p>
 					<pre class="prettyprint lang-js linenums">

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array Unique</title>
+	<script>
+		var indexOf = [].indexOf ? function(ary,item){
+					return ary.indexOf(item);
+				} : function(ary, item) {
+					for (var i = 0; i < ary.length; i++) {
+						if (ary[i] == item) return i;
+					}
+					return -1;
+				};
+
+		function unique(ary) {
+			var ret = [];
+			for (var i = 0; i < ary.length; i++) {
+				if (indexOf(ret,ary[i]) === -1) {
+					ret.push(ary[i]);
+				}
+			}
+			return ret;
+		}
+
+		function unique2(ary){
+			var ret=[];
+			var hash={};
+			for (var i = 0; i < ary.length; i++) {
+				var item=ary[i];
+				var key=typeof(item)+item;
+				if(hash[key]!=1){
+					ret.push(item);
+				}
+				hash[key]=1;
+			};
+			return ret;
+		}
+
+		var a = [1, 2, 3, 4, 1, 2];
+		alert(unique2(a));
+
+	</script>
+<body>
+
+</body> 
+</html>

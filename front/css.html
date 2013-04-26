@@ -134,6 +134,19 @@
 	height: 0;
 }
 .cf { *zoom: 1; } /* for IE6 IE7 */
+
+/* or using below method */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both; 
+}
+.cf {
+    *zoom: 1; /* for IE6 IE7 */
+}
 </pre>
 				</div>
 				<div class="row-fluid">
