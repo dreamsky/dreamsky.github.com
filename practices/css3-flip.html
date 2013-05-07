@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 Flip Animation</title>
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style>
+	.demo{
+		width: 200px;
+		height: 200px;
+		line-height: 200px;
+		background: green;
+		text-align: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	</style>
+</head>
+<body>
+	<div class="demo" id="demo1">测试内容1</div>
+	<div class="demo" id="demo2" style="display:none">测试内容2</div>
+	<script>
+		$(function() {
+			$("#demo1").click(function() {
+				var ny = 0;
+				var ani_obj = $("#demo1");
+				if (timer) clearInterval(timer);
+				var timer = setInterval(function() {
+					ny = ny + 1;
+					ani_obj.css("-webkit-transform", "rotateY(" + ny + "deg)");
+					if (ny === 90) {
+						ani_obj = $("#demo2");
+						ani_obj.css("-webkit-transform", "rotateY(270deg)").show();
+						ny = 270;
+					}
+					if (ny >= 360) {
+						clearInterval(timer);
+					}
+				}, 10);
+			});
+		});
+	</script>
+</body>
+</html>
