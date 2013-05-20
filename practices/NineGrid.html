@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nine Grid</title>
+	<style>
+	ul {
+		width: 165px;
+		padding: 30;
+	}
+	ul li{
+		float:left;
+		list-style: none;
+		position: relative;
+	}
+	li a {
+		display: block;
+		width: 50px;
+		height: 50px;
+		border: 5px solid blue;
+		margin-left: -5px;
+		margin-top: -5px;
+	}
+	a:hover {
+		position: relative;
+		border-color: red;
+		z-index: 100;
+	}
+	.fn-clear:after{
+		visibility: hidden;
+		display: block;
+		content:' ';
+		clear:both;
+	}
+	.fn-clear{
+		*zoom:1;
+	}
+	</style>
+</head>
+<body>
+	<ul class="fn-clear">
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+		<li><a href="" class="1"></a></li>
+	</ul>
+</body>
+</html>
