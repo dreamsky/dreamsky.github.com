@@ -73,22 +73,27 @@
 "use strict";
 
 function $(id) {
-	return typeof id === "string" ? document.getElementById(id) : id;
+	return document.getElementById(id);
 }
 
 function $$(oParent, elem) {
 	return (oParent || document).getElementsByTagName(elem);
 }
 
-function $$$(oParent, sClass) {
-	var aElem = $$(oParent, '*');
-	var aClass = [];
-	var i = 0;
-	for (i = 0; i < aElem.length; i++) {
-		if (aElem[i].className == sClass)
-			aClass.push(aElem[i]);
+function $$$(oParent, className) {
+	if (oParent.querySelectorAll) {
+		return oParent.querySelectorAll('.' + className);
+	} else {
+		var els = $$(oParent, '*');
+		var re = [];
+		var i = 0;
+		for (i = 0; i < els.length; i++) {
+			if (els[i].className == className)
+				re.push(els[i]);
+		}
+		return re;
 	}
-	return aClass;
+
 }
 
 function Zoom() {
@@ -102,35 +107,33 @@ Zoom.prototype = {
 			lensWidth: 50,
 			lensHeight: 50
 		}
-		this.oBox = $('zoom');
-		this.oLeft = $$$(this.oBox, 'origin')[0];
+		this.oContainer = $('magnifier');
+		this.oLeft = $$$(this.oContainer, 'origin')[0];
 		this.oLimg = $$(this.oLeft, 'img')[0];
-		this.oZoom = $$$(this.oBox, 'large')[0];
+		var zoom = this.oZoom = $$$(this.oContainer, 'large')[0];
 		this.oRimg = $$(this.oZoom, 'img')[0];
-		this.oMask = $$$(this.oBox, 'mask')[0];
-		var lens = this.oLens = $$$(this.oBox, 'lens')[0];
+		var mask = this.oMask = $$$(this.oContainer, 'mask')[0];
+		var lens = this.oLens = $$$(this.oContainer, 'lens')[0];
 
 		lens.style.width = (options && options.lensWidth || config.lensWidth) + 'px';
 		lens.style.height = (options && options.lensHeight || config.lensHeight) + 'px';
 
-		this.oMask.onmouseover = function() {
-			_this.mouseover();
+		mask.onmouseover = function() {
+			lens.style.display = 'block';
+			zoom.style.display = 'block';
 		};
-		this.oMask.onmousemove = function(e) {
+		mask.onmouseout = function() {
+			lens.style.display = 'none';
+			zoom.style.display = 'none';
+		};
+		mask.onmousemove = function(e) {
 			_this.mousemove(e);
 		};
-		this.oMask.onmouseout = function() {
-			_this.mouseout();
-		};
-	},
-	mouseover: function() {
-		this.oLens.style.display = 'block';
-		this.oZoom.style.display = 'block';
 	},
 	mousemove: function(e) {
 		var ev = e || event;
-		var lensX = (ev.clientX - this.oBox.offsetLeft) - this.oLens.offsetWidth / 2;
-		var lensY = (ev.clientY - this.oBox.offsetTop) - this.oLens.offsetHeight / 2;
+		var lensX = (ev.clientX - this.oContainer.offsetLeft) - this.oLens.offsetWidth / 2;
+		var lensY = (ev.clientY - this.oContainer.offsetTop) - this.oLens.offsetHeight / 2;
 		var maxLeft = this.oMask.offsetWidth - this.oLens.offsetWidth;
 		var maxTop = this.oMask.offsetHeight - this.oLens.offsetHeight;
 		if (lensX < 0) {
@@ -149,10 +152,6 @@ Zoom.prototype = {
 		var percentY = lensY / maxTop;
 		this.oRimg.style.left = -percentX * (this.oRimg.offsetWidth - this.oZoom.offsetWidth) + 'px';
 		this.oRimg.style.top = -percentY * (this.oRimg.offsetHeight - this.oZoom.offsetHeight) + 'px';
-	},
-	mouseout: function() {
-		this.oLens.style.display = 'none';
-		this.oZoom.style.display = 'none';
 	}
 };
 
@@ -163,12 +162,13 @@ window.onload = function() {
 		lensHeight: 150
 	});
 
-	// other example
-	// new Zoom();	
+	// other way
+	// new Zoom();
 };
+
 </script>
 <body>
-	<div class="container" id="zoom">
+	<div class="container" id="magnifier">
 		<div class="origin">
 			<span class="lens"></span>
 			<span class="mask"></span>
