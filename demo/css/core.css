@@ -219,7 +219,7 @@ a {
 	text-align: center;
 }
 #site-title h1 {
-	font-size: 150px;
+	font-size: 120px;
 	font-family: 'Microsoft YaHei';
 	letter-spacing: 10px;
 	text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
@@ -227,10 +227,28 @@ a {
 .index #nav .tab {
 	position: absolute;
 	z-index: 999;
-	width: 120px;
+	width: 130px;
 	background-color: #777;
 	border-radius: 3px;
+	box-shadow: 1px 1px 4px rgba(0,0,0,.3);
+	padding: 10px 0;
 	display: none;
+}
+.index #nav .arrow {
+	position: absolute;
+	left: 35px;
+	top: -16px;
+}
+.index #nav .arrow .i {
+	width: 0;
+	height: 0;
+	border-style: solid dashed dashed dashed;
+	border-right: dashed transparent;
+	border-left: dashed transparent;
+	border-top: dashed transparent;
+	border-width: 8px;
+	border-bottom-color: #777;
+	font-size: 0; 
 }
 .index #nav .tab li {
 	text-align: left;
@@ -243,7 +261,7 @@ a {
 	color: #fff;
 	text-decoration: none;
 	padding-left: 30px;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	/*text-shadow: 1px 1px 1px rgba(0,0,0,0.5);*/
 }
 .index #nav .tab a:hover {
 	color: orange;
@@ -267,6 +285,11 @@ a {
 	background-color: #eee;
 	color: #666;
 }
+.index .article-list .active {
+	background-color: #eee;
+	color: #666;	
+}
+
 .index .article-detail {
 	width: 760px;
 	margin-left: 30px;
@@ -294,6 +317,38 @@ a {
 	text-shadow:1px 1px 1px #000;
 	padding-bottom:30px;
 	line-height:40px;
+}
+
+/* text effect */
+
+.entry-title .char1 {
+	color: #ff2626;
+	text-shadow: -4px 4px 0px #b80000;
+}
+.entry-title .char2,
+.entry-title .char11 {
+	color:#ff7826;
+	text-shadow:-4px 4px 0px #be4300;
+}
+.entry-title .char3,
+.entry-title .char10 {
+	color:#ffce26;
+	text-shadow:-4px 4px 0px #d8a700;
+}
+.entry-title .char4,
+.entry-title .char9 {
+	color:#4ed000;
+	text-shadow:-4px 4px 0px #2da000;
+}
+.entry-title .char5,
+.entry-title .char8 {
+	color:#247cf4;
+	text-shadow:-4px 4px 0px #004db6;
+}
+.entry-title .char6,
+.entry-title .char7 {
+	color:#7d80ff;
+	text-shadow:-4px 4px 0px #242fff;
 }
 
 /* shining button */
