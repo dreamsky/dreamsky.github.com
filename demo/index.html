@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/core.css" rel="stylesheet" />
+</head>
+<body class="index">
+	<div class="container">
+		<div id="nav" class="clearfix">
+			<div class="item fr" data-id="one"><a href="show_article.html">文章</a></div>
+			<div class="item fr">|</div> 
+			<div class="item fr" data-id="two"><a href="show_works.html">作品</a></div>
+			<div class="tab one">
+				<ul>
+					<li><a href="">分类一</a></li>
+					<li><a href="">分类一</a></li>
+					<li><a href="">分类一</a></li>
+					<li><a href="">分类一</a></li>
+					<li><a href="">分类一</a></li>
+					<li><a href="">分类一</a></li>
+				</ul>
+			</div>
+			<div class="tab two">
+				<ul>
+					<li><a href="">文章一</a></li>
+					<li><a href="">文章一</a></li>
+					<li><a href="">文章一</a></li>
+					<li><a href="">文章一</a></li>
+					<li><a href="">文章一</a></li>
+					<li><a href="">文章一</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="container">
+		<div id="site-title">
+			<h1>张敏画作</h1>
+		</div>
+	</div>
+	<script src="http://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+	<script type="text/javascript">
+		$(function(){
+			// 居中
+			var center = function() {
+				var marginTop = $(window).height() - $('#site-title').height();
+				if(marginTop < 0)
+					marginTop = 0;
+				$('#site-title').css('margin-top', marginTop/2);		
+			};
+			center();
+			$(window).resize(center);
+
+			// 导航
+			$('#nav .tab').hover(function(){
+				var cs = $(this).attr('data-id');
+				$('#nav .tab').hide();
+				$('#nav .' + cs).show();
+			});
+		});
+	</script>
+</body>
+</html>

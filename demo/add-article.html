@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/core.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/jquery.wysiwyg.css" type="text/css"/>
+    <script src="http://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $('textarea').wysiwyg({
+                width: 550,
+                controls: {
+                    insertImage: { visible: false }
+                }
+            });
+        });
+    })(jQuery);
+    // https://github.com/akzhan/jwysiwyg
+    // http://akzhan.github.com/jwysiwyg/examples/
+    </script>
+    <style>
+        div.wysiwyg {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="iframe">
+    <div id="content">
+        <div class="manage-container clearfix">
+            <form method="post" action="#">
+                <div class="form-line add-file">
+                    <label>标题</label><input type="text" class="form-control" name="title" id="tile">
+                </div>
+                <div class="form-line add-des">
+                    <label>内容</label><textarea class="form-control" name="ms" id="ms" width="600"></textarea>
+                </div>
+                <div class="form-line">
+                    <label></label><button class="btn btn-primary" type="submit">添加文章</button>
+                </div>
+            </form> 
+		</div>
+	</div>
+</body>
+</html>
