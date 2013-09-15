@@ -226,6 +226,7 @@ a {
 }
 .index #nav .tab {
 	position: absolute;
+	z-index: 999;
 	width: 120px;
 	background-color: #777;
 	border-radius: 3px;
@@ -275,10 +276,24 @@ a {
 	text-align: center;
 	margin: 30px 0;
 	font-size: 50px;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }
 .index .article-detail .content {
 	font-size: 16px;
 	line-height: 30px;
+}
+.index .works {
+	margin: 50px 0;
+}
+.index .works h1 {
+	margin:15px;
+	font-size:50px;
+	text-align:center;
+	color:#fff;
+	font-family: 'Microsoft YaHei';
+	text-shadow:1px 1px 1px #000;
+	padding-bottom:30px;
+	line-height:40px;
 }
 
 /* shining button */
