@@ -26,8 +26,8 @@
 
     $.each(attrs, function (i, attr) {
       if (/^data-in-*/.test(attr.nodeName)) {
-        data.in = data.in || {};
-        data.in[attr.nodeName.replace(/data-in-/, '')] = attr.nodeValue;
+        data['in'] = data['in'] || {};
+        (data['in'])[attr.nodeName.replace(/data-in-/, '')] = attr.nodeValue;
       } else if (/^data-out-*/.test(attr.nodeName)) {
         data.out = data.out || {};
         data.out[attr.nodeName.replace(/data-out-/, '')] = attr.nodeValue;
@@ -146,13 +146,13 @@
         var $chars = base.$current.find('[class^="char"]')
           .css('display', 'inline-block');
 
-        if (isInEffect(options.in.effect)) {
+        if (isInEffect((options['in']).effect)) {
           $chars.css('visibility', 'hidden');
-        } else if (isOutEffect(options.in.effect)) {
+        } else if (isOutEffect((options['in']).effect)) {
           $chars.css('visibility', 'visible');
         }
 
-        animateChars($chars, options.in, function () {
+        animateChars($chars, options['in'], function () {
           setTimeout(function () {
             // in case options have changed 
             var options = $.extend({}, base.options, getData($elem));
@@ -198,7 +198,7 @@
     loop: false,
     minDisplayTime: 2000,
     initialDelay: 0,
-    in: {
+    'in': {
       effect: 'fadeInLeftBig',
       delayScale: 1.5,
       delay: 50,
@@ -210,7 +210,7 @@
       delayScale: 1.5,
       delay: 50,
       sync: false,
-      shuffle: false,
+      shuffle: false
     },
     autoStart: true,
     inEffects: [],
