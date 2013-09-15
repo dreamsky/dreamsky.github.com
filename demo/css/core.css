@@ -7,7 +7,7 @@ body {
 	line-height: 1.62;
 }
 .container {
-	width: 800px;
+	width: 960px;
 	margin: 0 auto;
 }
 .form-line {
@@ -225,18 +225,61 @@ a {
 	text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
 }
 .index #nav .tab {
-	width: 100px;
-	background-color: #aaa;
+	position: absolute;
+	width: 120px;
+	background-color: #777;
+	border-radius: 3px;
 	display: none;
 }
 .index #nav .tab li {
-	text-align: center;
-	height: 25px;
+	text-align: left;
+	height: 35px;
 }
 .index #nav .tab a {
+	display: block;
+	height: 35px;
+	margin-top: -10px;
 	color: #fff;
+	text-decoration: none;
+	padding-left: 30px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
-
+.index #nav .tab a:hover {
+	color: orange;
+}
+.index .article-list {
+	width: 160px;
+	margin-top: 30px;
+	background-color: #666;
+	border: 1px solid #777;
+	box-shadow: rgba(0,0,0,0.5) 0px 2px 5px;
+}
+.index .article-list a {
+	color: #fff;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 30px;
+	text-decoration: none;
+}
+.index .article-list a:hover {
+	background-color: #eee;
+	color: #666;
+}
+.index .article-detail {
+	width: 760px;
+	margin-left: 30px;
+	margin-bottom: 50px;
+}
+.index .article-detail .title {
+	text-align: center;
+	margin: 30px 0;
+	font-size: 50px;
+}
+.index .article-detail .content {
+	font-size: 16px;
+	line-height: 30px;
+}
 
 /* shining button */
 .button {
