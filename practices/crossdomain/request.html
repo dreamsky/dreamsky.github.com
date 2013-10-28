@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>该页面的路径是：http://a.com/request.html</title>
+</head>
+<body>
+    <p id="result">这里将会填上响应的结果</p>
+    <a id="sendBtn" href="javascript:void(0)">点击，发送跨域请求</a>
+    <iframe id="serverIf"></iframe>
+    <script type="text/javascript">
+        document.getElementById("sendBtn").onclick = function() {
+            var url = "http://10.1.18.78:83/CrossDomain/response.html";
+            var fn = "GetPerson";//这是定义在response.html的方法
+            var reqdata = '{"id" : 24}';//这是请求的参数
+            var callback = "CallBack";//这是请求全过程完成后执行的回调函数，执行最后的动作
+            CrossRequest(url, fn, reqdata, callback);//发送请求
+        }
+        function CrossRequest(url, fn, reqdata, callback) {
+            var server = document.getElementById("serverIf");
+            server.src = url + "?fn=" + encodeURIComponent(fn) + "&data=" + encodeURIComponent(reqdata) + "&callback=" + encodeURIComponent(callback);//这里由request.html向response.html发送的请求其实就是通过iframe的src将参数与回调方法传给response.html
+        }
+        function CallBack(data) {//回调函数
+            alert(data.result);
+            var str = "My name is " + data.name + ". I am a " + data.sex + ". I am " + data.age + " years old.";
+            document.getElementById("result").innerHTML = str;
+        }
+    </script>
+</body>
+</html>
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CORS</title>
+</head>
+<body>
+	<script>
+	// http://10.1.18.78:83/_postJSON?result=success		
+
+
+	</script>
+</body>
+</html> -->

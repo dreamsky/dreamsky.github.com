@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>该页面的路径是：http://a.com/proxy.html</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function _getUrl(key) {//通用方法，获取URL参数
+            var query = location.href.split("?")[1];
+            var value = decodeURIComponent(query.split(key + "=")[1].split("&")[0]);
+            return value;
+        }
+        (function() {
+            var callback = _getUrl("callback");
+            var data = _getUrl("data");
+            eval("window.top." + decodeURIComponent(callback) + "(" + decodeURIComponent(data) + ")");
+        })()
+    </script>
+</body>
+</html>

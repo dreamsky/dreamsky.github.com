@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=620">
+<title>HTML5 Demo: Web Socket</title>
+<link rel="stylesheet" href="http://html5demos.com/css/html5demos.css">
+<style>
+  #chat { width: 97%; }
+  .them { font-weight: bold; }
+  .them:before { content: 'them '; color: #bbb; font-size: 14px; }
+  .you { font-style: italic; }
+  .you:before { content: 'you '; color: #bbb; font-size: 14px; font-weight: bold; }
+  #log {
+    overflow: auto;
+    max-height: 300px;
+    list-style: none;
+    padding: 0;
+  }
+  #log li {
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 10px 0;
+  }
+</style>
+</head>
+<body>
+<section id="wrapper">
+    <header>
+      <h1>Web Socket</h1>
+    </header>
+	<article>
+	  <form>
+	    <input type="text" id="chat" placeholder="type and press enter to chat">
+	  </form>
+	  <p id="status" class="success">Socket open</p>
+	  <p>Users connected: <span id="connected">0</span></p>
+	  <ul id="log"></ul>
+	</article>
+</section>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+var addEvent = (function () {
+  if (document.addEventListener) {
+    return function (el, type, fn) {
+      if (el && el.nodeName || el === window) {
+        el.addEventListener(type, fn, false);
+      } else if (el && el.length) {
+        for (var i = 0; i < el.length; i++) {
+          addEvent(el[i], type, fn);
+        }
+      }
+    };
+  } else {
+    return function (el, type, fn) {
+      if (el && el.nodeName || el === window) {
+        el.attachEvent('on' + type, function () { return fn.call(el, window.event); });
+      } else if (el && el.length) {
+        for (var i = 0; i < el.length; i++) {
+          addEvent(el[i], type, fn);
+        }
+      }
+    };
+  }
+})();
+
+var connected = document.getElementById('connected'),
+    log = document.getElementById('log'),
+    chat = document.getElementById('chat'),
+    form = chat.form,
+    state = document.getElementById('status'),
+    entities = {
+      '<' : '&lt;',
+      '>' : '&gt;',
+      '&' : '&amp;'
+    };
+
+var socket = io.connect('http://localhost:8088');
+
+socket.on('count', function (data) {
+	console.log('count 001.........');
+	connected.innerHTML = data.connect_count;
+});
+
+socket.on('message', function (data) {
+  console.log('client 001........'+data);
+	var message = data.msg; 
+	log.innerHTML = '<li class="them">' + message.replace(/[<>&]/g, function (m) { return entities[m]; }) + '</li>' + log.innerHTML;
+
+});
+
+socket.on('connect', function () {
+	addEvent(form, 'submit', function (event) {
+	    event.preventDefault();
+
+	      socket.emit('message', {'msg': chat.value});
+	      log.innerHTML = '<li class="you">' + chat.value.replace(/[<>&]/g, function (m) { return entities[m]; }) + '</li>' + log.innerHTML;
+	      
+	      chat.value = '';
+	    
+	  });
+});
+
+
+</script>
+</body>
+</html>

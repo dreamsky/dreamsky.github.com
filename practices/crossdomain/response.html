@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>该页面的路径是：http://b.com/response.html</title>
+</head>
+<body>
+    <iframe id="proxy"></iframe>
+    <script type="text/javascript">
+        function _request(reqdata, url, callback) {//通用方法，ajax请求
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var data = xmlhttp.responseText;
+                    callback(data);
+                }
+            }
+            xmlhttp.open("POST", url);
+            xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+            xmlhttp.send(reqdata);
+        }
+        function _getQuery(key) {//通用方法，获取url参数
+            var query = location.href.split("?")[1];
+            var value = decodeURIComponent(query.split(key + "=")[1].split("&")[0]);
+            return value;
+        }
+        function GetPerson(reqdata, callback) {//向process.php发送ajax请求
+            var url = "load_data.json";
+            var fn = function(data) {
+                var proxy = document.getElementById("proxy");
+                proxy.src = "http://localhost:83/CrossDomain/proxy.html?data=" + encodeURIComponent(data) + "&callback=" + encodeURIComponent(callback);
+            }
+            _request(reqdata, url, fn);
+        }
+        (function() {
+            var fn = _getQuery("fn");
+            var reqdata = _getQuery("data");
+            var callback = _getQuery("callback");
+            eval(fn + "('" + reqdata +"', '" + callback + "')");
+        })();
+    </script>
+</body>
+</html>
