@@ -1,0 +1,16 @@
+.top-banner {
+	position:absolute;
+	left:0;
+	top:0;
+	height:40px;
+	line-height:40px;
+	padding:0 30px;
+	width:100%;
+	font-size: 13px;
+	background-color:#666;
+	color: #fff;
+}
+.top-banner a {
+	color: #fff;
+	text-decoration: none;
+}
