@@ -219,7 +219,7 @@ function createInstructions() {
 
 	text = document.createElement( 'div' );
 	text.onSelectStart = null;
-	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px;">Hello!</span><br /><br /><span style="font-size:15px;"><strong>This is how it works:</strong><br /><br />1. Drag a ball.<br />2.&nbsp;Click&nbsp;on&nbsp;the&nbsp;background.<br />3. Shake your browser.<br />4. Double click.<br />5. Play!</span>';
+	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:26px;">玩法介绍：</span><br /><span style="font-size:15px;"><br />1. 随意拖动圆球；<br />2.点击页面背景；<br />3. 晃动浏览器；<br />4. 双击页面背景；<br />5. 按住鼠标左键。</span>';
 	text.style.color = theme[1];
 	text.style.position = 'absolute';
 	text.style.left = '0px';
