@@ -1,3 +1,4 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
 .clearfix{*zoom:1}
 .fl{float:left}
