@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Custom designed fancy check boxes and radio buttons with CSS and jQuery</title>
+    <meta name="Description" content="Custom designed HTML checkboxes and radio controls with CSS 3.0 and jQuery." />
+    <style type="text/css">
+	* { margin: 0; padding: 0; }
+	html        { font: 14px/18px 'HelveticaNeue-Light', 'Helvetica Neue', Arial, Helvetica, sans-serif; color: #fff; background: url(images/noise.png); }
+	a:hover, a:active { outline: none; }
+	#sizer      { width: 340px; margin: 0 auto; padding: 150px 20px; background: url(images/highlight.png) no-repeat 50% 0; }
+	form        { width: 300px; padding: 18px 20px 0; margin-bottom: 18px; background: #4f84b8 url(images/box-grad.png) repeat-x 0 0; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; box-shadow: 0 5px 12px rgba(0,0,0,.4); -webkit-box-shadow: 0 5px 12px rgba(0,0,0,.4); -moz-box-shadow: 0 5px 12px rgba(0,0,0,.4); -khtml-box-shadow: 0 5px 12px rgba(0,0,0,.4); }
+	fieldset    { border: 0; padding-bottom: 9px; }
+	label       { display: block; cursor: pointer; line-height: 20px; padding-bottom: 9px; text-shadow: 0 -1px 0 rgba(0,0,0,.2); }
+	.radios     { padding-top: 18px; background: url(images/divider.png) repeat-x 0 0; }
+	.label_check input,
+	.label_radio input  { margin-right: 5px; }
+	#footer     { width: 100%; text-align: center; font-size: 12px; }
+	#footer a   { padding: 2px 10px; margin: 0 2px; color: #999; background: #ddd; text-decoration: none; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; }
+	#footer a:hover,
+	#footer a:focus { color: #fff; background: #333; background: rgba(0,0,0,.3); }
+
+	.has-js .label_check,
+	.has-js .label_radio    { padding-left: 34px; }
+	.has-js .label_radio    { background: url(images/radio-off.png) no-repeat; }
+	.has-js .label_check    { background: url(images/check-off.png) no-repeat; }
+	.has-js label.c_on      { background: url(images/check-on.png) no-repeat; }
+	.has-js label.r_on      { background: url(images/radio-on.png) no-repeat; }
+	.has-js .label_check input,
+	.has-js .label_radio input  { position: absolute; left: -9999px; }
+	</style>
+    <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+</head>
+<body>
+<div id="sizer">
+    <form action="#" method="get" accept-charset="utf-8">
+        <fieldset class="checkboxes">
+            <label class="label_check" for="checkbox-01"><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /> I agree to the terms &#38; conditions.</label>
+            <label class="label_check" for="checkbox-02"><input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox" /> Please send me regular updates.</label>
+        </fieldset>
+        <fieldset class="radios">
+            <label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked /> This is option A...</label>
+            <label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" /> and this is option B...</label>
+            <label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" /> or simply choose option C</label>
+        </fieldset>
+    </form>
+</div>
+<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+<script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>
+<script src="http://dreamsky.github.io/main/blog/common/init.js"></script>
+<script>
+    function setupLabel() {
+        if ($('.label_check input').length) {
+            $('.label_check').each(function(){ 
+                $(this).removeClass('c_on');
+            });
+            $('.label_check input:checked').each(function(){ 
+                $(this).parent('label').addClass('c_on');
+            });                
+        };
+        if ($('.label_radio input').length) {
+            $('.label_radio').each(function(){ 
+                $(this).removeClass('r_on');
+            });
+            $('.label_radio input:checked').each(function(){ 
+                $(this).parent('label').addClass('r_on');
+            });
+        };
+    };
+    $(document).ready(function(){
+        $('body').addClass('has-js');
+        $('.label_check, .label_radio').click(function(){
+            setupLabel();
+        });
+        setupLabel(); 
+    });
+</script>
+</body>
+</html>
