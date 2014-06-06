@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <title>Rainy Day – 逼真的雨滴效果</title>
+        <style media="screen">
+            body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+        <script src="rainyday.js"></script>
+        <script>
+            function run() {
+                var image = document.getElementById('background');
+                image.onload = function() {
+                    var engine = new RainyDay({
+                        image: this
+                    });
+					engine.rain([ [3, 2, 2] ], 100);
+				};
+                image.crossOrigin = 'anonymous';
+                image.src = 'http://i.imgur.com/U1Tqqdw.jpg';
+            }
+        </script>
+    </head>
+    <body onload="run();">
+        <img id="background" alt="background" src="" />
+    </body>
+    <div style="position:fixed;bottom:30px;width:100%;height:90px;z-index:999">
+        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+    </div>
+    <script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>
+    <script src="http://dreamsky.github.io/main/blog/common/init.js"></script>
+</html>
