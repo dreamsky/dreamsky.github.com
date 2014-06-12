@@ -1,20 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
     <head>
         <meta charset="utf-8">
-        <title>gRaphaël Static Pie Chart</title>
+        <title>gRaphaël - 互动的饼图</title>
         <link rel="stylesheet" href="assets/base.css">
         <link rel="stylesheet" href="assets/demo.css">
+        <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
         <script src="assets/raphael-min.js"></script>
         <script src="assets/g.raphael.js"></script>
         <script src="assets/g.pie.js"></script>
         <script>
             window.onload = function () {
                 var r = Raphael("holder"),
-                    pie = r.piechart(400, 250, 120, [55, 20, 13, 32, 5, 1, 2, 10], { legend: ["%%.%% - Enterprise Users", "IE Users"], legendpos: "west", href: ["http://jizhula.com", "http://www.cnblogs.com/lhb25/"]});
+                    pie = r.piechart(400, 250, 120, [55, 20, 13, 32, 5, 1, 2, 10], { legend: ["%%.%% - Enterprise Users", "IE Users"], legendpos: "west", href: ["http://www.cnblogs.com/lhb25/", "http://www.cnblogs.com/lhb25/"]});
 
-                r.text(320, 60, "Interactive Pie Chart").attr({ font: "20px sans-serif" });
+                r.text(320, 60, "互动的饼图").attr({ font: "20px sans-serif" });
                 pie.hover(function () {
                     this.sector.stop();
                     this.sector.scale(1.1, 1.1, this.cx, this.cy);
@@ -36,9 +36,12 @@
         </script>
     </head>
     <body class="raphael">
-        <div id="holder"></div>
+        <div id="holder" style="margin-top:50px"></div>
         <p style="text-align:center">
-            梦想天空—— <a href="http://www.cnblogs.com/lhb25/archive/2013/01/07/gRaphael-javascript-chart-library.html">gRaphaël</a> 矢量图表库示例。
+            <a href="http://www.cnblogs.com/lhb25/archive/2013/01/07/gRaphael-javascript-chart-library.html">gRaphaël</a> 矢量图表库示例。
         </p>
+        <div class="footer-banner" style="width:728px; margin:30px auto"></div>
+        <script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://dreamsky.github.io/main/blog/common/init.js"></script>        
     </body>
 </html>
