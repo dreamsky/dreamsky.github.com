@@ -1,0 +1,18 @@
+body { background-color:#333; margin:0 auto; background-image:url('images/interface/bgnoise.png');}
+#container { width:793px; height:498px; margin:0 auto; background-image:url('images/interface/back_noise.png'); background-color:#111; margin-top: 140px;}
+#container .mainframe { width: 500px; height:498px; float:left}
+#container .thumbnails { float:left; width:293px; height:498px; background-repeat:no-repeat; background-image:url('images/interface/total_grid.png'); background-position:9px 70px; }
+.thumbnailimage { float:left; padding:7px;}
+.large_thumb	{float:left; position: relative; width:64px; height:64px; padding:0px 10px 0px 0;}
+img.large_thumb_image	{position:absolute; left:5px; top:4px;}
+.large_thumb_border	{width:64px; height:64px; background:url('images/interface/thumb_border.png'); position:absolute; }
+.large_thumb_shine	{width:54px; height:54px; background:url('images/interface/shine.png'); position:absolute; background-position:-150px 0; left:5px; top:4px; background-repeat:no-repeat;}
+.thumb_container { width:64px; height:64px; background-image:url('images/interface/thumb_holder.png'); }
+#largephoto { width: 444px; height:370px; background-color:#333333; margin-top:68px; margin-left:40px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; }
+#largetrans { width: 444px; height:370px; background-image:url('images/interface/main_bg_trans.png'); -moz-border-radius: 10px; -webkit-border-radius: 10px;}
+.large_image { display:none}
+#containertitle { position:absolute; margin-top:35px; margin-left:40px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; text-shadow: 0px 1px 2px #fff;}
+#largecaption {  text-align:center; height:100px; width:100%; background-color:#111; position:absolute; width: 444px; margin-top:270px; -moz-border-radius-bottomleft: 10px;  -moz-border-radius-bottomright: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px; display:none; color:#fff; font-size:30px; font-family:Arial; letter-spacing:-1px; font-weight:bold}
+#largecaption .captionContent { padding:5px;}
+#largecaption .captionShine { background:url('images/interface/bigshine.png'); position:absolute;  width: 444px; height: 100px; background-position:-150px 0;background-repeat:no-repeat;}
+#loader { width:150px; height:150px;background-image:url('images/interface/loader.gif'); background-repeat:no-repeat; position:absolute;}
