@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>Lightbox</title>
+	<meta name="description" lang="en" content="Lightbox is a script used to overlay images on the current page. It's a snap to setup and works on all modern browsers."/>
+	<meta name="author" content="Lokesh Dhakar">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/demopage/favicon.png">
+	<link rel="stylesheet" href="css/screen.css">
+	<link rel="stylesheet" href="css/lightbox.css">
+	<link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+	<style type="text/css">
+	.top-banner {
+		background-color: #333;
+	}
+	</style>
+</head>
+<body>
+	<section id="examples" class="examples-section">
+		<div class="container">
+			<h1 style="font-size:35px">jQuery Lightbox</h1>
+			<h3>示例一：2张独立的图片</h3>
+			<div class="image-row">
+				<a class="example-image-link" href="img/demopage/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="img/demopage/image-1.jpg" alt="image-1" /></a>
+				<a class="example-image-link" href="img/demopage/image-2.jpg" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="img/demopage/image-2.jpg" alt="image-1"/></a>
+			</div>
+
+			<!-- <hr /> -->
+
+			<h3 style="clear: both;">示例二：四张图片集</h3>
+
+			<div class="image-row">
+				<div class="image-set">
+					<a class="example-image-link" href="img/demopage/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="img/demopage/thumb-3.jpg" alt=""/></a>
+					<a class="example-image-link" href="img/demopage/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="img/demopage/thumb-4.jpg" alt="" /></a>
+					<a class="example-image-link" href="img/demopage/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="img/demopage/thumb-5.jpg" alt="" /></a>
+					<a class="example-image-link" href="img/demopage/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="img/demopage/thumb-6.jpg" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+	<footer>
+		<div class="container">
+			<a href="https://github.com/lokesh/lightbox2/" class="button">
+				View on Github
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/lightbox.js"></script>
+	<script src="http://dreamsky.github.io/main/blog/common/init.js"></script>
+</body>
+</html>
