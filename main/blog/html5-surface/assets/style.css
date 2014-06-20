@@ -1,0 +1,202 @@
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CCC;
+	font-size: 11px;
+	background: #000;
+}
+
+#container
+{
+	height: 100%;
+	left: 0px;
+	background: #000;
+	background-image: url(../images/vignette.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	position:relative;
+	overflow:hidden;
+}
+
+#container.live {
+	background-image: url(../images/vignette.jpg);
+}
+
+.no-webgl #container {
+	background-image: url(../images/no-webgl.png);
+}
+
+#menu
+{
+	background: #2b2b2b;
+	width: 220px;
+	float: left;
+	height: 100%;
+}
+
+#menu-inner {
+	padding: 20px;
+}
+
+h1 {
+	width: 160px;
+	height: 31px;
+	display: block;
+	text-indent: -30000px;
+	background: url(../images/header.png) no-repeat;
+}
+
+p {
+	margin: 1em 0 1em 0;
+	line-height: 130%;
+	width: 180px;
+}
+
+#gui {
+	display: none;
+}
+
+#gui.live {
+	display: block;
+}
+
+a {
+	color: #FFF;
+	font-weight: bold;
+}
+
+.gui-set {
+	display:block;
+	padding: 5px 0 10px 0;
+}
+
+.gui-set a.disabled {
+	opacity: 0.2;
+}
+
+.gui-set a {
+	display:block;
+	background-color: #FFF;
+	color: #2b2b2b;
+	text-transform: uppercase;
+	padding: 4px 10px 4px 10px;
+	font-weight: bold;
+	font-size: 10px;
+	text-decoration: none;
+	float: left;
+	border-radius: 8px;
+	margin-right: 6px;
+	opacity: 1;
+}
+
+h2 {
+	color: #FFF;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+
+#flashcontainer
+{
+	width: 300px;
+	height: 200px;
+	padding: 14px;
+	border-radius: 8px;
+	background-color: #FFF;
+	box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	margin-top: -107px;
+	margin-left: -157px;
+}
+
+#flashcontainer.live
+{
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	left: 0;
+	top: 0;
+	background: none;
+}
+
+#flashcontainer.error {
+	background: url(../images/error.png) no-repeat center center;
+}
+
+#container a {
+	border-radius: 20px;
+	padding: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: block;
+	background: #333333;
+	color: #FFF;
+	font-weight: bold;
+	z-index: 20;
+	text-decoration: none;
+	width: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: bold;
+	-moz-transition: all 0.2s ease-out;  /* FF4+ */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.5+ */
+  -webkit-transition: all 0.2s ease-out;  /* Saf3.2+, Chrome */
+          transition: all 0.2s ease-out; 
+}
+
+#container span {
+	width: 20px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 0 15px 0 5px;
+}
+
+#container a:hover {
+	-moz-transition: all 0.2s ease-out;  /* FF4+ */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.5+ */
+  -webkit-transition: all 0.2s ease-out;  /* Saf3.2+, Chrome */
+          transition: all 0.2s ease-out; 
+	width: 160px;
+	background-color: #CCC;
+	color: #000;
+}
+
+.twitter-share-button {
+	margin: 15px 0 15px 0;
+}
