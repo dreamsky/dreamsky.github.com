@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+        <meta charset="utf-8">
+        <title> Intense Images – 全屏查看图像的</title>
+        <!-- CSS -->
+        <link href='styles.css' rel='stylesheet'>
+        <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+        <!-- JS -->
+        <script src='intense.min.js'></script>
+        <style>
+        .top-banner {
+            background-color: #666;
+        }
+        header h1 {
+            background-color: #fff;
+            color: #666;
+            font-family: 'Microsoft Yahei';
+            font-size: 30px;
+        }
+        </style>
+    </head>
+    <body>
+
+    	<header style="margin-top:30px;">
+    		<div class="logo">ii</div>
+    		<div class="main">
+    			<h1> 点击图片查看效果!</h1>
+    		</div>
+    	</header>
+    	<section class="demos">
+    		<!-- Using divs for the demo, for formatting... you can use images if you want!  -->
+    		<div class="demo-image first" data-image="img/h1_small.jpg" data-title="Beautiful fields" data-caption="With lots of wheaty puffs. Love those puffs."></div>
+    		<div class="demo-image second" data-image="img/v1_small.jpg" data-title="Fantastic cliffs" data-caption="Longing for exploration. Explore me!"></div>
+    		<div class="demo-image third"  data-image="img/h2_small.jpg" data-title="Chilling sheep" data-caption="To your breed, your fleece, your clan be true!"></div>
+    	</section>
+
+    	<footer>
+    		<h1> <a href="http://tholman.com">
+    			By Tim Holman</a> &bull;
+    			<a href="https://github.com/tholman/intense-images">Source & Instructions</a> &bull;  
+    			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Intense.js - images for the full screen -" data-via="twholman">Tweet</a>
+    		</h1>
+    	</footer>
+        <div class="footer-banner" style="width:728px; margin:0px auto"></div>
+		<script>
+			var elements = document.querySelectorAll( '.demo-image' );
+			Intense( elements );
+		</script>
+        <script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>
+        <script src="http://dreamsky.github.io/main/blog/common/init.js"></script>
+    </body>
+</html>
